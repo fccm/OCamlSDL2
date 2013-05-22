@@ -1,0 +1,26 @@
+=== Linux and Cygwin ===
+
+Under Linux and Cygwin, go in the directory src/
+and create a file named "Makefile.config" based on
+"Makefile.config.cygwin" or "Makefile.config.linux".
+
+Then you can run:
+$ make gen
+$ make dep
+$ make opt byte
+
+----------------
+
+If you compiled and installed SDL2 with
+./configure --prefix=/tmp/SDL2-temp
+then you need to make sure that the utility "sdl2-config"
+can be found in the path:
+
+$ export PATH="$PATH:/tmp/SDL2-temp/bin"
+
+----------------
+
+
+=== Other Environments ===
+
+Please tell me how to do in other environments.
