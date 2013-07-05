@@ -243,12 +243,12 @@ type t =
   | AC_Stop
   | AC_Refresh
   | AC_Bookmarks
-  | BRIGHTNESSDOWN
-  | BRIGHTNESSUP
-  | DISPLAYSWITCH
-  | KBDILLUMTOGGLE
-  | KBDILLUMDOWN
-  | KBDILLUMUP
+  | BrightnessDown
+  | BrightnessUp
+  | DisplaySwitch
+  | KBDIllumToggle
+  | KBDIllumDown
+  | KBDIllumUp
   | Eject
   | Sleep
 

@@ -239,12 +239,12 @@ type t =
   | AC_Stop
   | AC_Refresh
   | AC_Bookmarks
-  | BRIGHTNESSDOWN
-  | BRIGHTNESSUP
-  | DISPLAYSWITCH
-  | KBDILLUMTOGGLE
-  | KBDILLUMDOWN
-  | KBDILLUMUP
+  | BrightnessDown
+  | BrightnessUp
+  | DisplaySwitch
+  | KBDIllumToggle
+  | KBDIllumDown
+  | KBDIllumUp
   | Eject
   | Sleep
 
@@ -477,11 +477,11 @@ let to_string = function
   | AC_Stop             -> "AC_Stop"
   | AC_Refresh          -> "AC_Refresh"
   | AC_Bookmarks        -> "AC_Bookmarks"
-  | BRIGHTNESSDOWN      -> "BRIGHTNESSDOWN"
-  | BRIGHTNESSUP        -> "BRIGHTNESSUP"
-  | DISPLAYSWITCH       -> "DISPLAYSWITCH"
-  | KBDILLUMTOGGLE      -> "KBDILLUMTOGGLE"
-  | KBDILLUMDOWN        -> "KBDILLUMDOWN"
-  | KBDILLUMUP          -> "KBDILLUMUP"
+  | BrightnessDown      -> "BrightnessDown"
+  | BrightnessUp        -> "BrightnessUp"
+  | DisplaySwitch       -> "DisplaySwitch"
+  | KBDIllumToggle      -> "KBDIllumToggle"
+  | KBDIllumDown        -> "KBDIllumDown"
+  | KBDIllumUp          -> "KBDIllumUp"
   | Eject               -> "Eject"
   | Sleep               -> "Sleep"
