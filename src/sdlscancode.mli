@@ -245,3 +245,5 @@ type t =
   | SLEEP
 
 val to_string : t -> string
+val of_string : string -> t
+
