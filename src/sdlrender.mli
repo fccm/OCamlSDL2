@@ -16,7 +16,9 @@
 type t = Sdltype.renderer
 
 external create_window_and_renderer :
-  width:int -> height:int -> Sdlwindow.t * t
+  width:int -> height:int ->
+  flags:Sdlwindow.window_flags list ->
+  Sdlwindow.t * t
   = "caml_SDL_CreateWindowAndRenderer"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateWindowAndRenderer}api doc} *)
 

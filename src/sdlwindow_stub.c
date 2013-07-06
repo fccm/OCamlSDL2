@@ -197,7 +197,7 @@ static const Uint32 caml_sdl_windowflags_table[] = {
     SDL_WINDOW_FOREIGN,
 };
 
-static inline Uint32
+Uint32
 Val_SDL_WindowFlags(value mask_list)
 {
     Uint32 c_mask = 0x00000000;

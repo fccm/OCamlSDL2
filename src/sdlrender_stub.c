@@ -21,14 +21,16 @@
 #include "sdlrect_stub.h"
 
 CAMLprim value
-caml_SDL_CreateWindowAndRenderer(value width, value height)
+caml_SDL_CreateWindowAndRenderer(
+        value width, value height, value _window_flags)
 {
     CAMLparam2(width, height);
     CAMLlocal1(ret);
 
     SDL_Window *window;
     SDL_Renderer *renderer;
-    Uint32 window_flags = 0;
+    Uint32 window_flags =
+        Val_SDL_WindowFlags(_window_flags);
 
     int r = SDL_CreateWindowAndRenderer(
         Int_val(width), Int_val(height), window_flags, &window, &renderer);
