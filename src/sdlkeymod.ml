@@ -37,4 +37,5 @@ let of_string s =
   | "num"    -> NUM
   | "caps"   -> CAPS
   | "mode"   -> MODE
-  | _ -> invalid_arg "of_string"
+  | _ -> invalid_arg "Sdlkeymod.of_string"
+
