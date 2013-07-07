@@ -44,14 +44,40 @@ caml_SDL_CreateWindowAndRenderer(
     CAMLreturn(ret);
 }
 
+static const SDL_RendererFlags SDL_RendererFlags_table[] = {
+    SDL_RENDERER_SOFTWARE,
+    SDL_RENDERER_ACCELERATED,
+    SDL_RENDERER_PRESENTVSYNC,
+    SDL_RENDERER_TARGETTEXTURE,
+};
+
+static inline Uint32
+SDL_RendererFlags_val(value flag_list)
+{
+    int c_mask = 0; 
+    while (flag_list != Val_emptylist)
+    {
+        value head = Field(flag_list, 0);
+        c_mask |= SDL_RendererFlags_table[Long_val(head)];
+        flag_list = Field(flag_list, 1);
+    }
+    return c_mask;
+}
+
 CAMLprim value
 caml_SDL_CreateRenderer(value window, value index, value _flags)
 {
-    //Uint32 flags = SDL_RENDERER_ACCELERATED;
-    SDL_Renderer * rend = SDL_CreateRenderer(
-            SDL_Window_val(window), Int_val(index),
-            SDL_RENDERER_ACCELERATED);
-    if (rend == NULL) caml_failwith("Sdlrender.create_renderer");
+    Uint32 flags = SDL_RendererFlags_val(_flags);
+
+    SDL_Renderer * rend =
+        SDL_CreateRenderer(
+            SDL_Window_val(window),
+            Int_val(index),
+            flags);
+
+    if (rend == NULL)
+        caml_failwith("Sdlrender.create_renderer");
+
     return Val_SDL_Renderer(rend);
 }
 

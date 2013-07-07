@@ -22,8 +22,19 @@ external create_window_and_renderer :
   = "caml_SDL_CreateWindowAndRenderer"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateWindowAndRenderer}api doc} *)
 
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RendererFlags}api doc} *)
+type renderer_flags =
+  | Software
+  | Accelerated
+  | PresentVSync
+  | TargetTexture
+
+val string_of_renderer_flags : renderer_flags -> string
+val renderer_flags_of_string : string -> renderer_flags
+
 external create_renderer :
-  win:Sdlwindow.t -> index:int -> flags:int32 -> t
+  win:Sdlwindow.t -> index:int ->
+  flags:renderer_flags list -> t
   = "caml_SDL_CreateRenderer"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateRenderer}api doc} *)
 

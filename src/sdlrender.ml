@@ -18,8 +18,29 @@ external create_window_and_renderer :
   Sdlwindow.t * t
   = "caml_SDL_CreateWindowAndRenderer"
 
+type renderer_flags =
+  | Software
+  | Accelerated
+  | PresentVSync
+  | TargetTexture
+
+let string_of_renderer_flags = function
+  | Software        -> "Software"
+  | Accelerated     -> "Accelerated"
+  | PresentVSync    -> "PresentVSync"
+  | TargetTexture   -> "TargetTexture"
+
+let renderer_flags_of_string s =
+  match String.lowercase s with
+  | "software"      -> Software
+  | "accelerated"   -> Accelerated
+  | "presentvsync"  -> PresentVSync
+  | "targettexture" -> TargetTexture
+  | _ -> invalid_arg "Sdlrender.renderer_flags_of_string"
+
 external create_renderer :
-  win:Sdlwindow.t -> index:int -> flags:int32 -> t
+  win:Sdlwindow.t -> index:int ->
+  flags:renderer_flags list -> t
   = "caml_SDL_CreateRenderer"
 
 external set_draw_color :
