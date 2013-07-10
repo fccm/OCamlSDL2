@@ -182,7 +182,7 @@ cleandoc:
 install:
 	$(INSTALL_DIR) $(DESTDIR)
 	$(INSTALL_FILES) \
-	  *.cm[aixo] *.cmx[as] *sdl2*_stubs.* \
+	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.* \
 	  $(DESTDIR)
 
 
