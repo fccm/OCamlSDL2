@@ -41,6 +41,6 @@ external get_status : unit -> status
   = "caml_SDL_GetAudioStatus"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetAudioStatus}api doc} *)
 
-external pause : pause_on:int -> unit
+external pause : pause_on:bool -> unit
   = "caml_SDL_PauseAudio"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_PauseAudio}api doc} *)

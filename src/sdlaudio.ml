@@ -33,5 +33,5 @@ type status =
 external get_status : unit -> status
   = "caml_SDL_GetAudioStatus"
 
-external pause : pause_on:int -> unit
+external pause : pause_on:bool -> unit
   = "caml_SDL_PauseAudio"

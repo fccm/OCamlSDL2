@@ -89,7 +89,7 @@ caml_SDL_GetAudioStatus(value unit)
 CAMLprim value
 caml_SDL_PauseAudio(value pause_on)
 {
-    SDL_PauseAudio(Int_val(pause_on));
+    SDL_PauseAudio(Bool_val(pause_on));
     return Val_unit;
 }
 
