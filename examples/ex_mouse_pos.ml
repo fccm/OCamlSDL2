@@ -1,7 +1,7 @@
 let () =
   Random.self_init ();
   let width, height = (640, 480) in
-  let r, g, b =
+  let rgb =
     (100 + Random.int 156,
      100 + Random.int 156,
      100 + Random.int 156)
@@ -11,10 +11,10 @@ let () =
   let window, renderer =
     Sdlrender.create_window_and_renderer ~width ~height ~flags:[]
   in
-  Sdlrender.set_draw_color renderer r g b alpha;
+  Sdlrender.set_draw_color renderer rgb alpha;
   let rec aux () =
-    let (x, y), buttons = Sdlmouse.get_state () in
-    Sdlrender.draw_point renderer ~x ~y;
+    let xy, buttons = Sdlmouse.get_state () in
+    Sdlrender.draw_point renderer xy;
     Sdlrender.render_present renderer;
     Printf.printf ".%!";
     List.iter print_endline (

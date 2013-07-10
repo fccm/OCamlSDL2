@@ -12,11 +12,11 @@ let () =
        Random.int 256)
     in
     let alpha = 255 in
-    Sdlrender.set_draw_color renderer r g b alpha;
+    Sdlrender.set_draw_color3 renderer r g b alpha;
     for i = 1 to 640 * 480 / 32 do
       let x = Random.int 640
       and y = Random.int 480 in
-      Sdlrender.draw_point renderer ~x ~y;
+      Sdlrender.draw_point2 renderer ~x ~y;
     done;
     Sdlrender.render_present renderer;
     Sdltimer.delay 40;

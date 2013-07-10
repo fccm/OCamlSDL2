@@ -84,23 +84,48 @@ caml_SDL_CreateRenderer(value window, value index, value _flags)
 #define Uint8_val Int_val
 CAMLprim value
 caml_SDL_SetRenderDrawColor(
+        value renderer, value rgb, value a)
+{
+    int s = SDL_SetRenderDrawColor(
+        SDL_Renderer_val(renderer),
+        Uint8_val(Field(rgb, 0)),
+        Uint8_val(Field(rgb, 1)),
+        Uint8_val(Field(rgb, 2)),
+        Uint8_val(a));
+    if (s) caml_failwith("Sdlrender.draw_color");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_SetRenderDrawColor3(
         value renderer, value r, value g, value b, value a)
 {
     int s = SDL_SetRenderDrawColor(
         SDL_Renderer_val(renderer),
         Uint8_val(r), Uint8_val(g), Uint8_val(b), Uint8_val(a));
-    if (s) caml_failwith("Sdlrender.draw_color");
+    if (s) caml_failwith("Sdlrender.draw_color3");
     return Val_unit;
 }
 #undef Uint8_val
 
 CAMLprim value
-caml_SDL_RenderDrawPoint(value renderer, value x, value y)
+caml_SDL_RenderDrawPoint(value renderer, value p)
+{
+    int r = SDL_RenderDrawPoint(
+                SDL_Renderer_val(renderer),
+                Int_val(Field(p, 0)),
+                Int_val(Field(p, 1)));
+    if (r) caml_failwith("Sdlrender.draw_point");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderDrawPoint2(value renderer, value x, value y)
 {
     int r = SDL_RenderDrawPoint(
                 SDL_Renderer_val(renderer),
                 Int_val(x), Int_val(y));
-    if (r) caml_failwith("Sdlrender.draw_point");
+    if (r) caml_failwith("Sdlrender.draw_point2");
     return Val_unit;
 }
 

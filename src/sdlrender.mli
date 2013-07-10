@@ -39,13 +39,23 @@ external create_renderer :
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateRenderer}api doc} *)
 
 external set_draw_color :
-  t -> r:int -> g:int -> b:int -> a:int -> unit
+  t -> rgb:(int * int * int) -> a:int -> unit
   = "caml_SDL_SetRenderDrawColor"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_SetRenderDrawColor}api doc} *)
 
+external set_draw_color3 :
+  t -> r:int -> g:int -> b:int -> a:int -> unit
+  = "caml_SDL_SetRenderDrawColor3"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_SetRenderDrawColor}api doc} *)
+
 external draw_point :
-  t -> x:int -> y:int -> unit
+  t -> int * int -> unit
   = "caml_SDL_RenderDrawPoint"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawPoint}api doc} *)
+
+external draw_point2 :
+  t -> x:int -> y:int -> unit
+  = "caml_SDL_RenderDrawPoint2"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawPoint}api doc} *)
 
 external copy : t -> 
