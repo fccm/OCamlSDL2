@@ -27,7 +27,7 @@ let () =
       ~title:"SDL Event" ~flags:[Window.Resizable]
   in
   let rndr =
-    Render.create_renderer window (-1) 0x00l
+    Render.create_renderer window (-1) [Render.Accelerated]
   in
 
   let filename = "assets/circle64.bmp" in

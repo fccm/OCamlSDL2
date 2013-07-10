@@ -9,7 +9,7 @@ let () =
   let alpha = 255 in
   Sdl.init [`VIDEO];
   let window, renderer =
-    Sdlrender.create_window_and_renderer ~width ~height
+    Sdlrender.create_window_and_renderer ~width ~height ~flags:[]
   in
   Sdlrender.set_draw_color renderer r g b alpha;
   let rec aux () =

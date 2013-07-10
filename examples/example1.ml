@@ -16,7 +16,7 @@ let () =
   Sdl.init [`VIDEO];
   let width, height = (320, 240) in
   let window, renderer =
-    Sdlrender.create_window_and_renderer ~width ~height
+    Sdlrender.create_window_and_renderer ~width ~height ~flags:[]
   in
 
   let rec loop () =

@@ -3,7 +3,7 @@ let () =
   Random.self_init ();
   Sdl.init [`VIDEO];
   let window, renderer =
-    Sdlrender.create_window_and_renderer ~width ~height
+    Sdlrender.create_window_and_renderer ~width ~height ~flags:[]
   in
   for i = 1 to 32 do
     let r, g, b =

@@ -17,7 +17,7 @@ let display () =
   Gl.flush ()
 
 let () =
-  Sdl.init [`VIDEO; `EVERYTHING];
+  Sdl.init [`VIDEO];
   let width, height = (640, 480) in
   let win =
     Sdlwindow.create
@@ -27,7 +27,7 @@ let () =
   in
   let rndr =
     let index = 0 in
-    let flags = 0x0l in
+    let flags = [Render.Accelerated] in
     Sdlrender.create_renderer ~win ~index ~flags
   in
   ignore(rndr);
