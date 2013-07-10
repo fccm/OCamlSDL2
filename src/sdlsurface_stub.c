@@ -167,7 +167,7 @@ caml_SDL_SurfaceGetBitsPerPixel(value surface)
 static inline SDL_bool
 SDL_SurfaceHasPalette(SDL_Surface * surface)
 {
-    return Val_bool((surface->format->palette) != 0);
+    return ((surface->format->palette) != 0);
 }
 
 CAMLprim value
