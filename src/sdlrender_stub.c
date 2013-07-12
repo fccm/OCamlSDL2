@@ -130,6 +130,96 @@ caml_SDL_RenderDrawPoint2(value renderer, value x, value y)
 }
 
 CAMLprim value
+caml_SDL_RenderDrawPoints(value renderer, value ml_points)
+{
+    unsigned int i;
+    unsigned int count = Wosize_val(ml_points);
+    SDL_Point * points = malloc(count * sizeof(SDL_Point));
+    for (i = 0; i < count; i++) {
+        value p = Field(ml_points, i);
+        points[i].x = Int_val(Field(p, 0));
+        points[i].y = Int_val(Field(p, 1));
+    }
+    int r = SDL_RenderDrawPoints(
+                SDL_Renderer_val(renderer),
+                points, count);
+    free(points);
+    if (r) caml_failwith("Sdlrender.draw_points");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderDrawLine(value renderer, value line)
+{
+    value p1 = Field(line, 0);
+    value p2 = Field(line, 1);
+    int r = SDL_RenderDrawLine(
+                SDL_Renderer_val(renderer),
+                Int_val(Field(p1, 0)),
+                Int_val(Field(p1, 1)),
+                Int_val(Field(p2, 0)),
+                Int_val(Field(p2, 1)));
+    if (r) caml_failwith("Sdlrender.draw_line");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderDrawLine2(value renderer, value p1, value p2)
+{
+    int r = SDL_RenderDrawLine(
+                SDL_Renderer_val(renderer),
+                Int_val(Field(p1, 0)),
+                Int_val(Field(p1, 1)),
+                Int_val(Field(p2, 0)),
+                Int_val(Field(p2, 1)));
+    if (r) caml_failwith("Sdlrender.draw_line");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderDrawLines(value renderer, value ml_points)
+{
+    unsigned int i;
+    unsigned int count = Wosize_val(ml_points);
+    SDL_Point * points = malloc(count * sizeof(SDL_Point));
+    for (i = 0; i < count; i++) {
+        value p = Field(ml_points, i);
+        points[i].x = Int_val(Field(p, 0));
+        points[i].y = Int_val(Field(p, 1));
+    }
+    int r = SDL_RenderDrawLines(
+                SDL_Renderer_val(renderer),
+                points, count);
+    free(points);
+    if (r) caml_failwith("Sdlrender.draw_lines");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderDrawRect(value renderer, value _rect)
+{
+    SDL_Rect rect;
+    SDL_Rect_val(&rect, _rect);
+    int r = SDL_RenderDrawRect(
+                SDL_Renderer_val(renderer),
+                &rect);
+    if (r) caml_failwith("Sdlrender.draw_rect");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderFillRect(value renderer, value _rect)
+{
+    SDL_Rect rect;
+    SDL_Rect_val(&rect, _rect);
+    int r = SDL_RenderFillRect(
+                SDL_Renderer_val(renderer),
+                &rect);
+    if (r) caml_failwith("Sdlrender.fill_rect");
+    return Val_unit;
+}
+
+CAMLprim value
 caml_SDL_RenderCopy(
         value renderer, value texture,
         value _srcrect, value _dstrect)

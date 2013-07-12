@@ -59,7 +59,31 @@ external draw_point2 :
   t -> x:int -> y:int -> unit
   = "caml_SDL_RenderDrawPoint2"
 
-external copy : t -> 
+external draw_points :
+  t -> points:(int * int) array -> unit
+  = "caml_SDL_RenderDrawPoints"
+
+external draw_line :
+  t -> ((int * int) * (int * int)) -> unit
+  = "caml_SDL_RenderDrawLine"
+
+external draw_line2 :
+  t -> p1:(int * int) -> p2:(int * int) -> unit
+  = "caml_SDL_RenderDrawLine2"
+
+external draw_lines :
+  t -> (int * int) array -> unit
+  = "caml_SDL_RenderDrawLines"
+
+external draw_rect :
+  t -> Sdlrect.t -> unit
+  = "caml_SDL_RenderDrawRect"
+
+external fill_rect :
+  t -> Sdlrect.t -> unit
+  = "caml_SDL_RenderFillRect"
+
+external copy : t ->
   texture:Sdltexture.t ->
   src_rect:Sdlrect.t ->
   dst_rect:Sdlrect.t -> unit

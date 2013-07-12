@@ -58,7 +58,37 @@ external draw_point2 :
   = "caml_SDL_RenderDrawPoint2"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawPoint}api doc} *)
 
-external copy : t -> 
+external draw_points :
+  t -> points:(int * int) array -> unit
+  = "caml_SDL_RenderDrawPoints"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawPoints}api doc} *)
+
+external draw_line :
+  t -> ((int * int) * (int * int)) -> unit
+  = "caml_SDL_RenderDrawLine"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawLine}api doc} *)
+
+external draw_line2 :
+  t -> p1:(int * int) -> p2:(int * int) -> unit
+  = "caml_SDL_RenderDrawLine2"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawLine}api doc} *)
+
+external draw_lines :
+  t -> (int * int) array -> unit
+  = "caml_SDL_RenderDrawLines"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawLines}api doc} *)
+
+external draw_rect :
+  t -> Sdlrect.t -> unit
+  = "caml_SDL_RenderDrawRect"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawRect}api doc} *)
+
+external fill_rect :
+  t -> Sdlrect.t -> unit
+  = "caml_SDL_RenderFillRect"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderFillRect}api doc} *)
+
+external copy : t ->
   texture:Sdltexture.t ->
   src_rect:Sdlrect.t ->
   dst_rect:Sdlrect.t -> unit
