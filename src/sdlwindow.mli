@@ -40,7 +40,7 @@ external create :
     "caml_SDL_CreateWindow"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateWindow}api doc} *)
 
-external set_window_title : window:t -> title:string -> unit
+external set_title : window:t -> title:string -> unit
   = "caml_SDL_SetWindowTitle"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_SetWindowTitle}api doc} *)
 
