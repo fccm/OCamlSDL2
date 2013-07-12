@@ -18,6 +18,7 @@ external get_ticks : unit -> int = "caml_SDL_GetTicks" "noalloc"
 
 module D : sig
   external get_ticks : unit -> int * int = "caml_SDL_GetTicks_d"
+  (** (seconds, milliseconds) *)
 end
 
 external delay : ms:int -> unit = "caml_SDL_Delay"
