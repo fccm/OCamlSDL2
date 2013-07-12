@@ -31,5 +31,11 @@ caml_SDL_CreateTextureFromSurface(value renderer, value surface)
     return Val_SDL_Texture(tex);
 }
 
+CAMLprim value
+caml_SDL_DestroyTexture(value texture)
+{
+    SDL_DestroyTexture(SDL_Texture_val(texture));
+    return Val_unit;
+}
 
 /* vim: set ts=4 sw=4 et: */
