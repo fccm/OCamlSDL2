@@ -19,3 +19,12 @@ external create_from_surface :
 external destroy : t -> unit
   = "caml_SDL_DestroyTexture"
 
+external set_alpha_mod : t -> alpha:int -> unit
+  = "caml_SDL_SetTextureAlphaMod"
+
+external set_color_mod : t -> int * int * int -> unit
+  = "caml_SDL_SetTextureColorMod"
+
+external set_color_mod3 : t -> r:int -> g:int -> b:int -> unit
+  = "caml_SDL_SetTextureColorMod3"
+

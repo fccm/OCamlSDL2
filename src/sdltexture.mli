@@ -23,3 +23,15 @@ external destroy : t -> unit
   = "caml_SDL_DestroyTexture"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_DestroyTexture}api doc} *)
 
+external set_alpha_mod : t -> alpha:int -> unit
+  = "caml_SDL_SetTextureAlphaMod"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_SetTextureAlphaMod}api doc} *)
+
+external set_color_mod : t -> int * int * int -> unit
+  = "caml_SDL_SetTextureColorMod"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_SetTextureColorMod}api doc} *)
+
+external set_color_mod3 : t -> r:int -> g:int -> b:int -> unit
+  = "caml_SDL_SetTextureColorMod3"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_SetTextureColorMod}api doc} *)
+
