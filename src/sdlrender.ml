@@ -43,6 +43,12 @@ external create_renderer :
   flags:renderer_flags list -> t
   = "caml_SDL_CreateRenderer"
 
+external set_logical_size : t -> int * int -> unit
+  = "caml_SDL_RenderSetLogicalSize"
+
+external set_logical_size2 : t -> x:int -> y:int -> unit
+  = "caml_SDL_RenderSetLogicalSize2"
+
 external set_draw_color :
   t -> rgb:(int * int * int) -> a:int -> unit
   = "caml_SDL_SetRenderDrawColor"

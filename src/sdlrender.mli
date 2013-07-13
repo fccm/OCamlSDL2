@@ -38,6 +38,14 @@ external create_renderer :
   = "caml_SDL_CreateRenderer"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateRenderer}api doc} *)
 
+external set_logical_size : t -> int * int -> unit
+  = "caml_SDL_RenderSetLogicalSize"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderSetLogicalSize}api doc} *)
+
+external set_logical_size2 : t -> x:int -> y:int -> unit
+  = "caml_SDL_RenderSetLogicalSize2"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderSetLogicalSize}api doc} *)
+
 external set_draw_color :
   t -> rgb:(int * int * int) -> a:int -> unit
   = "caml_SDL_SetRenderDrawColor"

@@ -81,6 +81,28 @@ caml_SDL_CreateRenderer(value window, value index, value _flags)
     return Val_SDL_Renderer(rend);
 }
 
+CAMLprim value
+caml_SDL_RenderSetLogicalSize(value renderer, value dims)
+{
+    value w = Field(dims,0);
+    value h = Field(dims,1);
+    int r = SDL_RenderSetLogicalSize(
+                SDL_Renderer_val(renderer),
+                Int_val(w), Int_val(h));
+    if (r) caml_failwith("Sdlrender.set_logical_size");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderSetLogicalSize2(value renderer, value w, value h)
+{
+    int r = SDL_RenderSetLogicalSize(
+                SDL_Renderer_val(renderer),
+                Int_val(w), Int_val(h));
+    if (r) caml_failwith("Sdlrender.set_logical_size2");
+    return Val_unit;
+}
+
 #define Uint8_val Int_val
 CAMLprim value
 caml_SDL_SetRenderDrawColor(
