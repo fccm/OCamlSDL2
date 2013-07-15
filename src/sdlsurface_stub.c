@@ -17,6 +17,7 @@
 #include <SDL_surface.h>
 #include "sdlsurface_stub.h"
 #include "sdlrect_stub.h"
+#include "sdlpixel_stub.h"
 
 CAMLprim value
 caml_SDL_CreateRGBSurface(
@@ -175,6 +176,17 @@ caml_SDL_SurfaceHasPalette(value surface)
 {
     SDL_bool b = SDL_SurfaceHasPalette(SDL_Surface_val(surface));
     return Val_bool(b);
+}
+
+CAMLprim value
+caml_SDL_Surface_get_pixelformat_t(value surface)
+{
+    SDL_PixelFormat *pixel_format =
+        SDL_Surface_val(surface)->format;
+
+    Uint32 format = pixel_format->format;
+
+    return Val_Sdl_pixelformat_t(format);
 }
 
 /* vim: set ts=4 sw=4 et: */

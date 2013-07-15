@@ -69,3 +69,7 @@ external get_bits_per_pixel : t -> int
 
 external has_palette : t -> bool
   = "caml_SDL_SurfaceHasPalette"
+
+external get_pixelformat_t : t -> Sdlpixel.pixel_format_t
+  = "caml_SDL_Surface_get_pixelformat_t"
+
