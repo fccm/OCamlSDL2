@@ -61,16 +61,16 @@ external free_format : pixel_format -> unit
 
 type uint8 = int
 
+type rgb = uint8 * uint8 * uint8
+type rgba = uint8 * uint8 * uint8 * uint8
+
 external map_RGB :
-  pixel_format -> r:uint8 -> g:uint8 -> b:uint8 -> int32
+  pixel_format -> rgb:rgb -> int32
   = "caml_SDL_MapRGB"
 
 external map_RGBA :
-  pixel_format -> r:uint8 -> g:uint8 -> b:uint8 -> a:uint8 -> int32
+  pixel_format -> rgba:rgba -> int32
   = "caml_SDL_MapRGBA"
-
-type rgb = uint8 * uint8 * uint8
-type rgba = uint8 * uint8 * uint8 * uint8
 
 external get_RGB : pixel:int32 -> fmt:pixel_format -> rgb
   = "caml_SDL_GetRGB"

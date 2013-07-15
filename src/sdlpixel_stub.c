@@ -1,10 +1,10 @@
 /* OCamlSDL2 - An OCaml interface to the SDL2 library
  Copyright (C) 2013 Florent Monnier
-
+ 
  This software is provided "AS-IS", without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
  the use of this software.
-
+ 
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it freely.
 */
@@ -88,8 +88,11 @@ caml_SDL_FreeFormat(value format)
 #define Val_uint8 Val_int
 
 CAMLprim value
-caml_SDL_MapRGB(value format, value r, value g, value b)
+caml_SDL_MapRGB(value format, value rgb)
 {
+    value r = Field(rgb,0);
+    value g = Field(rgb,1);
+    value b = Field(rgb,2);
     Uint32 px = SDL_MapRGB(
             SDL_PixelFormat_val(format),
             UInt8_val(r),
@@ -100,8 +103,12 @@ caml_SDL_MapRGB(value format, value r, value g, value b)
 }
 
 CAMLprim value
-caml_SDL_MapRGBA(value format, value r, value g, value b, value a)
+caml_SDL_MapRGBA(value format, value rgba)
 {
+    value r = Field(rgba,0);
+    value g = Field(rgba,1);
+    value b = Field(rgba,2);
+    value a = Field(rgba,3);
     Uint32 px = SDL_MapRGBA(
             SDL_PixelFormat_val(format),
             UInt8_val(r),
