@@ -19,6 +19,7 @@
 #include "sdlwindow_stub.h"
 #include "sdltexture_stub.h"
 #include "sdlrect_stub.h"
+#include "sdlpoint_stub.h"
 
 #define Val_none Val_int(0)
 #define Some_val(v) Field(v,0)
@@ -282,6 +283,96 @@ caml_SDL_RenderCopy(
         caml_failwith("Sdlrender.copy");
 
     return Val_unit;
+}
+
+
+static const SDL_RendererFlip sdl_rendererflip_table[] = {
+    SDL_FLIP_NONE,
+    SDL_FLIP_HORIZONTAL,
+    SDL_FLIP_VERTICAL,
+};
+
+#define SDL_RendererFlip_val(v) \
+    sdl_rendererflip_table[Long_val(v)]
+
+CAMLprim value
+caml_SDL_RenderCopyEx(
+        value renderer,
+        value texture,
+        value _srcrect,
+        value _dstrect,
+        value angle,
+        value _center,
+        value flip,
+        value unit)
+{
+    SDL_Rect srcrect;
+    SDL_Rect *srcrect_;
+
+    SDL_Rect dstrect;
+    SDL_Rect *dstrect_;
+
+    SDL_Point center;
+    SDL_Point *center_;
+
+    double angle_;
+    SDL_RendererFlip flip_;
+
+    if (_srcrect == Val_none) {
+        srcrect_ = NULL;
+    } else {
+        SDL_Rect_val(&srcrect, Some_val(_srcrect));
+        srcrect_ = &srcrect;
+    }
+
+    if (_dstrect == Val_none) {
+        dstrect_ = NULL;
+    } else {
+        SDL_Rect_val(&dstrect, Some_val(_dstrect));
+        dstrect_ = &dstrect;
+    }
+
+    if (_center == Val_none) {
+        center_ = NULL;
+    } else {
+        SDL_Point_val(&center, Some_val(_center));
+        center_ = &center;
+    }
+
+    angle_ =
+        (angle == Val_none
+        ? 0.0
+        : Double_val(Some_val(angle))
+        );
+
+    flip_ =
+        (flip == Val_none
+        ? SDL_FLIP_NONE
+        : SDL_RendererFlip_val(Some_val(flip))
+        );
+
+    int r =
+        SDL_RenderCopyEx(
+                SDL_Renderer_val(renderer),
+                SDL_Texture_val(texture),
+                srcrect_,
+                dstrect_,
+                angle_,
+                center_,
+                flip_);
+
+    if (r)
+        caml_failwith("Sdlrender.copyEx");
+
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderCopyEx_bc(value * argv, int argn)
+{
+    return caml_SDL_RenderCopyEx(
+        argv[0], argv[1], argv[2], argv[3],
+        argv[4], argv[5], argv[6], argv[7]);
 }
 
 CAMLprim value

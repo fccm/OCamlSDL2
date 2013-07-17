@@ -44,7 +44,7 @@ let () =
     Render.copy rndr
       ~texture:circ
       ~src_rect
-      ~dst_rect;
+      ~dst_rect ();
     Render.render_present rndr;
   in
 

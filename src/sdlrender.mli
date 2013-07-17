@@ -103,6 +103,24 @@ external copy : t ->
   = "caml_SDL_RenderCopy"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderCopy}api doc} *)
 
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_RendererFlip}api doc} *)
+type renderer_flip =
+  | Flip_None
+  | Flip_Horizontal
+  | Flip_Vertical
+
+external copyEx : t ->
+  texture:Sdltexture.t ->
+  ?src_rect:Sdlrect.t ->
+  ?dst_rect:Sdlrect.t ->
+  ?angle:float ->
+  ?center:int * int ->
+  ?flip:renderer_flip ->
+  unit -> unit
+  = "caml_SDL_RenderCopyEx_bc"
+    "caml_SDL_RenderCopyEx"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_RenderCopyEx}api doc} *)
+
 external set_scale : t -> float * float -> unit
   = "caml_SDL_RenderSetScale"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderSetScale}api doc} *)

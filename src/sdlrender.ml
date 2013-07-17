@@ -95,6 +95,22 @@ external copy : t ->
   ?dst_rect:Sdlrect.t -> unit -> unit
   = "caml_SDL_RenderCopy"
 
+type renderer_flip =
+  | Flip_None
+  | Flip_Horizontal
+  | Flip_Vertical
+
+external copyEx : t ->
+  texture:Sdltexture.t ->
+  ?src_rect:Sdlrect.t ->
+  ?dst_rect:Sdlrect.t ->
+  ?angle:float ->
+  ?center:int * int ->
+  ?flip:renderer_flip ->
+  unit -> unit
+  = "caml_SDL_RenderCopyEx_bc"
+    "caml_SDL_RenderCopyEx"
+
 external set_scale : t -> float * float -> unit
   = "caml_SDL_RenderSetScale"
 
