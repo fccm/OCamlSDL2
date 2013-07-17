@@ -91,8 +91,8 @@ external fill_rect :
 
 external copy : t ->
   texture:Sdltexture.t ->
-  src_rect:Sdlrect.t ->
-  dst_rect:Sdlrect.t -> unit
+  ?src_rect:Sdlrect.t ->
+  ?dst_rect:Sdlrect.t -> unit -> unit
   = "caml_SDL_RenderCopy"
 
 external set_scale : t -> float * float -> unit

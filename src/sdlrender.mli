@@ -98,8 +98,8 @@ external fill_rect :
 
 external copy : t ->
   texture:Sdltexture.t ->
-  src_rect:Sdlrect.t ->
-  dst_rect:Sdlrect.t -> unit
+  ?src_rect:Sdlrect.t ->
+  ?dst_rect:Sdlrect.t -> unit -> unit
   = "caml_SDL_RenderCopy"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderCopy}api doc} *)
 

@@ -20,6 +20,9 @@
 #include "sdltexture_stub.h"
 #include "sdlrect_stub.h"
 
+#define Val_none Val_int(0)
+#define Some_val(v) Field(v,0)
+
 CAMLprim value
 caml_SDL_CreateWindowAndRenderer(
         value width, value height, value _window_flags)
@@ -243,21 +246,41 @@ caml_SDL_RenderFillRect(value renderer, value _rect)
 
 CAMLprim value
 caml_SDL_RenderCopy(
-        value renderer, value texture,
-        value _srcrect, value _dstrect)
+        value renderer,
+        value texture,
+        value _srcrect,
+        value _dstrect,
+        value unit)
 {
     SDL_Rect srcrect;
     SDL_Rect dstrect;
 
-    SDL_Rect_val(&srcrect, _srcrect);
-    SDL_Rect_val(&dstrect, _dstrect);
+    SDL_Rect *srcrect_;
+    SDL_Rect *dstrect_;
+
+    if (_srcrect == Val_none) {
+        srcrect_ = NULL;
+    } else {
+        SDL_Rect_val(&srcrect, Some_val(_srcrect));
+        srcrect_ = &srcrect;
+    }
+
+    if (_dstrect == Val_none) {
+        dstrect_ = NULL;
+    } else {
+        SDL_Rect_val(&dstrect, Some_val(_dstrect));
+        dstrect_ = &dstrect;
+    }
 
     int r = SDL_RenderCopy(
                 SDL_Renderer_val(renderer),
                 SDL_Texture_val(texture),
-                &srcrect, /* TODO: or NULL */
-                &dstrect  /* TODO: or NULL */ );
-    if (r) caml_failwith("Sdlrender.copy");
+                srcrect_,
+                dstrect_);
+
+    if (r)
+        caml_failwith("Sdlrender.copy");
+
     return Val_unit;
 }
 
