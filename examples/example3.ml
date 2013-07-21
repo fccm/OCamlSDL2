@@ -1,6 +1,16 @@
 open Sdl
 
-let f surf win x y w h ~color ~msec =
+let color_of_rgb surf ~rgb =
+  let fmt_kind = Surface.get_pixelformat_t surf in
+  Printf.printf "# pixel_format kind: %s\n%!"
+    (Pixel.get_pixel_format_name fmt_kind);
+  let fmt = Pixel.alloc_format fmt_kind in
+  let color = Pixel.map_RGB fmt ~rgb in
+  Pixel.free_format fmt;
+  (color)
+
+let f surf win x y w h ~rgb ~msec =
+  let color = color_of_rgb ~rgb surf in
   let rect = Rect.make x y w h in
   Surface.fill_rect ~dst:surf ~rect ~color;
   Window.update_surface win;
@@ -11,14 +21,14 @@ let () =
   Sdl.init [`VIDEO];
   let win =
     Window.create
-      ~title:"Hello OCaml SDL2"
+      ~title:"OCaml SDL2 rectangles"
       ~x:10 ~y:40 ~width:640 ~height:480
       ~flags:[Sdlwindow.Resizable]
   in
   let surf = Window.get_surface win in
-  f surf win 20 20 200 120 ~color:0x00FF00l ~msec:600;
-  f surf win 60 60 200 200 ~color:0xFF0000l ~msec:600;
-  f surf win  0  0 100 100 ~color:0x0000FFl ~msec:2000;
+  f surf win 20 20 200 120 ~rgb:(0,255,0) ~msec:600;
+  f surf win 60 60 200 200 ~rgb:(255,0,0) ~msec:600;
+  f surf win  0  0 100 100 ~rgb:(0,0,255) ~msec:2000;
   (*
   Sdlsurface.save_bmp surf ~filename:"test.bmp";
   *)
