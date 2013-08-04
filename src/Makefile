@@ -37,6 +37,7 @@ ML_FILES_BASE := \
   sdlinit.ml \
   sdlquit.ml \
   sdlrect.ml \
+  sdlblendMode.ml \
   sdlsurface.ml \
   sdlwindow.ml \
   sdlrender.ml \
@@ -65,6 +66,7 @@ CSTUBS := \
   sdlinit_stub.c \
   sdlquit_stub.c \
   sdlrect_stub.c \
+  sdlblendMode_stub.c \
   sdlsurface_stub.c \
   sdlwindow_stub.c \
   sdlrender_stub.c \

@@ -19,6 +19,9 @@ external create_from_surface :
 external destroy : t -> unit
   = "caml_SDL_DestroyTexture"
 
+external set_blend_mode : t -> SdlblendMode.t -> unit
+  = "caml_SDL_SetTextureBlendMode" "noalloc"
+
 external set_alpha_mod : t -> alpha:int -> unit
   = "caml_SDL_SetTextureAlphaMod"
 

@@ -18,6 +18,7 @@
 #include "sdlrender_stub.h"
 #include "sdltexture_stub.h"
 #include "sdlsurface_stub.h"
+#include "sdlblendMode_stub.h"
 
 CAMLprim value
 caml_SDL_CreateTextureFromSurface(value renderer, value surface)
@@ -79,5 +80,17 @@ caml_SDL_SetTextureColorMod3(
     return Val_unit;
 }
 #undef Uint8_val
+
+CAMLprim value
+caml_SDL_SetTextureBlendMode(value texture, value blendMode)
+{
+    int r =
+        SDL_SetTextureBlendMode(
+            SDL_Texture_val(texture),
+            SDL_BlendMode_val(blendMode));
+    if (r)
+        caml_failwith("Sdltexture.set_blend_mode");
+    return Val_unit;
+}
 
 /* vim: set ts=4 sw=4 et: */

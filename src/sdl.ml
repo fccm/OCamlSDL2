@@ -37,6 +37,9 @@ end
 module Pixel = struct
   include Sdlpixel
 end
+module BlendMode = struct
+  include SdlblendMode
+end
 module Event = struct
   include Sdlevent
 end

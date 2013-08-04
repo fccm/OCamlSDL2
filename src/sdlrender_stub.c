@@ -20,6 +20,7 @@
 #include "sdltexture_stub.h"
 #include "sdlrect_stub.h"
 #include "sdlpoint_stub.h"
+#include "sdlblendMode_stub.h"
 
 #define Val_none Val_int(0)
 #define Some_val(v) Field(v,0)
@@ -133,6 +134,17 @@ caml_SDL_SetRenderDrawColor3(
     return Val_unit;
 }
 #undef Uint8_val
+
+CAMLprim value
+caml_SDL_SetRenderDrawBlendMode(value renderer, value blendMode)
+{
+    int r = SDL_SetRenderDrawBlendMode(
+                SDL_Renderer_val(renderer),
+                SDL_BlendMode_val(blendMode));
+    if (r)
+        caml_failwith("Sdlrender.set_draw_blend_mode");
+    return Val_unit;
+}
 
 CAMLprim value
 caml_SDL_RenderDrawPoint(value renderer, value p)

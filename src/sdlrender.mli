@@ -56,6 +56,10 @@ external set_draw_color3 :
   = "caml_SDL_SetRenderDrawColor3"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_SetRenderDrawColor}api doc} *)
 
+external set_draw_blend_mode : t -> SdlblendMode.t -> unit
+  = "caml_SDL_SetRenderDrawBlendMode"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_SetRenderDrawBlendMode}api doc} *)
+
 external draw_point :
   t -> int * int -> unit
   = "caml_SDL_RenderDrawPoint"

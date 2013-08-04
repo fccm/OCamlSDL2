@@ -17,6 +17,7 @@
 #include <SDL_surface.h>
 #include "sdlsurface_stub.h"
 #include "sdlrect_stub.h"
+#include "sdlblendMode_stub.h"
 #include "sdlpixel_stub.h"
 
 CAMLprim value
@@ -176,6 +177,19 @@ caml_SDL_SurfaceHasPalette(value surface)
 {
     SDL_bool b = SDL_SurfaceHasPalette(SDL_Surface_val(surface));
     return Val_bool(b);
+}
+
+CAMLprim value
+caml_SDL_SetSurfaceBlendMode(
+        value surface,
+        value blendMode)
+{
+    int r =
+        SDL_SetSurfaceBlendMode(
+            SDL_Surface_val(surface),
+            SDL_BlendMode_val(blendMode));
+    if (r) caml_failwith("Sdlsurface.set_blend_mode");
+    return Val_unit;
 }
 
 CAMLprim value
