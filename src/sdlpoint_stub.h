@@ -6,7 +6,7 @@
     (p)->y = Int_val(Field(v, 1));
 
 #define Val_SDL_Point(ret, p) \
-    ret = caml_alloc(4, 0); \
+    ret = caml_alloc(2, 0); \
     Store_field(ret, 0, Val_int((p)->x)); \
     Store_field(ret, 1, Val_int((p)->y));
 
