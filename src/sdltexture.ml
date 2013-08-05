@@ -22,12 +22,21 @@ external destroy : t -> unit
 external set_blend_mode : t -> SdlblendMode.t -> unit
   = "caml_SDL_SetTextureBlendMode" "noalloc"
 
+external get_blend_mode : t -> SdlblendMode.t
+  = "caml_SDL_GetTextureBlendMode"
+
 external set_alpha_mod : t -> alpha:int -> unit
   = "caml_SDL_SetTextureAlphaMod"
+
+external get_alpha_mod : t -> int
+  = "caml_SDL_GetTextureAlphaMod"
 
 external set_color_mod : t -> int * int * int -> unit
   = "caml_SDL_SetTextureColorMod"
 
 external set_color_mod3 : t -> r:int -> g:int -> b:int -> unit
   = "caml_SDL_SetTextureColorMod3"
+
+external get_color_mod : t -> int * int * int
+  = "caml_SDL_GetTextureColorMod"
 

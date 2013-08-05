@@ -40,6 +40,8 @@ caml_SDL_DestroyTexture(value texture)
 }
 
 #define Uint8_val Int_val
+#define Val_uint8(uc) Val_int((int)uc)
+
 CAMLprim value
 caml_SDL_SetTextureAlphaMod(value texture, value alpha)
 {
@@ -50,6 +52,17 @@ caml_SDL_SetTextureAlphaMod(value texture, value alpha)
     if (r)
         caml_failwith("Sdltexture.set_alpha_mod");
     return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_GetTextureAlphaMod(value texture)
+{
+    Uint8 alpha;
+    int r =
+        SDL_GetTextureAlphaMod(
+            SDL_Texture_val(texture),
+            &alpha);
+    return Val_uint8(alpha);
 }
 
 CAMLprim value
@@ -79,7 +92,6 @@ caml_SDL_SetTextureColorMod3(
         caml_failwith("Sdltexture.set_color_mod3");
     return Val_unit;
 }
-#undef Uint8_val
 
 CAMLprim value
 caml_SDL_SetTextureBlendMode(value texture, value blendMode)
@@ -92,5 +104,40 @@ caml_SDL_SetTextureBlendMode(value texture, value blendMode)
         caml_failwith("Sdltexture.set_blend_mode");
     return Val_unit;
 }
+
+CAMLprim value
+caml_SDL_GetTextureBlendMode(value texture)
+{
+    SDL_BlendMode blendMode;
+    int r =
+        SDL_GetTextureBlendMode(
+            SDL_Texture_val(texture),
+            &blendMode);
+    return Val_SDL_BlendMode(blendMode);
+}
+
+CAMLprim value
+caml_SDL_GetTextureColorMod(value texture)
+{
+    CAMLparam1(texture);
+    CAMLlocal1(rgb);
+
+    Uint8 r, g, b;
+    int s =
+        SDL_GetTextureColorMod(
+            SDL_Texture_val(texture),
+            &r, &g, &b);
+    if (s)
+        caml_failwith("Sdltexture.get_blend_mode");
+
+    rgb = caml_alloc(3, 0);
+    Store_field(rgb, 0, Val_uint8(r));
+    Store_field(rgb, 1, Val_uint8(g));
+    Store_field(rgb, 2, Val_uint8(b));
+    CAMLreturn(rgb);
+}
+
+#undef Val_uint8
+#undef Uint8_val
 
 /* vim: set ts=4 sw=4 et: */
