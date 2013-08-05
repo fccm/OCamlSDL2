@@ -62,6 +62,8 @@ caml_SDL_GetTextureAlphaMod(value texture)
         SDL_GetTextureAlphaMod(
             SDL_Texture_val(texture),
             &alpha);
+    if (r)
+        caml_failwith("Sdltexture.get_alpha_mod");
     return Val_uint8(alpha);
 }
 
@@ -113,6 +115,8 @@ caml_SDL_GetTextureBlendMode(value texture)
         SDL_GetTextureBlendMode(
             SDL_Texture_val(texture),
             &blendMode);
+    if (r)
+        caml_failwith("Sdltexture.get_blend_mode");
     return Val_SDL_BlendMode(blendMode);
 }
 
@@ -128,7 +132,7 @@ caml_SDL_GetTextureColorMod(value texture)
             SDL_Texture_val(texture),
             &r, &g, &b);
     if (s)
-        caml_failwith("Sdltexture.get_blend_mode");
+        caml_failwith("Sdltexture.get_color_mod");
 
     rgb = caml_alloc(3, 0);
     Store_field(rgb, 0, Val_uint8(r));
