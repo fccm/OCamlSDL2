@@ -48,3 +48,38 @@ external swap_window : Sdlwindow.t -> unit
 external delete_context : context -> unit
   = "caml_SDL_GL_DeleteContext"
 (** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_DeleteContext}api doc} *)
+
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GLattr}api doc} *)
+type gl_attr =
+  | GL_RED_SIZE
+  | GL_GREEN_SIZE
+  | GL_BLUE_SIZE
+  | GL_ALPHA_SIZE
+  | GL_BUFFER_SIZE
+  | GL_DOUBLEBUFFER
+  | GL_DEPTH_SIZE
+  | GL_STENCIL_SIZE
+  | GL_ACCUM_RED_SIZE
+  | GL_ACCUM_GREEN_SIZE
+  | GL_ACCUM_BLUE_SIZE
+  | GL_ACCUM_ALPHA_SIZE
+  | GL_STEREO
+  | GL_MULTISAMPLEBUFFERS
+  | GL_MULTISAMPLESAMPLES
+  | GL_ACCELERATED_VISUAL
+  | GL_RETAINED_BACKING
+  | GL_CONTEXT_MAJOR_VERSION
+  | GL_CONTEXT_MINOR_VERSION
+  | GL_CONTEXT_EGL
+  | GL_CONTEXT_FLAGS
+  | GL_CONTEXT_PROFILE_MASK
+  | GL_SHARE_WITH_CURRENT_CONTEXT
+
+external set_attribute : gl_attr -> int -> unit
+  = "caml_SDL_GL_SetAttribute"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_SetAttribute}api doc} *)
+
+external get_attribute : gl_attr -> int
+  = "caml_SDL_GL_GetAttribute"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_GetAttribute}api doc} *)
+
