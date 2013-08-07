@@ -33,7 +33,10 @@ external extension_supported : extension:string -> bool
   = "caml_SDL_GL_ExtensionSupported"
 (** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_ExtensionSupported}api doc} *)
 
-(* TODO: return something more semantic than an int *)
+external set_swap_interval : interval:int -> unit
+  = "caml_SDL_GL_SetSwapInterval"
+(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_SetSwapInterval}api doc} *)
+
 external get_swap_interval : unit -> int
   = "caml_SDL_GL_GetSwapInterval"
 (** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_GetSwapInterval}api doc} *)

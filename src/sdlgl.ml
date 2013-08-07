@@ -25,6 +25,9 @@ external unload_library : unit -> unit
 external extension_supported : extension:string -> bool
   = "caml_SDL_GL_ExtensionSupported"
 
+external set_swap_interval : interval:int -> unit
+  = "caml_SDL_GL_SetSwapInterval"
+
 external get_swap_interval : unit -> int
   = "caml_SDL_GL_GetSwapInterval"
 

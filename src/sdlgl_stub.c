@@ -59,9 +59,13 @@ caml_SDL_GL_MakeCurrent(value window, value context)
     return Val_int(r);
 }
 
-/*
-int SDL_GL_SetSwapInterval(int interval);
-*/
+CAMLprim value
+caml_SDL_GL_SetSwapInterval(value interval)
+{
+    int r = SDL_GL_SetSwapInterval(Int_val(interval));
+    if (r) caml_failwith("Sdlgl.set_swap_interval");
+    return Val_unit;
+}
 
 CAMLprim value
 caml_SDL_GL_GetSwapInterval(value unit)
