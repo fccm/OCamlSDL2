@@ -95,10 +95,20 @@ external draw_rect :
   = "caml_SDL_RenderDrawRect"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawRect}api doc} *)
 
+external draw_rects :
+  t -> Sdlrect.t array -> unit
+  = "caml_SDL_RenderDrawRects"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderDrawRects}api doc} *)
+
 external fill_rect :
   t -> Sdlrect.t -> unit
   = "caml_SDL_RenderFillRect"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderFillRect}api doc} *)
+
+external fill_rects :
+  t -> Sdlrect.t array -> unit
+  = "caml_SDL_RenderFillRects"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RenderFillRects}api doc} *)
 
 external copy : t ->
   texture:Sdltexture.t ->

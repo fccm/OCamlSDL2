@@ -88,9 +88,17 @@ external draw_rect :
   t -> Sdlrect.t -> unit
   = "caml_SDL_RenderDrawRect"
 
+external draw_rects :
+  t -> Sdlrect.t array -> unit
+  = "caml_SDL_RenderDrawRects"
+
 external fill_rect :
   t -> Sdlrect.t -> unit
   = "caml_SDL_RenderFillRect"
+
+external fill_rects :
+  t -> Sdlrect.t array -> unit
+  = "caml_SDL_RenderFillRects"
 
 external copy : t ->
   texture:Sdltexture.t ->

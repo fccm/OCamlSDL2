@@ -246,6 +246,24 @@ caml_SDL_RenderDrawRect(value renderer, value _rect)
 }
 
 CAMLprim value
+caml_SDL_RenderDrawRects(value renderer, value ml_rects)
+{
+    unsigned int i;
+    unsigned int count = Wosize_val(ml_rects);
+    SDL_Rect * rects = malloc(count * sizeof(SDL_Rect));
+    for (i = 0; i < count; i++) {
+        value _rect = Field(ml_rects, i);
+        SDL_Rect_val(&(rects[i]), _rect);
+    }
+    int r = SDL_RenderDrawRects(
+                SDL_Renderer_val(renderer),
+                rects, count);
+    free(rects);
+    if (r) caml_failwith("Sdlrender.draw_rects");
+    return Val_unit;
+}
+
+CAMLprim value
 caml_SDL_RenderFillRect(value renderer, value _rect)
 {
     SDL_Rect rect;
@@ -254,6 +272,24 @@ caml_SDL_RenderFillRect(value renderer, value _rect)
                 SDL_Renderer_val(renderer),
                 &rect);
     if (r) caml_failwith("Sdlrender.fill_rect");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_RenderFillRects(value renderer, value ml_rects)
+{
+    unsigned int i;
+    unsigned int count = Wosize_val(ml_rects);
+    SDL_Rect * rects = malloc(count * sizeof(SDL_Rect));
+    for (i = 0; i < count; i++) {
+        value _rect = Field(ml_rects, i);
+        SDL_Rect_val(&(rects[i]), _rect);
+    }
+    int r = SDL_RenderFillRects(
+                SDL_Renderer_val(renderer),
+                rects, count);
+    free(rects);
+    if (r) caml_failwith("Sdlrender.fill_rects");
     return Val_unit;
 }
 
