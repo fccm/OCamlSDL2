@@ -11,7 +11,7 @@ let color_of_rgb surf ~rgb =
 
 let f surf win x y w h ~rgb ~msec =
   let color = color_of_rgb ~rgb surf in
-  let rect = Rect.make x y w h in
+  let rect = Rect.make4 x y w h in
   Surface.fill_rect ~dst:surf ~rect ~color;
   Window.update_surface win;
   Timer.delay msec;

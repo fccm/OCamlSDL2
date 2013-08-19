@@ -7,7 +7,7 @@ let () =
   in
   let surf = Sdlwindow.get_surface window in
   let color = 0x00BB00_l in
-  let rect = Sdlrect.make 0 0 width height in
+  let rect = Sdlrect.make4 0 0 width height in
   Sdlsurface.fill_rect surf rect color;
   Sdlwindow.update_surface window;
   let rec aux () =

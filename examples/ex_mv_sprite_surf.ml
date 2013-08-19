@@ -24,9 +24,9 @@ let () =
   let filename = "assets/circle64.bmp" in
   let surf = Surface.load_bmp ~filename in
 
-  let screen_rect = Rect.make 0 0 width height in
-  let src_rect = Rect.make 0 0 width height in
-  let dst_rect = Rect.make 100 100 64 64 in
+  let screen_rect = Rect.make4 0 0 width height in
+  let src_rect = Rect.make4 0 0 width height in
+  let dst_rect = Rect.make4 100 100 64 64 in
   let render t dt =
     Surface.fill_rect
       ~dst:screen ~rect:screen_rect

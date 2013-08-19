@@ -33,8 +33,8 @@ let () =
   let filename = "assets/circle64.bmp" in
   let circ = load_sprite rndr ~filename in
 
-  let src_rect = Rect.make 0 0 64 64 in
-  let dst_rect = Rect.make 100 100 64 64 in
+  let src_rect = Rect.make4 0 0 64 64 in
+  let dst_rect = Rect.make4 100 100 64 64 in
 
   let render t dt =
     let x = (t / 10) mod width in
