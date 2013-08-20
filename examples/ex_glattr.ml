@@ -4,17 +4,17 @@ open Sdlgl
 let main () =
   Sdlinit.init [`VIDEO];
 
-  Sdlgl.set_attribute GL_RED_SIZE 8;
-  Sdlgl.set_attribute GL_GREEN_SIZE 8;
-  Sdlgl.set_attribute GL_BLUE_SIZE 8;
+  Sdlgl.set_attribute GL_RED_SIZE 5;
+  Sdlgl.set_attribute GL_GREEN_SIZE 6;
+  Sdlgl.set_attribute GL_BLUE_SIZE 5;
   Sdlgl.set_attribute GL_DEPTH_SIZE 16;
   Sdlgl.set_attribute GL_DOUBLEBUFFER 1;
 
   let window =
-    Sdlwindow.create
+    Sdlwindow.create2
       ~title:"OpenGL Window"
-      ~x:10
-      ~y:10
+      ~x:(`pos 10)
+      ~y:(`pos 10)
       ~width:640
       ~height:480
       ~flags:[Sdlwindow.OpenGL]
@@ -28,6 +28,9 @@ let main () =
     (Sdlgl.get_attribute GL_RED_SIZE)
     (Sdlgl.get_attribute GL_GREEN_SIZE)
     (Sdlgl.get_attribute GL_BLUE_SIZE);
+
+  Sdltimer.delay 2000;
+  Sdl.quit ()
 ;;
 
 let () =

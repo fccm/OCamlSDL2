@@ -182,9 +182,9 @@ let () =
   ignore (window, renderer);
   *)
   let window =
-    Sdlwindow.create
+    Sdlwindow.create2
       ~title:"SDL Event"
-      ~x:10 ~y:30
+      ~x:`undefined ~y:`undefined
       ~width ~height
       ~flags:[
       (*

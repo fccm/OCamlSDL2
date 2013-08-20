@@ -2,9 +2,9 @@ let () =
   Sdl.init [`VIDEO];
   let width, height = (320, 240) in
   let _ =
-    Sdlwindow.create
+    Sdlwindow.create2
       ~title:"Let's try SDL2 with OCaml!"
-      ~x:10 ~y:40 ~width ~height
+      ~x:`undefined ~y:`undefined ~width ~height
       ~flags:[]
   in
   Sdltimer.delay 2000;

@@ -2,7 +2,8 @@ let () =
   let width, height = (640, 480) in
   let title = "Let's try SDL2 with OCaml!" in
   let window =
-    Sdlwindow.create ~title ~x:10 ~y:40 ~width ~height
+    Sdlwindow.create2 ~title
+      ~x:`undefined ~y:`undefined ~width ~height
       ~flags:[Sdlwindow.Resizable]
   in
   let surf = Sdlwindow.get_surface window in

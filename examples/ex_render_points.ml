@@ -5,6 +5,8 @@ let () =
   let window, renderer =
     Sdlrender.create_window_and_renderer ~width ~height ~flags:[]
   in
+  Sdlrender.set_draw_color3 renderer 0 0 0 255;
+  Sdlrender.clear renderer;
 
   let rec loop () =
     let r = Random.int 255 in

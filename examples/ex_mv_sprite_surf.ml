@@ -17,8 +17,10 @@ let () =
   at_exit print_newline;
   let window =
     Window.create
-      ~x:0 ~y:0 ~width ~height
-      ~title:"SDL Event" ~flags:[Window.Resizable]
+      ~pos:(`centered, `centered)
+      ~dims:(width, height)
+      ~title:"SDL2 Sprite Surface"
+      ~flags:[Window.Resizable]
   in
   let screen = Window.get_surface window in
   let filename = "assets/circle64.bmp" in

@@ -11,6 +11,8 @@ let () =
   let window, renderer =
     Sdlrender.create_window_and_renderer ~width ~height ~flags:[]
   in
+  Sdlrender.set_draw_color renderer (0,0,0) alpha;
+  Sdlrender.clear renderer;
   Sdlrender.set_draw_color renderer rgb alpha;
   let rec aux () =
     let xy, buttons = Sdlmouse.get_state () in

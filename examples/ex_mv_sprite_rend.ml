@@ -23,8 +23,10 @@ let () =
   at_exit print_newline;
   let window =
     Window.create
-      ~x:0 ~y:0 ~width ~height
-      ~title:"SDL Event" ~flags:[Window.Resizable]
+      ~pos:(`centered, `centered)
+      ~dims:(width, height)
+      ~title:"SDL2 Sprite Render"
+      ~flags:[Window.Resizable]
   in
   let rndr =
     Render.create_renderer window (-1) [Render.Accelerated]

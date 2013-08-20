@@ -20,9 +20,10 @@ let f surf win x y w h ~rgb ~msec =
 let () =
   Sdl.init [`VIDEO];
   let win =
-    Window.create
+    Window.create2
       ~title:"OCaml SDL2 rectangles"
-      ~x:10 ~y:40 ~width:640 ~height:480
+      ~x:`centered ~y:`centered
+      ~width:640 ~height:480
       ~flags:[Sdlwindow.Resizable]
   in
   let surf = Window.get_surface win in
