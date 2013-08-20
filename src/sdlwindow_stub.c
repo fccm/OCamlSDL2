@@ -1,10 +1,10 @@
 /* OCamlSDL2 - An OCaml interface to the SDL2 library
  Copyright (C) 2013 Florent Monnier
-
+ 
  This software is provided "AS-IS", without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
  the use of this software.
-
+ 
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it freely.
 */
@@ -210,28 +210,84 @@ Val_SDL_WindowFlags(value mask_list)
     return c_mask;
 }
 
+static inline int
+caml_SDL_WindowPos(value pos)
+{
+    if (Is_long(pos))
+    {
+        if (pos == caml_hash_variant("centered"))
+        {
+            return SDL_WINDOWPOS_CENTERED;
+        } else
+        if (pos == caml_hash_variant("undefined"))
+        {
+            return SDL_WINDOWPOS_UNDEFINED;
+        } else
+            caml_failwith("Sdlwindow.window_pos");
+    }
+    else if (Is_block(pos))
+    {
+        if (Field(pos,0) == caml_hash_variant("pos"))
+        {
+            return Int_val(Field(pos,1));
+        } else
+            caml_failwith("Sdlwindow.window_pos");
+    } else {
+        caml_failwith("Sdlwindow.window_pos");
+    }
+}
+
 CAMLprim value
 caml_SDL_CreateWindow(
         value title,
-        value x, value y,
-        value w, value h,
+        value pos,
+        value dims,
         value flags)
 {
-    /* TODO: custom x, y input (see docs) */
+    int _x = caml_SDL_WindowPos(Field(pos,0));
+    int _y = caml_SDL_WindowPos(Field(pos,1));
+
     SDL_Window *win =
         SDL_CreateWindow(
                 String_val(title),
-                Int_val(x), Int_val(y),
-                Int_val(w), Int_val(h),
+                _x, _y,
+                Int_val(Field(dims,0)),
+                Int_val(Field(dims,1)),
                 Val_SDL_WindowFlags(flags));
+
+    if (win == NULL)
+        caml_failwith("Sdlwindow.create");
 
     return Val_SDL_Window(win);
 }
 
 CAMLprim value
-caml_SDL_CreateWindow_bc(value * argv, int argn)
+caml_SDL_CreateWindow2(
+        value title,
+        value x, value y,
+        value w, value h,
+        value flags)
 {
-    return caml_SDL_CreateWindow(
+    int _x = caml_SDL_WindowPos(x);
+    int _y = caml_SDL_WindowPos(y);
+
+    SDL_Window *win =
+        SDL_CreateWindow(
+                String_val(title),
+                _x, _y,
+                Int_val(w), Int_val(h),
+                Val_SDL_WindowFlags(flags));
+
+    if (win == NULL)
+        caml_failwith("Sdlwindow.create2");
+
+    return Val_SDL_Window(win);
+}
+
+CAMLprim value
+caml_SDL_CreateWindow2_bc(value * argv, int argn)
+{
+    return caml_SDL_CreateWindow2(
                 argv[0], argv[1], argv[2],
                 argv[3], argv[4], argv[5]);
 }

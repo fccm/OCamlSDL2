@@ -31,13 +31,25 @@ type window_flags =
   | FullScreen_Desktop
   | Foreign
 
+type window_pos = [ `centered | `undefined | `pos of int ]
+
 external create :
   title:string ->
-  x:int -> y:int ->
-  width:int -> height:int ->
+  pos:window_pos * window_pos ->
+  dims:int * int ->
   flags:window_flags list -> t
-  = "caml_SDL_CreateWindow_bc"
-    "caml_SDL_CreateWindow"
+  = "caml_SDL_CreateWindow"
+(** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateWindow}api doc} *)
+
+external create2 :
+  title:string ->
+  x:window_pos ->
+  y:window_pos ->
+  width:int ->
+  height:int ->
+  flags:window_flags list -> t
+  = "caml_SDL_CreateWindow2_bc"
+    "caml_SDL_CreateWindow2"
 (** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateWindow}api doc} *)
 
 external set_title : window:t -> title:string -> unit
