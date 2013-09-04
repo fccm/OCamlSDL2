@@ -20,6 +20,8 @@
 #include "sdlblendMode_stub.h"
 #include "sdlpixel_stub.h"
 
+#include <string.h>
+
 CAMLprim value
 caml_SDL_CreateRGBSurface(
         value width,
@@ -100,6 +102,17 @@ caml_SDL_BlitSurface(
     if (r) caml_failwith("Sdlsurface.blit_surface");
     Val_SDL_Rect(ret, &dstrect);
     CAMLreturn(ret);
+}
+
+CAMLprim value
+caml_SDL_Surface_Blit_Pixels(
+        value surf, value pixels_buffer)
+{
+    SDL_Surface *surface = SDL_Surface_val(surf);
+    memcpy(surface->pixels,
+        String_val(pixels_buffer),
+        caml_string_length(pixels_buffer));
+    return Val_unit;
 }
 
 CAMLprim value

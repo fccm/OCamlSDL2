@@ -38,6 +38,10 @@ external blit_surface :
   Sdlrect.t
   = "caml_SDL_BlitSurface"
 
+external blit_pixels_unsafe :
+  t -> string -> unit
+  = "caml_SDL_Surface_Blit_Pixels"
+
 external set_color_key : t -> enable:bool -> key:int32 -> unit
   = "caml_SDL_SetColorKey"
 
