@@ -1,0 +1,17 @@
+*.[oa]
+*.cm[ioxa]
+*.cmx[as]
+*.byte
+*.opt
+*.native
+*.bin
+*.exe
+*.so
+*.dll
+a.out
+.*.swp
+*~
+src/Makefile.config
+src/*_depend.mk
+src/sdl.mli
+src/*.gen.c
