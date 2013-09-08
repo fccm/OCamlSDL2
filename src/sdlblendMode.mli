@@ -14,7 +14,7 @@
   {{:http://wiki.libsdl.org/moin.fcg/SDL_BlendMode}SDL_BlendMode} *)
 
 type t =
-  | None
+  | BNone
   | Blend
   | Add
   | Mod

@@ -11,20 +11,20 @@
 (* Blend Modes *)
 
 type t =
-  | None
+  | BNone
   | Blend
   | Add
   | Mod
 
 let to_string = function
-  | None    -> "Blend_Mode_None"
-  | Blend   -> "Blend_Mode_Blend"
-  | Add     -> "Blend_Mode_Add"
-  | Mod     -> "Blend_Mode_Mod"
+  | BNone   -> "blend_mode_none"
+  | Blend   -> "blend_mode_blend"
+  | Add     -> "blend_mode_add"
+  | Mod     -> "blend_mode_mod"
 
 let of_string s =
   match String.lowercase s with
-  | "blend_mode_none"   -> None
+  | "blend_mode_none"   -> BNone
   | "blend_mode_blend"  -> Blend
   | "blend_mode_add"    -> Add
   | "blend_mode_mod"    -> Mod
