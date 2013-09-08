@@ -50,7 +50,7 @@ external blit_surface :
 external blit_pixels_unsafe :
   t -> string -> unit
   = "caml_SDL_Surface_Blit_Pixels"
-(** {{http://wiki.libsdl.org/SDL_Surface}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_Surface}api doc} *)
 
 external set_color_key : t -> enable:bool -> key:int32 -> unit
   = "caml_SDL_SetColorKey"
