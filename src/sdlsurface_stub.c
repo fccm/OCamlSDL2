@@ -18,7 +18,7 @@
 #include "sdlsurface_stub.h"
 #include "sdlrect_stub.h"
 #include "sdlblendMode_stub.h"
-#include "sdlpixel_stub.h"
+#include "sdlpixelFormat_stub.h"
 
 #include <string.h>
 

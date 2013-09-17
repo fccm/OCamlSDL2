@@ -34,6 +34,9 @@ end
 module Texture = struct
   include Sdltexture
 end
+module PixelFormat = struct
+  include SdlpixelFormat
+end
 module Pixel = struct
   include Sdlpixel
 end

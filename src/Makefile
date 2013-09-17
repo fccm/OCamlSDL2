@@ -42,6 +42,7 @@ ML_FILES_BASE := \
   sdlwindow.ml \
   sdlrender.ml \
   sdltexture.ml \
+  sdlpixelFormat.ml \
   sdlpixel.ml \
   sdlevent.ml \
   sdlkeyboard.ml \
@@ -71,6 +72,7 @@ CSTUBS := \
   sdlwindow_stub.c \
   sdlrender_stub.c \
   sdltexture_stub.c \
+  sdlpixelFormat_stub.c \
   sdlpixel_stub.c \
   sdlevent_stub.c \
   sdlkeyboard_stub.c \

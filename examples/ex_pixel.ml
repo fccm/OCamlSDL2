@@ -1,7 +1,7 @@
 open Sdl
 
 let test_rgb () =
-  let fmt = Pixel.PixelFormat_RGB888 in
+  let fmt = PixelFormat.RGB888 in
   Printf.printf "Using pixel format: %s\n"
     (Pixel.get_pixel_format_name fmt);
   let pixel_format = Pixel.alloc_format fmt in
@@ -14,7 +14,7 @@ let test_rgb () =
 ;;
 
 let test_rgba () =
-  let fmt = Pixel.PixelFormat_RGBA8888 in
+  let fmt = PixelFormat.RGBA8888 in
   Printf.printf "Using pixel format: %s\n"
     (Pixel.get_pixel_format_name fmt);
   let pixel_format = Pixel.alloc_format fmt in

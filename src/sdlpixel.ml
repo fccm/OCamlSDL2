@@ -10,50 +10,12 @@
 *)
 (** Pixel format *)
 
-type pixel_format_t =
-  | PixelFormat_Unknown
-  | PixelFormat_Index1LSB
-  | PixelFormat_Index1MSB
-  | PixelFormat_Index4LSB
-  | PixelFormat_Index4MSB
-  | PixelFormat_Index8
-  | PixelFormat_RGB332
-  | PixelFormat_RGB444
-  | PixelFormat_RGB555
-  | PixelFormat_BGR555
-  | PixelFormat_ARGB4444
-  | PixelFormat_RGBA4444
-  | PixelFormat_ABGR4444
-  | PixelFormat_BGRA4444
-  | PixelFormat_ARGB1555
-  | PixelFormat_RGBA5551
-  | PixelFormat_ABGR1555
-  | PixelFormat_BGRA5551
-  | PixelFormat_RGB565
-  | PixelFormat_BGR565
-  | PixelFormat_RGB24
-  | PixelFormat_BGR24
-  | PixelFormat_RGB888
-  | PixelFormat_RGBX8888
-  | PixelFormat_BGR888
-  | PixelFormat_BGRX8888
-  | PixelFormat_ARGB8888
-  | PixelFormat_RGBA8888
-  | PixelFormat_ABGR8888
-  | PixelFormat_BGRA8888
-  | PixelFormat_ARGB2101010
-  | PixelFormat_YV12
-  | PixelFormat_IYUV
-  | PixelFormat_YUY2
-  | PixelFormat_UYVY
-  | PixelFormat_YVYU
-
-external get_pixel_format_name : pixel_format_t -> string
+external get_pixel_format_name : SdlpixelFormat.t -> string
   = "caml_SDL_GetPixelFormatName"
 
 type pixel_format
 
-external alloc_format : pixel_format_t -> pixel_format
+external alloc_format : SdlpixelFormat.t -> pixel_format
   = "caml_SDL_AllocFormat"
 
 external free_format : pixel_format -> unit

@@ -67,6 +67,6 @@ external has_palette : t -> bool
 external set_blend_mode : t -> SdlblendMode.t -> unit
   = "caml_SDL_SetSurfaceBlendMode"
 
-external get_pixelformat_t : t -> Sdlpixel.pixel_format_t
+external get_pixelformat_t : t -> SdlpixelFormat.t
   = "caml_SDL_Surface_get_pixelformat_t"
 
