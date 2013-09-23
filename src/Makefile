@@ -16,6 +16,7 @@ LIBS := $(shell ocaml prm.ml $(LIBS_))
 OCAML := ocaml
 OCAMLDOC := ocamldoc
 OCAMLDEP := ocamldep
+OCAMLFIND := ocamlfind
 CC_MM = gcc -MM
 OCAMLDIR := $(shell $(OCAMLC) -where)
 DIRSEP := $(shell $(OCAML) dir_sep.ml)
@@ -181,6 +182,11 @@ cleandoc:
 	$(RMDIR) $(DOC_DIR)
 
 # Installation
+
+.PHONY: findinstall
+findinstall: META sdl2.cma
+	$(OCAMLFIND) install $(BINDINGS_DIR) META \
+	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.*
 
 .PHONY: install
 install:
