@@ -23,6 +23,7 @@ DIRSEP := $(shell $(OCAML) dir_sep.ml)
 BINDINGS_DIR := sdl2
 PREFIX := 
 DESTDIR := $(PREFIX)$(DIRSEP)$(OCAMLDIR)$(DIRSEP)$(BINDINGS_DIR)
+DESTDIR_H := $(DESTDIR)$(DIRSEP)include
 INSTALL_DIR := mkdir -p
 INSTALL_FILES := cp -f
 MKDIR := mkdir -p
@@ -89,6 +90,19 @@ CSTUBS := \
   sdlpower_stub.c \
   sdlerror_stub.c \
   sdl_platform_stub.c \
+  #End
+
+C_HEADERS := \
+  sdlblendMode_stub.h \
+  sdlkeymod_stub.h \
+  sdlpixelFormat_stub.h \
+  sdlpixel_stub.h \
+  sdlpoint_stub.h \
+  sdlrect_stub.h \
+  sdlrender_stub.h \
+  sdlsurface_stub.h \
+  sdltexture_stub.h \
+  sdlwindow_stub.h \
   #End
 
 CMO_FILES := $(patsubst %.ml, %.cmo, $(ML_FILES))
@@ -195,6 +209,12 @@ install:
 	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.* \
 	  $(DESTDIR)
 
+.PHONY: install_h
+install_h:
+	$(INSTALL_DIR) $(DESTDIR_H)
+	$(INSTALL_FILES) \
+	  $(C_HEADERS) \
+	  $(DESTDIR_H)
 
 # Dependency visualisation:
 # (needs graphviz to be installed)

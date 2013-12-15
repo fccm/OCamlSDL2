@@ -20,6 +20,21 @@ $ export PATH="$PATH:/tmp/SDL2-temp/bin"
 
 ----------------
 
+After the compilation, complete the installation with:
+$ make install
+
+By default the installation with be done in the directory:
+  DESTDIR="`ocamlc -where`/sdl2"
+you can install in another directory with:
+$ make install DESTDIR="/tmp/mysdl2"
+
+----------------
+
+It's possible to install the C headers of the stubs with:
+$ make install_h
+
+----------------
+
 
 === Other Environments ===
 
