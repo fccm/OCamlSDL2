@@ -11,7 +11,7 @@
 (** Audio *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryAudio}Audio category} *)
+  {{:http://wiki.libsdl.org/CategoryAudio}Audio category} *)
 
 type t
 

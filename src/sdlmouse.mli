@@ -11,7 +11,7 @@
 (** Mouse event handling *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryMouse}Mouse category} *)
+  {{:http://wiki.libsdl.org/CategoryMouse}Mouse category} *)
 
 type button =
   | Button_Left
@@ -27,7 +27,7 @@ type pos = int * int
 
 external get_state : unit -> pos * button list
   = "caml_SDL_GetMouseState"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetMouseState}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetMouseState}api doc} *)
 
 external get_buttons : unit -> button list
   = "caml_SDL_GetMouseButtons"
@@ -37,7 +37,8 @@ external get_pos : unit -> pos
 
 external warp_in_window : Sdlwindow.t -> x:int -> y:int -> unit
   = "caml_SDL_WarpMouseInWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_WarpMouseInWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_WarpMouseInWindow}api doc} *)
 
 val to_string : button -> string
 val of_string : string -> button
+

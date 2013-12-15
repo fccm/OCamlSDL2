@@ -10,7 +10,7 @@
 *)
 (** Rectangles *)
 
-(** {{:http://wiki.libsdl.org/moin.fcg/CategoryRect}Rect category} *)
+(** {{:http://wiki.libsdl.org/CategoryRect}Rect category} *)
 
 (** A rectangle, with the origin at the upper left. *)
 type t = {

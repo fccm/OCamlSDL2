@@ -11,7 +11,7 @@
 (** Events handling *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryEvents}Events category} *)
+  {{:http://wiki.libsdl.org/CategoryEvents}Events category} *)
 
 type state =
   | Released
@@ -28,7 +28,7 @@ type keyboard_event = {
   keycode: Sdlkeycode.t;
   keymod: Sdlkeymod.t list;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_KeyboardEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_KeyboardEvent}api doc} *)
 
 type mouse_motion_event = {
   mm_timestamp: int32;
@@ -39,7 +39,7 @@ type mouse_motion_event = {
   mm_xrel: int;
   mm_yrel: int;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_MouseMotionEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_MouseMotionEvent}api doc} *)
 
 type mouse_button_event = {
   mb_timestamp: int32;
@@ -49,7 +49,7 @@ type mouse_button_event = {
   mb_x: int;
   mb_y: int;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_MouseButtonEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_MouseButtonEvent}api doc} *)
 
 type mouse_wheel_event = {
   mw_timestamp: int32;
@@ -57,7 +57,7 @@ type mouse_wheel_event = {
   mw_x: int;
   mw_y: int;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_MouseWheelEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_MouseWheelEvent}api doc} *)
 
 type joy_axis_event = {
   ja_timestamp: int32;
@@ -65,7 +65,7 @@ type joy_axis_event = {
   ja_axis: int;
   ja_value: int;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_JoyAxisEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_JoyAxisEvent}api doc} *)
 
 type joy_button_event = {
   jb_timestamp: int32;
@@ -73,7 +73,7 @@ type joy_button_event = {
   jb_button: int;
   jb_state: state;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_JoyButtonEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_JoyButtonEvent}api doc} *)
 
 type joy_hat_event = {
   jh_timestamp: int32;
@@ -82,7 +82,7 @@ type joy_hat_event = {
   jh_dir: Sdlhat.direction;
   jh_pos: Sdlhat.positions;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_JoyHatEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_JoyHatEvent}api doc} *)
 
 type joy_device_change =
   | JoyDevice_Added
@@ -126,7 +126,7 @@ type window_event = {
   window_ID: int32;
   kind : window_event_kind;
 }
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_WindowEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_WindowEvent}api doc} *)
 
 type quit_event = {
   quit_timestamp: int32;
@@ -168,6 +168,7 @@ type t =
 
 external poll_event : unit -> t option
   = "caml_SDL_PollEvent"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_PollEvent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_PollEvent}api doc} *)
 
 val to_string : t -> string
+

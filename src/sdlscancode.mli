@@ -1,7 +1,7 @@
 (** Keyboard scancodes *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/SDL_Scancode}SDL_Scancode} *)
+  {{:http://wiki.libsdl.org/SDL_Scancode}SDL_Scancode} *)
 
 type t =
   | UNKNOWN

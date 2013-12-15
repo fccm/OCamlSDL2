@@ -11,11 +11,11 @@
 (** Create and manage windows *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryVideo}Video category} *)
+  {{:http://wiki.libsdl.org/CategoryVideo}Video category} *)
 
 type t
 
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_WindowFlags}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_WindowFlags}api doc} *)
 type window_flags =
   | FullScreen
   | OpenGL
@@ -39,7 +39,7 @@ external create :
   dims:int * int ->
   flags:window_flags list -> t
   = "caml_SDL_CreateWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_CreateWindow}api doc} *)
 
 external create2 :
   title:string ->
@@ -50,35 +50,36 @@ external create2 :
   flags:window_flags list -> t
   = "caml_SDL_CreateWindow2_bc"
     "caml_SDL_CreateWindow2"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_CreateWindow}api doc} *)
 
 external set_title : window:t -> title:string -> unit
   = "caml_SDL_SetWindowTitle"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_SetWindowTitle}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_SetWindowTitle}api doc} *)
 
 external show : t -> unit = "caml_SDL_ShowWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_ShowWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_ShowWindow}api doc} *)
 
 external hide : t -> unit = "caml_SDL_HideWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_HideWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_HideWindow}api doc} *)
 
 external raise_win : t -> unit = "caml_SDL_RaiseWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RaiseWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_RaiseWindow}api doc} *)
 
 external maximize : t -> unit = "caml_SDL_MaximizeWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_MaximizeWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_MaximizeWindow}api doc} *)
 
 external minimize : t -> unit = "caml_SDL_MinimizeWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_MinimizeWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_MinimizeWindow}api doc} *)
 
 external restore : t -> unit = "caml_SDL_RestoreWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_RestoreWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_RestoreWindow}api doc} *)
 
 external get_surface : t -> Sdlsurface.t = "caml_SDL_GetWindowSurface"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetWindowSurface}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetWindowSurface}api doc} *)
 
 external update_surface : t -> unit = "caml_SDL_UpdateWindowSurface"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_UpdateWindowSurface}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_UpdateWindowSurface}api doc} *)
 
 external destroy : t -> unit = "caml_SDL_DestroyWindow"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_DestroyWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_DestroyWindow}api doc} *)
+

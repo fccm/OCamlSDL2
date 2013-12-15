@@ -11,21 +11,21 @@
 (** Pixel format *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryPixels}Pixels category} *)
+  {{:http://wiki.libsdl.org/CategoryPixels}Pixels category} *)
 
 external get_pixel_format_name : SdlpixelFormat.t -> string
   = "caml_SDL_GetPixelFormatName"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetPixelFormatName}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetPixelFormatName}api doc} *)
 
 type pixel_format
 
 external alloc_format : SdlpixelFormat.t -> pixel_format
   = "caml_SDL_AllocFormat"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_AllocFormat}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_AllocFormat}api doc} *)
 
 external free_format : pixel_format -> unit
   = "caml_SDL_FreeFormat"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_FreeFormat}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_FreeFormat}api doc} *)
 
 type uint8 = int
 
@@ -35,18 +35,18 @@ type rgba = uint8 * uint8 * uint8 * uint8
 external map_RGB :
   pixel_format -> rgb:rgb -> int32
   = "caml_SDL_MapRGB"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_MapRGB}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_MapRGB}api doc} *)
 
 external map_RGBA :
   pixel_format -> rgba:rgba -> int32
   = "caml_SDL_MapRGBA"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_MapRGBA}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_MapRGBA}api doc} *)
 
 external get_RGB : pixel:int32 -> fmt:pixel_format -> rgb
   = "caml_SDL_GetRGB"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetRGB}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetRGB}api doc} *)
 
 external get_RGBA : pixel:int32 -> fmt:pixel_format -> rgba
   = "caml_SDL_GetRGBA"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetRGBA}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetRGBA}api doc} *)
 

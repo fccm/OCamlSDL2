@@ -11,8 +11,9 @@
 (** Quit SDL *)
 
 external quit : unit -> unit = "caml_SDL_Quit"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_Quit}doc} *)
+(** {{:http://wiki.libsdl.org/SDL_Quit}doc} *)
 
 external quit_requested : unit -> bool
   = "caml_SDL_QuitRequested"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_QuitRequested}doc} *)
+(** {{:http://wiki.libsdl.org/SDL_QuitRequested}doc} *)
+

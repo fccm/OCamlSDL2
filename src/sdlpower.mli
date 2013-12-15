@@ -20,3 +20,4 @@ type power_state = [
 
 external get_power_info : unit -> power_state * int * int
   = "caml_SDL_GetPowerInfo"
+

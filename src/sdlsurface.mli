@@ -11,7 +11,7 @@
 (** Surface definition and management *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategorySurface}Surface category} *)
+  {{:http://wiki.libsdl.org/CategorySurface}Surface category} *)
 
 type t
 
@@ -20,32 +20,32 @@ external create_rgb :
   height:int ->
   depth:int -> t
   = "caml_SDL_CreateRGBSurface"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_CreateRGBSurface}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_CreateRGBSurface}api doc} *)
 
 external free : t -> unit
   = "caml_SDL_FreeSurface"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_FreeSurface}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_FreeSurface}api doc} *)
 
 external load_bmp : filename:string -> t
   = "caml_SDL_LoadBMP"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_LoadBMP}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_LoadBMP}api doc} *)
 
 external save_bmp : t -> filename:string -> unit
   = "caml_SDL_SaveBMP"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_SaveBMP}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_SaveBMP}api doc} *)
 
 external fill_rect :
   dst:t -> rect:Sdlrect.t ->
   color:int32 -> unit
   = "caml_SDL_FillRect"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_FillRect}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_FillRect}api doc} *)
 
 external blit_surface :
   src:t -> src_rect:Sdlrect.t ->
   dst:t -> dst_rect:Sdlrect.t ->
   Sdlrect.t
   = "caml_SDL_BlitSurface"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_BlitSurface}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_BlitSurface}api doc} *)
 
 external blit_pixels_unsafe :
   t -> string -> unit
@@ -54,7 +54,7 @@ external blit_pixels_unsafe :
 
 external set_color_key : t -> enable:bool -> key:int32 -> unit
   = "caml_SDL_SetColorKey"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_SetColorKey}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_SetColorKey}api doc} *)
 
 external get_width : t -> int = "caml_SDL_SurfaceGetWidth"
 external get_height : t -> int = "caml_SDL_SurfaceGetHeight"
@@ -77,7 +77,7 @@ external has_palette : t -> bool
 
 external set_blend_mode : t -> SdlblendMode.t -> unit
   = "caml_SDL_SetSurfaceBlendMode"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_SetSurfaceBlendMode}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_SetSurfaceBlendMode}api doc} *)
 
 external get_pixelformat_t : t -> SdlpixelFormat.t
   = "caml_SDL_Surface_get_pixelformat_t"

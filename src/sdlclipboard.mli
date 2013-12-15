@@ -11,16 +11,17 @@
 (** Clipboard handling *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryClipboard}Clipboard category} *)
+  {{:http://wiki.libsdl.org/CategoryClipboard}Clipboard category} *)
 
 external set_text : text:string -> int
   = "caml_SDL_SetClipboardText"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_SetClipboardText}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_SetClipboardText}api doc} *)
 
 external get_text : unit -> string
   = "caml_SDL_GetClipboardText"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GetClipboardText}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetClipboardText}api doc} *)
 
 external has_text : unit -> bool
   = "caml_SDL_HasClipboardText"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_HasClipboardText}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_HasClipboardText}api doc} *)
+

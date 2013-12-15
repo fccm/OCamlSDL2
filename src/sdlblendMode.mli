@@ -11,7 +11,7 @@
 (** Blend Modes *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/SDL_BlendMode}SDL_BlendMode} *)
+  {{:http://wiki.libsdl.org/SDL_BlendMode}SDL_BlendMode} *)
 
 type t =
   | BNone

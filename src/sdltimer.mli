@@ -11,10 +11,10 @@
 (** Time management *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryTimer}Timer category} *)
+  {{:http://wiki.libsdl.org/CategoryTimer}Timer category} *)
 
 external get_ticks : unit -> int = "caml_SDL_GetTicks" "noalloc"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GetTicks}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetTicks}api doc} *)
 
 module D : sig
   external get_ticks : unit -> int * int = "caml_SDL_GetTicks_d"
@@ -22,6 +22,6 @@ module D : sig
 end
 
 external delay : ms:int -> unit = "caml_SDL_Delay"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_Delay}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_Delay}api doc} *)
 
 (* vim: set ts=2 sw=2 et: *)

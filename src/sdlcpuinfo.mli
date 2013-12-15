@@ -11,8 +11,9 @@
 (** CPU feature detection *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryCPU}CPU category} *)
+  {{:http://wiki.libsdl.org/CategoryCPU}CPU category} *)
 
 external get_CPU_count : unit -> int
   = "caml_SDL_GetCPUCount"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetCPUCount}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetCPUCount}api doc} *)
+

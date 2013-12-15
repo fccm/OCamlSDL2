@@ -11,12 +11,13 @@
 (** Simple error message routines *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryError}Error category} *)
+  {{:http://wiki.libsdl.org/CategoryError}Error category} *)
 
 external get_error : unit -> string
   = "caml_SDL_GetError"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetError}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetError}api doc} *)
 
 external clear_error : unit -> unit
   = "caml_SDL_ClearError"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_ClearError}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_ClearError}api doc} *)
+

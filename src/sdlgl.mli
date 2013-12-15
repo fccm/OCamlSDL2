@@ -12,44 +12,44 @@
 (** This module provides windowing for OpenGL applications *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryVideo}Video category} *)
+  {{:http://wiki.libsdl.org/CategoryVideo}Video category} *)
 
 type context
 
 external create_context : win:Sdlwindow.t -> context
   = "caml_SDL_GL_CreateContext"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_CreateContext}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_CreateContext}api doc} *)
 
 external make_current :
   win:Sdlwindow.t -> ctx:context -> int
   = "caml_SDL_GL_MakeCurrent"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_MakeCurrent}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_MakeCurrent}api doc} *)
 
 external unload_library : unit -> unit
   = "caml_SDL_GL_UnloadLibrary"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_UnloadLibrary}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_UnloadLibrary}api doc} *)
 
 external extension_supported : extension:string -> bool
   = "caml_SDL_GL_ExtensionSupported"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_ExtensionSupported}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_ExtensionSupported}api doc} *)
 
 external set_swap_interval : interval:int -> unit
   = "caml_SDL_GL_SetSwapInterval"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_SetSwapInterval}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_SetSwapInterval}api doc} *)
 
 external get_swap_interval : unit -> int
   = "caml_SDL_GL_GetSwapInterval"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_GetSwapInterval}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_GetSwapInterval}api doc} *)
 
 external swap_window : Sdlwindow.t -> unit
   = "caml_SDL_GL_SwapWindow"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_SwapWindow}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_SwapWindow}api doc} *)
 
 external delete_context : context -> unit
   = "caml_SDL_GL_DeleteContext"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_DeleteContext}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_DeleteContext}api doc} *)
 
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GLattr}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GLattr}api doc} *)
 type gl_attr =
   | GL_RED_SIZE
   | GL_GREEN_SIZE
@@ -77,9 +77,9 @@ type gl_attr =
 
 external set_attribute : gl_attr -> int -> unit
   = "caml_SDL_GL_SetAttribute"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_SetAttribute}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_SetAttribute}api doc} *)
 
 external get_attribute : gl_attr -> int
   = "caml_SDL_GL_GetAttribute"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_GL_GetAttribute}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GL_GetAttribute}api doc} *)
 

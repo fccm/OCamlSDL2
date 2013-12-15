@@ -11,22 +11,24 @@
 (** Keyboard management *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/CategoryKeyboard}Keyboard category} *)
+  {{:http://wiki.libsdl.org/CategoryKeyboard}Keyboard category} *)
 
 external start_text_input : unit -> unit
   = "caml_SDL_StartTextInput"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_StartTextInput}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_StartTextInput}api doc} *)
 
 external stop_text_input : unit -> unit
   = "caml_SDL_StopTextInput"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_StopTextInput}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_StopTextInput}api doc} *)
 
 external is_text_input_active : unit -> bool
   = "caml_SDL_IsTextInputActive"
 
 external set_text_input_rect : Sdlrect.t -> unit
   = "caml_SDL_SetTextInputRect"
-(** {{:http://wiki.libsdl.org/moin.fcg/SDL_SetTextInputRect}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_SetTextInputRect}api doc} *)
 
 external has_screen_keyboard_support : unit -> bool
   = "caml_SDL_HasScreenKeyboardSupport"
+(** {{:http://wiki.libsdl.org/SDL_HasScreenKeyboardSupport}api doc} *)
+

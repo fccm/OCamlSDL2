@@ -11,8 +11,7 @@
 (** Keyboard keys and modifiers *)
 
 (** API Doc:
-  {{:http://wiki.libsdl.org/moin.fcg/SDL_Keycode}SDL_Keycode} *)
-
+  {{:http://wiki.libsdl.org/SDL_Keycode}SDL_Keycode} *)
 
 type t =
   | Unknown
