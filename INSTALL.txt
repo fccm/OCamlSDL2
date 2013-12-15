@@ -2,7 +2,7 @@
 
 Under Linux and Cygwin, go in the directory src/
 and create a file named "Makefile.config" based on
-"Makefile.config.cygwin" or "Makefile.config.linux".
+"Makefile.config.win32" or "Makefile.config.unix".
 
 Then you can run:
 $ make gen
