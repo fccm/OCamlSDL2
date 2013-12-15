@@ -60,6 +60,7 @@ ML_FILES_BASE := \
   sdlversion.ml \
   sdlcpuinfo.ml \
   sdlpower.ml \
+  sdlrwops.ml \
   sdlerror.ml \
   sdlgl.ml \
   #End
@@ -88,6 +89,7 @@ CSTUBS := \
   sdlversion_stub.c \
   sdlcpuinfo_stub.c \
   sdlpower_stub.c \
+  sdlrwops_stub.c \
   sdlerror_stub.c \
   sdl_platform_stub.c \
   #End
@@ -103,6 +105,7 @@ C_HEADERS := \
   sdlsurface_stub.h \
   sdltexture_stub.h \
   sdlwindow_stub.h \
+  sdlrwops_stub.h \
   #End
 
 CMO_FILES := $(patsubst %.ml, %.cmo, $(ML_FILES))
