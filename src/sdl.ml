@@ -91,6 +91,9 @@ end
 module Power = struct
   include Sdlpower
 end
+module RWops = struct
+  include Sdlrwops
+end
 module Error = struct
   include Sdlerror
 end
