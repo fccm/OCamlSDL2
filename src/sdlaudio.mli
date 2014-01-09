@@ -47,3 +47,15 @@ external pause : pause_on:bool -> unit
   = "caml_SDL_PauseAudio"
 (** {{:http://wiki.libsdl.org/SDL_PauseAudio}api doc} *)
 
+external lock : unit -> unit
+  = "caml_SDL_LockAudio"
+(** {{:http://wiki.libsdl.org/SDL_LockAudio}api doc} *)
+
+external unlock : unit -> unit
+  = "caml_SDL_UnlockAudio"
+(** {{:http://wiki.libsdl.org/SDL_UnlockAudio}api doc} *)
+
+external close : unit -> unit
+  = "caml_SDL_CloseAudio"
+(** {{:http://wiki.libsdl.org/SDL_CloseAudio}api doc} *)
+

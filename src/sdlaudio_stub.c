@@ -1,10 +1,10 @@
 /* OCamlSDL2 - An OCaml interface to the SDL2 library
  Copyright (C) 2013 Florent Monnier
-
+ 
  This software is provided "AS-IS", without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
  the use of this software.
-
+ 
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it freely.
 */
@@ -93,6 +93,27 @@ caml_SDL_PauseAudio(value pause_on)
     return Val_unit;
 }
 
+CAMLprim value
+caml_SDL_LockAudio(value unit)
+{
+    SDL_LockAudio();
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_UnlockAudio(value unit)
+{
+    SDL_UnlockAudio();
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_CloseAudio(value unit)
+{
+    SDL_CloseAudio();
+    return Val_unit;
+}
+
 #if 0
 int
 SDL_OpenAudio(
@@ -156,11 +177,8 @@ SDL_MixAudioFormat(
             SDL_AudioFormat format,
             Uint32 len, int volume);
 
-void SDL_LockAudio();
 void SDL_LockAudioDevice(SDL_AudioDeviceID dev);
-void SDL_UnlockAudio();
 void SDL_UnlockAudioDevice(SDL_AudioDeviceID dev);
-void SDL_CloseAudio();
 void SDL_CloseAudioDevice(SDL_AudioDeviceID dev);
 int SDL_AudioDeviceConnected(SDL_AudioDeviceID dev);
 

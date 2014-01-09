@@ -8,7 +8,7 @@
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it freely.
 *)
-(** Audio *)
+(* Audio *)
 
 type t
 
@@ -40,4 +40,13 @@ let string_of_status = function
 
 external pause : pause_on:bool -> unit
   = "caml_SDL_PauseAudio"
+
+external lock : unit -> unit
+  = "caml_SDL_LockAudio"
+
+external unlock : unit -> unit
+  = "caml_SDL_UnlockAudio"
+
+external close : unit -> unit
+  = "caml_SDL_CloseAudio"
 
