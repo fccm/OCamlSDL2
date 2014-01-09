@@ -18,19 +18,19 @@ type t
 external get_drivers :
   unit -> string array
   = "caml_SDL_GetAudioDrivers"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetAudioDrivers}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetAudioDrivers}api doc} *)
 
 external init : driver_name:string -> unit
   = "caml_SDL_AudioInit"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_AudioInit}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_AudioInit}api doc} *)
 
 external quit : unit -> unit
   = "caml_SDL_AudioQuit"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_AudioQuit}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_AudioQuit}api doc} *)
 
 external get_current_driver : unit -> string
   = "caml_SDL_GetCurrentAudioDriver"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetCurrentAudioDriver}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetCurrentAudioDriver}api doc} *)
 
 type status =
   | Stopped
@@ -39,8 +39,9 @@ type status =
 
 external get_status : unit -> status
   = "caml_SDL_GetAudioStatus"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_GetAudioStatus}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_GetAudioStatus}api doc} *)
 
 external pause : pause_on:bool -> unit
   = "caml_SDL_PauseAudio"
-(** {{:http://wiki.libsdl.org/moin.cgi/SDL_PauseAudio}api doc} *)
+(** {{:http://wiki.libsdl.org/SDL_PauseAudio}api doc} *)
+
