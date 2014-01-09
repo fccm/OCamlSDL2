@@ -33,5 +33,11 @@ type status =
 external get_status : unit -> status
   = "caml_SDL_GetAudioStatus"
 
+let string_of_status = function
+  | Stopped -> "Stopped"
+  | Playing -> "Playing"
+  | Paused  -> "Paused"
+
 external pause : pause_on:bool -> unit
   = "caml_SDL_PauseAudio"
+

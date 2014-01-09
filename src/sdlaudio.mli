@@ -41,6 +41,8 @@ external get_status : unit -> status
   = "caml_SDL_GetAudioStatus"
 (** {{:http://wiki.libsdl.org/SDL_GetAudioStatus}api doc} *)
 
+val string_of_status : status -> string
+
 external pause : pause_on:bool -> unit
   = "caml_SDL_PauseAudio"
 (** {{:http://wiki.libsdl.org/SDL_PauseAudio}api doc} *)
