@@ -1,4 +1,4 @@
-# Config for Cygwin
+# Config for Cygwin/MinGW
 
 CC_PARAMS := -Wall -Werror
 CC = c:/cygwin/bin/i686-w64-mingw32-gcc.exe -g $(CC_PARAMS)
