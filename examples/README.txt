@@ -2,7 +2,7 @@
 - ex_mv_sprite_surf.ml : displays a simple sprite moving in the window,
       using the "Surface" module.
 - ex_mv_sprite_rend.ml : does the same than "ex_mv_sprite_surf.ml" but
-      using the new "Render" api.
+      using the new "Render" API.
 - ex_cpu_count.ml : prints in the terminal the number of CPU.
 - ex_event.ml : opens a window and prints in the terminal
       every events that occure in this window.
@@ -14,10 +14,10 @@
 - ex_surf.ml : opens a window and draws rectangles in it using the "Surface"
       module.
 - ex_draw_render.ml : opens a window and draws primitives in it using the new
-      "Render" api.
+      "Render" API.
 - ex_audio_drivers.ml : displays the available audio drivers.
 - ex_pixel.ml : converts RGB values into a given pixel format.
 - ex_glattr.ml : tests GL-attributes
 - ex_mouse_pos.ml : demonstrates how to get the mouse state.
 - ex_gl.ml : shows how to use SDL2 for OpenGL windowing.
-- ex_render_points.ml : draws points using the "Render" api.
+- ex_render_points.ml : draws points using the "Render" API.
