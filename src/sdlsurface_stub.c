@@ -146,6 +146,17 @@ caml_SDL_SurfaceGetPitch(value surface)
 }
 
 CAMLprim value
+caml_SDL_SurfaceGetDims(value surface)
+{
+    CAMLparam1(surface);
+    CAMLlocal1(dims);
+    dims = caml_alloc(2, 0);
+    Store_field(dims, 0, Val_int(SDL_Surface_val(surface)->w));
+    Store_field(dims, 1, Val_int(SDL_Surface_val(surface)->h));
+    CAMLreturn(dims);
+}
+
+CAMLprim value
 caml_SDL_SurfaceGetPixel32(value surface, value x, value y)
 {
     int32 *pixels = (int32 *) SDL_Surface_val(surface)->pixels;

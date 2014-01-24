@@ -58,6 +58,7 @@ external set_color_key : t -> enable:bool -> key:int32 -> unit
 
 external get_width : t -> int = "caml_SDL_SurfaceGetWidth"
 external get_height : t -> int = "caml_SDL_SurfaceGetHeight"
+external get_dims : t -> int * int = "caml_SDL_SurfaceGetDims"
 external get_pitch : t -> int = "caml_SDL_SurfaceGetPitch"
 
 external get_pixel32_unsafe : t -> x:int -> y:int -> int32
