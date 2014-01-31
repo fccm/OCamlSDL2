@@ -158,7 +158,6 @@ sdl.mli: sdl.ml $(MLI_FILES_BASE)
 %_stub.o: %_stub.c
 	$(OCAMLC) -ccopt "-static $(CFLAGS) -g -O " $<
 
-
 sdl2.cma: $(CMO_FILES) libsdlstub.a
 	$(OCAMLMKLIB) -o sdl2 -oc sdl2_stubs $(CMO_FILES) $(LIBS)
 
@@ -201,13 +200,22 @@ cleandoc:
 
 # Installation
 
-.PHONY: findinstall finduninstall
+.PHONY: findinstall finduninstall findreinstall
 findinstall: META sdl2.cma
 	$(OCAMLFIND) install $(BINDINGS_DIR) META \
 	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.*
 
 finduninstall:
 	$(OCAMLFIND) remove $(BINDINGS_DIR)
+
+findreinstall:
+	make clean
+	make gen
+	make dep
+	make opt
+	make byte
+	make finduninstall
+	make findinstall
 
 .PHONY: install uninstall
 install:
