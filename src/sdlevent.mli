@@ -132,6 +132,21 @@ type quit_event = {
   quit_timestamp: int32;
 }
 
+
+type text_editing_event = {
+  te_timestamp: int32;
+  te_window_ID: int32;
+  te_text: string;
+  te_begin: int;
+  te_length: int;
+}
+
+type text_input_event = {
+  ti_timestamp: int32;
+  ti_window_ID: int32;
+  ti_text: string;
+}
+
 type t =
   | Quit of quit_event
   | Mouse_Motion of mouse_motion_event
@@ -140,8 +155,8 @@ type t =
   | Mouse_Wheel of mouse_wheel_event
   | KeyDown of keyboard_event
   | KeyUp of keyboard_event
-  | Text_Editing
-  | Text_Input
+  | Text_Editing of text_editing_event
+  | Text_Input of text_input_event
   | Joy_Axis_Motion of joy_axis_event
   | Joy_Ball_Motion
   | Joy_Hat_Motion of joy_hat_event
