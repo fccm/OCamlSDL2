@@ -13,8 +13,6 @@
 (** API Doc:
   {{:http://wiki.libsdl.org/CategorySurface}Surface category} *)
 
-(*open Bigarray*)
-
 type t
 
 external create_rgb :
@@ -87,4 +85,4 @@ external get_pixelformat_t : t -> SdlpixelFormat.t
 
 external get_pixels : t -> (int, Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t
   = "caml_SDL_Surface_get_pixels"
-
+(** {{:http://wiki.libsdl.org/SDL_Surface}api doc} *)

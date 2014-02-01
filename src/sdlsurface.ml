@@ -10,11 +10,7 @@
 *)
 (* Surface definition and management *)
 
-(*open Bigarray*)
-
 type t
-
-(*let () = Callback.register_exception "" (Invalid_argument "")*)
 
 external create_rgb :
   width:int ->
