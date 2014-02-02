@@ -56,24 +56,22 @@ Val_some(value v)
     SDL_DropEvent drop;               /* Drag and drop */
 #endif
 
-#define Val_Text_Editing                Val_int(0)
-#define Val_Text_Input                  Val_int(1)
-#define Val_Joy_Ball_Motion             Val_int(2)
-#define Val_Controller_Axis_Motion      Val_int(3)
-#define Val_Controller_Button_Down      Val_int(4)
-#define Val_Controller_Button_Up        Val_int(5)
-#define Val_Controller_Device_Added     Val_int(6)
-#define Val_Controller_Device_Removed   Val_int(7)
-#define Val_Finger_Down                 Val_int(8)
-#define Val_Finger_Up                   Val_int(9)
-#define Val_Finger_Motion               Val_int(10)
-#define Val_Dollar_Gesture              Val_int(11)
-#define Val_Dollar_Record               Val_int(12)
-#define Val_Multi_Gesture               Val_int(13)
-#define Val_Clipboard_Update            Val_int(14)
-#define Val_Drop_File                   Val_int(15)
-#define Val_User_Event                  Val_int(16)
-#define Val_SYSWM_Event                 Val_int(17)
+#define Val_Joy_Ball_Motion             Val_int(0)
+#define Val_Controller_Axis_Motion      Val_int(1)
+#define Val_Controller_Button_Down      Val_int(2)
+#define Val_Controller_Button_Up        Val_int(3)
+#define Val_Controller_Device_Added     Val_int(4)
+#define Val_Controller_Device_Removed   Val_int(5)
+#define Val_Finger_Down                 Val_int(6)
+#define Val_Finger_Up                   Val_int(7)
+#define Val_Finger_Motion               Val_int(8)
+#define Val_Dollar_Gesture              Val_int(9)
+#define Val_Dollar_Record               Val_int(10)
+#define Val_Multi_Gesture               Val_int(11)
+#define Val_Clipboard_Update            Val_int(12)
+#define Val_Drop_File                   Val_int(13)
+#define Val_User_Event                  Val_int(14)
+#define Val_SYSWM_Event                 Val_int(15)
 
 
 #define Tag_Quit                        (0)
@@ -83,14 +81,15 @@ Val_some(value v)
 #define Tag_Mouse_Wheel                 (4)
 #define Tag_KeyDown                     (5)
 #define Tag_KeyUp                       (6)
-#define Tag_Joy_Axis_Motion             (7)
-#define Tag_Joy_Hat_Motion              (8)
-#define Tag_Joy_Button_Down             (9)
-#define Tag_Joy_Button_Up               (10)
-#define Tag_Joy_Device_Added            (11)
-#define Tag_Joy_Device_Removed          (12)
-#define Tag_Window_Event                (13)
-
+#define Tag_Text_Editing                (7)
+#define Tag_Text_Input                  (8)
+#define Tag_Joy_Axis_Motion             (9)
+#define Tag_Joy_Hat_Motion              (10)
+#define Tag_Joy_Button_Down             (11)
+#define Tag_Joy_Button_Up               (12)
+#define Tag_Joy_Device_Added            (13)
+#define Tag_Joy_Device_Removed          (14)
+#define Tag_Window_Event                (15)
 
 
 static value Val_SDL_QuitEvent(SDL_QuitEvent * e) {
@@ -411,6 +410,35 @@ Val_SDL_WindowEvent(SDL_WindowEvent * e)
     CAMLreturn(ret);
 }
 
+static inline value
+Val_SDL_TextEditingEvent(SDL_TextEditingEvent * e)
+{
+    CAMLparam0();
+    CAMLlocal2(ret, rec);
+    ret = caml_alloc(1, Tag_Text_Editing);
+    rec = caml_alloc(4, 0);
+    Store_field(rec, 0, caml_copy_int32(e->timestamp));
+    Store_field(rec, 1, caml_copy_int32(e->windowID));
+    Store_field(rec, 2, caml_copy_string(e->text));
+    Store_field(rec, 3, Val_int(e->start));
+    Store_field(rec, 4, Val_int(e->length));
+    Store_field(ret, 0, rec);
+    CAMLreturn(ret);
+}
+
+static inline value
+Val_SDL_TextInputEvent(SDL_TextInputEvent * e)
+{
+    CAMLparam0();
+    CAMLlocal2(ret, rec);
+    ret = caml_alloc(1, Tag_Text_Input);
+    rec = caml_alloc(3, 0);
+    Store_field(rec, 0, caml_copy_int32(e->timestamp));
+    Store_field(rec, 1, caml_copy_int32(e->windowID));
+    Store_field(rec, 2, caml_copy_string(e->text));
+    Store_field(ret, 0, rec);
+    CAMLreturn(ret);
+}
 
 static inline value
 Val_SDL_Event(SDL_Event * event)
@@ -423,8 +451,8 @@ Val_SDL_Event(SDL_Event * event)
     case SDL_MOUSEWHEEL:        return Val_SDL_MouseWheelEvent(&(event->wheel));
     case SDL_KEYDOWN:           return Val_SDL_KeyDown(&(event->key));
     case SDL_KEYUP:             return Val_SDL_KeyUp(&(event->key));
-    case SDL_TEXTEDITING:       return Val_Text_Editing;
-    case SDL_TEXTINPUT:         return Val_Text_Input;
+    case SDL_TEXTEDITING:       return Val_SDL_TextEditingEvent(&(event->edit));
+    case SDL_TEXTINPUT:         return Val_SDL_TextInputEvent(&(event->text));
     case SDL_JOYAXISMOTION:     return Val_SDL_JoyAxisEvent(&(event->jaxis));
     case SDL_JOYBALLMOTION:     return Val_Joy_Ball_Motion;
     case SDL_JOYHATMOTION:      return Val_SDL_JoyHatEvent(&(event->jhat));
