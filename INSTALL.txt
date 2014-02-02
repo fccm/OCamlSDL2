@@ -1,4 +1,4 @@
-=== Linux and Cygwin ===
+=== Linux, Cygwin, and OSX ===
 
 Under Linux and Cygwin, go in the directory src/
 and create a file named "Makefile.config" based on
@@ -35,6 +35,15 @@ $ make install_h
 
 ----------------
 
+Install using ocamlfind:
+$ make findinstall
+
+----------------
+
+To uninstall:
+$ make uninstall
+or
+$ make finduninstall
 
 === Other Environments ===
 

@@ -24,6 +24,7 @@ BINDINGS_DIR := sdl2
 PREFIX := 
 DESTDIR := $(PREFIX)$(DIRSEP)$(OCAMLDIR)$(DIRSEP)$(BINDINGS_DIR)
 DESTDIR_H := $(DESTDIR)$(DIRSEP)include
+UNINSTALL_DIR := rm -Rf
 INSTALL_DIR := mkdir -p
 INSTALL_FILES := cp -f
 MKDIR := mkdir -p
@@ -157,7 +158,6 @@ sdl.mli: sdl.ml $(MLI_FILES_BASE)
 %_stub.o: %_stub.c
 	$(OCAMLC) -ccopt "-static $(CFLAGS) -g -O " $<
 
-
 sdl2.cma: $(CMO_FILES) libsdlstub.a
 	$(OCAMLMKLIB) -o sdl2 -oc sdl2_stubs $(CMO_FILES) $(LIBS)
 
@@ -200,17 +200,32 @@ cleandoc:
 
 # Installation
 
-.PHONY: findinstall
+.PHONY: findinstall finduninstall findreinstall
 findinstall: META sdl2.cma
 	$(OCAMLFIND) install $(BINDINGS_DIR) META \
 	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.*
 
-.PHONY: install
+finduninstall:
+	$(OCAMLFIND) remove $(BINDINGS_DIR)
+
+findreinstall:
+	make clean
+	make gen
+	make dep
+	make opt
+	make byte
+	make finduninstall
+	make findinstall
+
+.PHONY: install uninstall
 install:
 	$(INSTALL_DIR) $(DESTDIR)
 	$(INSTALL_FILES) \
 	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.* \
 	  $(DESTDIR)
+
+uninstall:
+	$(UNINSTALL_DIR) $(DESTDIR)
 
 .PHONY: install_h
 install_h:
