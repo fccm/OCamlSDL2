@@ -21,6 +21,9 @@ type t = {
 let make ~pos:(x, y) ~dims:(w, h) =
   { x; y; w; h }
 
+let make1 (x, y, w, h) =
+  { x; y; w; h }
+
 let make4 ~x ~y ~w ~h =
   { x; y; w; h }
 

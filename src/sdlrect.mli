@@ -22,6 +22,8 @@ type t = {
 
 val make : pos:int * int -> dims:int * int -> t
 
+val make1 : int * int * int * int -> t
+
 val make4 : x:int -> y:int -> w:int -> h:int -> t
 
 external has_intersection : a:t -> b:t -> bool
