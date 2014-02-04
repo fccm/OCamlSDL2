@@ -249,13 +249,13 @@ finduninstall:
 	$(OCAMLFIND) remove $(BINDINGS_DIR)
 
 findreinstall:
-	make clean
-	make gen
-	make dep
-	make opt
-	make byte
-	make finduninstall
-	make findinstall
+	$(MAKE) clean
+	$(MAKE) gen
+	$(MAKE) dep
+	$(MAKE) opt
+	$(MAKE) byte
+	$(MAKE) finduninstall
+	$(MAKE) findinstall
 
 .PHONY: install uninstall
 install:
