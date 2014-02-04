@@ -18,14 +18,16 @@ type t = {
   h: int;
 }
 
-let make ~pos:(x, y) ~dims:(w, h) =
+let make1 (x, y, w, h) =
   { x; y; w; h }
 
-let make1 (x, y, w, h) =
+let make2 ~pos:(x, y) ~dims:(w, h) =
   { x; y; w; h }
 
 let make4 ~x ~y ~w ~h =
   { x; y; w; h }
+
+let make = make2
 
 external has_intersection : a:t -> b:t -> bool
   = "caml_SDL_HasIntersection"

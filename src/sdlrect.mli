@@ -21,8 +21,11 @@ type t = {
 }
 
 val make : pos:int * int -> dims:int * int -> t
+(** currently an alias for [make2] *)
 
 val make1 : int * int * int * int -> t
+
+val make2 : pos:int * int -> dims:int * int -> t
 
 val make4 : x:int -> y:int -> w:int -> h:int -> t
 
