@@ -22,17 +22,6 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-static const Uint32 sdl_init_table[] = {
-    SDL_INIT_TIMER,
-    SDL_INIT_AUDIO,
-    SDL_INIT_VIDEO,
-    SDL_INIT_JOYSTICK,
-    SDL_INIT_HAPTIC,
-    SDL_INIT_GAMECONTROLLER,
-    SDL_INIT_EVERYTHING,
-    SDL_INIT_NOPARACHUTE,
-};
-
 static inline Uint32
 sdlinit_val(value v)
 {
