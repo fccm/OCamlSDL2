@@ -24,13 +24,13 @@ let () =
       ~title:"OCaml SDL2 rectangles"
       ~x:`centered ~y:`centered
       ~width:640 ~height:480
-      ~flags:[Sdlwindow.Resizable]
+      ~flags:[Window.Resizable]
   in
   let surf = Window.get_surface win in
   f surf win 20 20 200 120 ~rgb:(0,255,0) ~msec:600;
   f surf win 60 60 200 200 ~rgb:(255,0,0) ~msec:600;
   f surf win  0  0 100 100 ~rgb:(0,0,255) ~msec:2000;
   (*
-  Sdlsurface.save_bmp surf ~filename:"test.bmp";
+  Surface.save_bmp surf ~filename:"test.bmp";
   *)
   Sdl.quit ()
