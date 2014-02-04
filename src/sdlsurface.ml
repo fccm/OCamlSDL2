@@ -73,6 +73,3 @@ external set_blend_mode : t -> SdlblendMode.t -> unit
 external get_pixelformat_t : t -> SdlpixelFormat.t
   = "caml_SDL_Surface_get_pixelformat_t"
 
-external get_pixels : t -> (int, Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t
-  = "caml_SDL_Surface_get_pixels"
-

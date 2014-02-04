@@ -228,38 +228,4 @@ caml_SDL_Surface_get_pixelformat_t(value surface)
     return Val_Sdl_pixelformat_t(format);
 }
 
-CAMLprim value
-caml_SDL_Surface_get_pixels(value surface)
-{
-  SDL_Surface *surf = SDL_Surface_val(surface);
-
-  Uint8 bpp = surf->format->BitsPerPixel;
-  int b_flag = 0;
-  long dim = surf->h;
-
-  switch (bpp) {
-  case 8:
-    dim *= surf->pitch;
-    b_flag |= CAML_BA_UINT8; break;
-  case 16:
-    dim *= surf->pitch / 2;
-    b_flag |= CAML_BA_UINT16; break;
-  case 24:
-    dim *= surf->pitch;
-    b_flag |= CAML_BA_UINT8; break;
-  case 32:
-    dim *= surf->pitch / 4;
-    b_flag |= CAML_BA_INT32; break;
-  case 64:
-    dim *= surf->pitch / 8;
-    b_flag |= CAML_BA_INT64; break;
-  default:
-    caml_failwith("Sdlsurface.get_pixels");
-  }
-
-  b_flag |= CAML_BA_C_LAYOUT | CAML_BA_EXTERNAL ;
-
-  return caml_ba_alloc(b_flag, 1, surf->pixels, &dim);
-}
-
 /* vim: set ts=4 sw=4 et: */
