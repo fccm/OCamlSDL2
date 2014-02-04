@@ -15,6 +15,7 @@ _*
 src/Makefile.config
 src/*_depend.mk
 src/sdl.mli
+src/sdlba.mli
 src/*.gen.c
-doc/*.html
-doc/*.css
+src/doc/*.html
+src/doc/*.css
