@@ -1,1 +1,9 @@
-Florent Monnier <monnier.florent on gmail> (main author and current maintainer)
+Florent Monnier <monnier.florent on gmail>
+  Main author and current maintainer
+
+David Cade <codename68 on gmail>
+  Added events structures for SDL_TextInputEvent and SDL_TextEditingEvent
+
+Piotr Mardziel <@piotrm0>
+  Added Sdl.Surface.get_pixels
+
