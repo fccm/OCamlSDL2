@@ -38,6 +38,15 @@ external blit_surface :
   Sdlrect.t
   = "caml_SDL_BlitSurface"
 
+external blit_surf :
+  src:t -> dst:t -> dst_rect:Sdlrect.t ->
+  Sdlrect.t
+  = "caml_SDL_BlitSurf"
+
+external blit_surfs :
+  src:t -> dst:t -> dst_rect:Sdlrect.t -> unit
+  = "caml_SDL_BlitSurfs"
+
 external blit_pixels_unsafe :
   t -> string -> unit
   = "caml_SDL_Surface_Blit_Pixels"

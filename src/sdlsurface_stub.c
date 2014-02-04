@@ -106,6 +106,36 @@ caml_SDL_BlitSurface(
 }
 
 CAMLprim value
+caml_SDL_BlitSurf(
+        value src, value dst, value _dstrect)
+{
+    CAMLparam3(src, dst, _dstrect);
+    CAMLlocal1(ret);
+    SDL_Rect dstrect;
+    SDL_Rect_val(&dstrect, _dstrect);
+    int r = SDL_BlitSurface(
+        SDL_Surface_val(src), NULL,
+        SDL_Surface_val(dst), &dstrect);
+    if (r) caml_failwith("Sdlsurface.blit_surf");
+    Val_SDL_Rect(ret, &dstrect);
+    CAMLreturn(ret);
+}
+
+CAMLprim value
+caml_SDL_BlitSurfs(
+        value src, value dst, value _dstrect)
+{
+    CAMLparam3(src, dst, _dstrect);
+    SDL_Rect dstrect;
+    SDL_Rect_val(&dstrect, _dstrect);
+    int r = SDL_BlitSurface(
+        SDL_Surface_val(src), NULL,
+        SDL_Surface_val(dst), &dstrect);
+    if (r) caml_failwith("Sdlsurface.blit_surfs");
+    CAMLreturn(Val_unit);
+}
+
+CAMLprim value
 caml_SDL_Surface_Blit_Pixels(
         value surf, value pixels_buffer)
 {
