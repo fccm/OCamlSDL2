@@ -29,6 +29,8 @@ val make2 : pos:int * int -> dims:int * int -> t
 
 val make4 : x:int -> y:int -> w:int -> h:int -> t
 
+val move : t -> x:int -> y:int -> t
+
 external has_intersection : a:t -> b:t -> bool
   = "caml_SDL_HasIntersection"
 

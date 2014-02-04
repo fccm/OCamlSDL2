@@ -29,6 +29,9 @@ let make4 ~x ~y ~w ~h =
 
 let make = make2
 
+let move r ~x ~y =
+  { r with x; y }
+
 external has_intersection : a:t -> b:t -> bool
   = "caml_SDL_HasIntersection"
 
