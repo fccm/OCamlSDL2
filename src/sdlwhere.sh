@@ -1,1 +1,0 @@
-echo "/usr/local"

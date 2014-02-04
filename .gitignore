@@ -10,6 +10,7 @@
 *.dll
 a.out
 .*.swp
+_*
 *~
 src/Makefile.config
 src/*_depend.mk
