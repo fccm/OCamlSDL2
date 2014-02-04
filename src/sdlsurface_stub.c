@@ -228,4 +228,19 @@ caml_SDL_Surface_get_pixelformat_t(value surface)
     return Val_Sdl_pixelformat_t(format);
 }
 
+CAMLprim value
+caml_SDL_Surface_get_pixels(value surface)
+{
+    SDL_Surface *surf = SDL_Surface_val(surface);
+
+    unsigned int len =
+        surf->w * surf->h *
+        surf->format->BytesPerPixel;
+
+    value ml_pixels = caml_alloc_string(len);
+    memcpy(String_val(ml_pixels), surf->pixels, len);
+
+    return ml_pixels;
+}
+
 /* vim: set ts=4 sw=4 et: */

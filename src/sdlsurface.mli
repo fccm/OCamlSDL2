@@ -83,3 +83,7 @@ external set_blend_mode : t -> SdlblendMode.t -> unit
 external get_pixelformat_t : t -> SdlpixelFormat.t
   = "caml_SDL_Surface_get_pixelformat_t"
 
+external get_pixels : t -> string
+  = "caml_SDL_Surface_get_pixels"
+(** {{:http://wiki.libsdl.org/SDL_Surface}api doc} *)
+
