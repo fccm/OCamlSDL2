@@ -36,6 +36,11 @@ all: cma
 opt cmxa: sdl2.cmxa
 byte cma: sdl2.cma
 
+.PHONY: ba baopt
+ba: sdl2-ba.cma
+baopt: sdl2-ba.cmxa
+
+
 ML_FILES_BASE := \
   sdlinit.ml \
   sdlquit.ml \
@@ -67,6 +72,11 @@ ML_FILES_BASE := \
   #End
 ML_FILES := $(ML_FILES_BASE) sdl.ml
 
+ML_FILES_BA_BASE := \
+  sdlsurface_ba.ml \
+  #End
+ML_FILES_BA := $(ML_FILES_BA_BASE) sdlba.ml
+
 CSTUBS := \
   sdlinit_stub.c \
   sdlquit_stub.c \
@@ -95,6 +105,10 @@ CSTUBS := \
   sdl_platform_stub.c \
   #End
 
+CSTUBS_BA := \
+  sdlsurface_ba_stub.c \
+  #End
+
 C_HEADERS := \
   sdlblendMode_stub.h \
   sdlkeymod_stub.h \
@@ -117,6 +131,17 @@ MLI_FILES := $(patsubst %.ml, %.mli, $(ML_FILES))
 C_STUBS_O := $(patsubst %.c, %.o, $(CSTUBS))
 
 MLI_FILES_BASE := $(patsubst %.ml, %.mli, $(ML_FILES_BASE))
+
+
+
+CMO_FILES_BA := $(patsubst %.ml, %.cmo, $(ML_FILES_BA))
+CMX_FILES_BA := $(patsubst %.ml, %.cmx, $(ML_FILES_BA))
+CMI_FILES_BA := $(patsubst %.ml, %.cmi, $(ML_FILES_BA))
+MLI_FILES_BA := $(patsubst %.ml, %.mli, $(ML_FILES_BA))
+
+C_STUBS_BA_O := $(patsubst %.c, %.o, $(CSTUBS_BA))
+
+MLI_FILES_BA_BASE := $(patsubst %.ml, %.mli, $(ML_FILES_BA_BASE))
 
 
 # Dependencies
@@ -146,6 +171,10 @@ sdl.mli: sdl.ml $(MLI_FILES_BASE)
 	cat sdl_header > $@
 	$(OCAMLC) -i $< >> $@
 
+sdlba.mli: sdlba.ml $(MLI_FILES_BA_BASE)
+	cat sdl_header > $@
+	$(OCAMLC) -i $< >> $@
+
 %.cmi: %.mli
 	$(OCAMLC) $<
 
@@ -168,6 +197,16 @@ libsdlstub.a: $(C_STUBS_O)
 	$(OCAMLMKLIB) -o sdl2 -oc sdl2_stubs $(C_STUBS_O) $(LIBS)
 
 
+sdl2-ba.cma: $(CMO_FILES_BA) libsdl2ba_stub.a
+	$(OCAMLMKLIB) -o sdl2-ba -oc sdl2ba_stubs $(CMO_FILES_BA) $(LIBS)
+
+sdl2-ba.cmxa: $(CMX_FILES_BA) libsdl2ba_stub.a
+	$(OCAMLMKLIB) -o sdl2-ba -oc sdl2ba_stubs $(CMX_FILES_BA) $(LIBS)
+
+libsdl2ba_stub.a: $(C_STUBS_BA_O)
+	$(OCAMLMKLIB) -o sdl2-ba -oc sdl2ba_stubs $(C_STUBS_BA_O) $(LIBS)
+
+
 poly_var.exe: poly_var.ml poly_var_stubs.c
 	ocamlopt -o $@ str.cmxa $^
 
@@ -187,10 +226,11 @@ OCAMLDOC_PRM := -colorize-code -html
 
 .PHONY: doc cmi
 cmi: $(CMI_FILES)
-doc: $(MLI_FILES) $(CMI_FILES)
+doc: $(MLI_FILES) $(MLI_FILES_BA) $(CMI_FILES)
 	$(MKDIR) $(DOC_DIR)
 	$(OCAMLDOC) $(OCAMLDOC_PRM) \
 	  $(MLI_FILES) \
+	  $(MLI_FILES_BA) \
 	  -d $(DOC_DIR)
 
 .PHONY: cleandoc

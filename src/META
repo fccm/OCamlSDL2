@@ -2,9 +2,20 @@ name = "sdl2"
 description = "bindings to the SDL2 library"
 license = "Zlib"
 version = "@VERSION@"
-requires = "bigarray"
 
 archive(byte) = "sdl2.cma"
 archive(native) = "sdl2.cmxa"
 archive(byte,plugin) = "sdl2.cma"
 archive(native,plugin) = "sdl2.cmxs"
+
+package "ba" (
+  description = "SDL2 with Bigarrays for buffer interexchange"
+  version = "@VERSION@"
+  requires = "sdl2 bigarray"
+  
+  archive(byte) = "sdl2-ba.cma"
+  archive(native) = "sdl2-ba.cmxa"
+  archive(byte,plugin) = "sdl2-ba.cma"
+  archive(native,plugin) = "sdl2-ba.cmxs"
+)
+
