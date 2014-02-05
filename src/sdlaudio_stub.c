@@ -16,7 +16,7 @@
 
 #include <SDL_audio.h>
 
-static const SDL_AudioFormat ocaml_sdl_AudioFormat_table[] = {
+const SDL_AudioFormat ocaml_SDL_AudioFormat_table[] = {
     AUDIO_U8,
     AUDIO_S8,
     AUDIO_U16LSB,
@@ -36,8 +36,6 @@ static const SDL_AudioFormat ocaml_sdl_AudioFormat_table[] = {
     AUDIO_S32SYS,
     AUDIO_F32SYS
 };
-#define SDL_AudioFormat_val(v) \
-    ocaml_sdl_AudioFormat_table[Long_val(v)]
 
 value
 Val_SDL_AudioFormat(SDL_AudioFormat format)

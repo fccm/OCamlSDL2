@@ -11,3 +11,8 @@ extern const SDL_AudioFormat ocaml_SDL_AudioFormat_table[];
     ocaml_SDL_AudioFormat_table[Long_val(format)]
 
 #endif /* _CAML_SDL_AUDIO_ */
+
+/* vim: set ts=4 sw=4 et: */
+/* Local Variables: */
+/* c-basic-offset:4; tab-width:4; indent-tabs-mode:nil; */
+/* End: */
