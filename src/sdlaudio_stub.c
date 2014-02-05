@@ -16,6 +16,55 @@
 
 #include <SDL_audio.h>
 
+static const SDL_AudioFormat ocaml_sdl_AudioFormat_table[] = {
+    AUDIO_U8,
+    AUDIO_S8,
+    AUDIO_U16LSB,
+    AUDIO_S16LSB,
+    AUDIO_U16MSB,
+    AUDIO_S16MSB,
+    AUDIO_U16,
+    AUDIO_S16,
+    AUDIO_S32LSB,
+    AUDIO_S32MSB,
+    AUDIO_S32,
+    AUDIO_F32LSB,
+    AUDIO_F32MSB,
+    AUDIO_F32,
+    AUDIO_U16SYS,
+    AUDIO_S16SYS,
+    AUDIO_S32SYS,
+    AUDIO_F32SYS
+};
+#define SDL_AudioFormat_val(v) \
+    ocaml_sdl_AudioFormat_table[Long_val(v)]
+
+value
+Val_SDL_AudioFormat(SDL_AudioFormat format)
+{
+    switch (format) {
+    case AUDIO_U8: return Val_int(0);
+    case AUDIO_S8: return Val_int(1);
+    case AUDIO_U16LSB: return Val_int(2);
+    case AUDIO_S16LSB: return Val_int(3);
+    case AUDIO_U16MSB: return Val_int(4);
+    case AUDIO_S16MSB: return Val_int(5);
+        // case AUDIO_U16: return Val_int(6);
+        // case AUDIO_S16: return Val_int(7);
+    case AUDIO_S32LSB: return Val_int(8);
+    case AUDIO_S32MSB: return Val_int(9);
+        // case AUDIO_S32: return Val_int(10);
+    case AUDIO_F32LSB: return Val_int(11);
+    case AUDIO_F32MSB: return Val_int(12);
+        // case AUDIO_F32: return Val_int(13);
+        // case AUDIO_U16SYS: return Val_int(14);
+        // case AUDIO_S16SYS: return Val_int(15);
+        // case AUDIO_S32SYS: return Val_int(16);
+        // case AUDIO_F32SYS: return Val_int(17);
+    }
+    caml_failwith("SdlAudiFormat.t");
+}
+
 CAMLprim value
 caml_SDL_GetAudioDrivers(value unit)
 {
@@ -185,5 +234,6 @@ int SDL_AudioDeviceConnected(SDL_AudioDeviceID dev);
 #endif
 
 /* vim: set ts=4 sw=4 et: */
-
-
+/* Local Variables: */
+/* c-basic-offset:4; tab-width:4; indent-tabs-mode:nil; */
+/* End: */

@@ -110,6 +110,7 @@ CSTUBS_BA := \
   #End
 
 C_HEADERS := \
+  sdlaudio_stub.h \
   sdlblendMode_stub.h \
   sdlkeymod_stub.h \
   sdlpixelFormat_stub.h \
@@ -254,6 +255,8 @@ findreinstall:
 	$(MAKE) dep
 	$(MAKE) opt
 	$(MAKE) byte
+	$(MAKE) ba
+	$(MAKE) baopt
 	$(MAKE) finduninstall
 	$(MAKE) findinstall
 
