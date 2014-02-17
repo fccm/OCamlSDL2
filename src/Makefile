@@ -243,7 +243,7 @@ cleandoc:
 .PHONY: findinstall finduninstall findreinstall
 findinstall: META sdl2.cma
 	$(OCAMLFIND) install $(BINDINGS_DIR) META \
-	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.*
+	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.* *_stub.h
 
 finduninstall:
 	$(OCAMLFIND) remove $(BINDINGS_DIR)
@@ -261,7 +261,7 @@ findreinstall:
 install:
 	$(INSTALL_DIR) $(DESTDIR)
 	$(INSTALL_FILES) \
-	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.* \
+	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.* *_stub.h \
 	  $(DESTDIR)
 
 uninstall:
