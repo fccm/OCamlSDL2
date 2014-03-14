@@ -24,6 +24,8 @@ BINDINGS_DIR := sdl2
 PREFIX := 
 DESTDIR := $(PREFIX)$(DIRSEP)$(OCAMLDIR)$(DIRSEP)$(BINDINGS_DIR)
 DESTDIR_H := $(DESTDIR)$(DIRSEP)include
+# This is defined only after make findinstall
+OCAMLFINDDESTDIR_H := $(shell $(OCAMLFIND) query sdl2)$(DIRSEP)include
 UNINSTALL_DIR := rm -Rf
 INSTALL_DIR := mkdir -p
 INSTALL_FILES := cp -f
@@ -240,7 +242,7 @@ cleandoc:
 
 # Installation
 
-.PHONY: findinstall finduninstall findreinstall
+.PHONY: findinstall finduninstall findreinstall findinstall_h
 findinstall: META sdl2.cma
 	$(OCAMLFIND) install $(BINDINGS_DIR) META \
 	  *.cm[aix] *.cmx[as] sdl2*.a *sdl2*_stubs.*
@@ -256,6 +258,12 @@ findreinstall:
 	$(MAKE) byte
 	$(MAKE) finduninstall
 	$(MAKE) findinstall
+
+findinstall_h:
+	$(INSTALL_DIR) $(OCAMLFINDDESTDIR_H)
+	$(INSTALL_FILES) \
+	  $(C_HEADERS) \
+	  $(OCAMLFINDDESTDIR_H)
 
 .PHONY: install uninstall
 install:
