@@ -40,6 +40,7 @@ const SDL_AudioFormat ocaml_SDL_AudioFormat_table[] = {
 value
 Val_SDL_AudioFormat(SDL_AudioFormat format)
 {
+    // commented-out cases are synonyms
     switch (format) {
     case AUDIO_U8: return Val_int(0);
     case AUDIO_S8: return Val_int(1);
