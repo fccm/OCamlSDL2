@@ -15,6 +15,26 @@
 
 type t
 
+type format =
+  | AUDIO_U8
+  | AUDIO_S8
+  | AUDIO_U16LSB
+  | AUDIO_S16LSB
+  | AUDIO_U16MSB
+  | AUDIO_S16MSB
+  | AUDIO_U16
+  | AUDIO_S16
+  | AUDIO_S32LSB
+  | AUDIO_S32MSB
+  | AUDIO_S32
+  | AUDIO_F32LSB
+  | AUDIO_F32MSB
+  | AUDIO_F32
+  | AUDIO_U16SYS
+  | AUDIO_S16SYS
+  | AUDIO_S32SYS
+  | AUDIO_F32SYS
+
 external get_drivers :
   unit -> string array
   = "caml_SDL_GetAudioDrivers"
