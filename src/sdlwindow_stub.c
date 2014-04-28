@@ -350,6 +350,7 @@ SDL_SetWindowSize(
 CAMLprim value
 caml_SDL_GetWindowSize(value window)
 {
+    CAMLparam1(window);
     CAMLlocal1(ret);
 
     int w, h;
