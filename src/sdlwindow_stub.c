@@ -345,12 +345,24 @@ SDL_SetWindowSize(
             SDL_Window * window,
             int w, int h);
 
-void
-SDL_GetWindowSize(
-            SDL_Window * window,
-            int *w,
-            int *h);
-    
+*/
+
+CAMLprim value
+caml_SDL_GetWindowSize(value window)
+{
+    CAMLparam1(window);
+    CAMLlocal1(ret);
+
+    int w, h;
+    SDL_GetWindowSize(SDL_Window_val(window), &w, &h);
+
+    ret = caml_alloc(2, 0);
+    Store_field(ret, 0, Val_int(w));
+    Store_field(ret, 1, Val_int(h));
+    CAMLreturn(ret);
+}
+
+/*
 void
 SDL_SetWindowMinimumSize(
             SDL_Window * window,

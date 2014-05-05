@@ -83,3 +83,5 @@ external update_surface : t -> unit = "caml_SDL_UpdateWindowSurface"
 external destroy : t -> unit = "caml_SDL_DestroyWindow"
 (** {{:http://wiki.libsdl.org/SDL_DestroyWindow}api doc} *)
 
+external get_size : t -> (int * int) = "caml_SDL_GetWindowSize"
+(** {{:http://wiki.libsdl.org/SDL_GetWindowSize}api doc} *)
