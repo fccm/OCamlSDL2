@@ -52,6 +52,13 @@ caml_SDL_FreeRW(value rwo)
     return Val_unit;
 }
 
+CAMLprim value
+caml_SDL_CloseRW(value rwo)
+{
+    SDL_RWclose(SDL_RWops_val(rwo));
+    return Val_unit;
+}
+
 #define Uint8_val(d) (Int_val(d))
 #define Val_Uint8(d) (Val_int(d))
 
