@@ -1,6 +1,6 @@
 === Linux, Cygwin, and OSX ===
 
-Under Linux and Cygwin, go in the directory src/
+Under an Unix-like system, go in the directory src/
 and create a file named "Makefile.config" based on
 "Makefile.config.win32" or "Makefile.config.unix".
 
