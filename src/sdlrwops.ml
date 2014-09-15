@@ -35,6 +35,8 @@ let from_input_opt = function
 external alloc : unit -> t = "caml_SDL_AllocRW"
 external free : t -> unit = "caml_SDL_FreeRW"
 
+external close : t -> unit = "caml_SDL_CloseRW"
+
 type uint8 = int
 
 type uint16 = int

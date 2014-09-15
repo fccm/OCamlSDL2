@@ -37,6 +37,8 @@ val from_input_opt :
 external alloc : unit -> t = "caml_SDL_AllocRW"
 external free : t -> unit = "caml_SDL_FreeRW"
 
+external close : t -> unit = "caml_SDL_CloseRW"
+(** {{:http://wiki.libsdl.org/SDL_RWclose}api doc} *)
 
 type uint8 = int
 
