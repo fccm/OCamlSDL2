@@ -82,6 +82,9 @@ end
 module Audio = struct
   include Sdlaudio
 end
+module Filesystem = struct
+  include Sdlfilesystem
+end
 module Version = struct
   include Sdlversion
 end

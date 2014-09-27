@@ -65,6 +65,7 @@ ML_FILES_BASE := \
   sdlclipboard.ml \
   sdltimer.ml \
   sdlaudio.ml \
+  sdlfilesystem.ml \
   sdlversion.ml \
   sdlcpuinfo.ml \
   sdlpower.ml \
@@ -99,6 +100,7 @@ CSTUBS := \
   sdltimer_stub.c \
   sdlgl_stub.c \
   sdlaudio_stub.c \
+  sdlfilesystem_stub.c \
   sdlversion_stub.c \
   sdlcpuinfo_stub.c \
   sdlpower_stub.c \
