@@ -10,28 +10,28 @@
 
 include Makefile.config
 
-CFLAGS := $(shell sdl2-config --cflags)
-LIBS_ := $(shell sdl2-config --static-libs)
-LIBS := $(shell ocaml prm.ml $(LIBS_))
-OCAML := ocaml
-OCAMLDOC := ocamldoc
-OCAMLDEP := ocamldep
-OCAMLFIND := ocamlfind
-OCAMLDIR := $(shell $(OCAMLC) -where)
-CC_MM := gcc -MM -I $(OCAMLDIR) $(CFLAGS)
-DIRSEP := $(shell $(OCAML) dir_sep.ml)
-BINDINGS_DIR := sdl2
-PREFIX := 
-DESTDIR := $(PREFIX)$(DIRSEP)$(OCAMLDIR)$(DIRSEP)$(BINDINGS_DIR)
-DESTDIR_H := $(DESTDIR)$(DIRSEP)include
+CFLAGS = $(shell sdl2-config --cflags)
+LIBS_ = $(shell sdl2-config --static-libs)
+LIBS = $(shell ocaml prm.ml $(LIBS_))
+OCAML = ocaml
+OCAMLDOC = ocamldoc
+OCAMLDEP = ocamldep
+OCAMLFIND = ocamlfind
+OCAMLDIR = $(shell $(OCAMLC) -where)
+CC_MM = gcc -MM -I $(OCAMLDIR) $(CFLAGS)
+DIRSEP = $(shell $(OCAML) dir_sep.ml)
+BINDINGS_DIR = sdl2
+PREFIX = 
+DESTDIR = $(PREFIX)$(DIRSEP)$(OCAMLDIR)$(DIRSEP)$(BINDINGS_DIR)
+DESTDIR_H = $(DESTDIR)$(DIRSEP)include
 # This is defined only after make findinstall
 OCAMLFINDDESTDIR_H := $(shell $(OCAMLFIND) query sdl2)$(DIRSEP)include
-UNINSTALL_DIR := rm -Rf
-INSTALL_DIR := mkdir -p
-INSTALL_FILES := cp -f
-MKDIR := mkdir -p
-RMDIR := rmdir
-DOC_DIR := doc
+UNINSTALL_DIR = rm -Rf
+INSTALL_DIR = mkdir -p
+INSTALL_FILES = cp -f
+MKDIR = mkdir -p
+RMDIR = rmdir
+DOC_DIR = doc
 
 .PHONY: all opt byte cmxa cma
 all: cma
