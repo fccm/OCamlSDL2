@@ -43,7 +43,7 @@ ba: sdl2-ba.cma
 baopt: sdl2-ba.cmxa
 
 
-ML_FILES_BASE := \
+ML_FILES_BASE = \
   sdlinit.ml \
   sdlquit.ml \
   sdlrect.ml \
@@ -73,14 +73,14 @@ ML_FILES_BASE := \
   sdlerror.ml \
   sdlgl.ml \
   #End
-ML_FILES := $(ML_FILES_BASE) sdl.ml
+ML_FILES = $(ML_FILES_BASE) sdl.ml
 
-ML_FILES_BA_BASE := \
+ML_FILES_BA_BASE = \
   sdlsurface_ba.ml \
   #End
-ML_FILES_BA := $(ML_FILES_BA_BASE) sdlba.ml
+ML_FILES_BA = $(ML_FILES_BA_BASE) sdlba.ml
 
-CSTUBS := \
+CSTUBS = \
   sdlinit_stub.c \
   sdlquit_stub.c \
   sdlrect_stub.c \
@@ -109,11 +109,11 @@ CSTUBS := \
   sdl_platform_stub.c \
   #End
 
-CSTUBS_BA := \
+CSTUBS_BA = \
   sdlsurface_ba_stub.c \
   #End
 
-C_HEADERS := \
+C_HEADERS = \
   sdlaudio_stub.h \
   sdlblendMode_stub.h \
   sdlkeymod_stub.h \
@@ -128,25 +128,25 @@ C_HEADERS := \
   sdlrwops_stub.h \
   #End
 
-CMO_FILES := $(patsubst %.ml, %.cmo, $(ML_FILES))
-CMX_FILES := $(patsubst %.ml, %.cmx, $(ML_FILES))
-CMI_FILES := $(patsubst %.ml, %.cmi, $(ML_FILES))
-MLI_FILES := $(patsubst %.ml, %.mli, $(ML_FILES))
+CMO_FILES = $(patsubst %.ml, %.cmo, $(ML_FILES))
+CMX_FILES = $(patsubst %.ml, %.cmx, $(ML_FILES))
+CMI_FILES = $(patsubst %.ml, %.cmi, $(ML_FILES))
+MLI_FILES = $(patsubst %.ml, %.mli, $(ML_FILES))
 
-C_STUBS_O := $(patsubst %.c, %.o, $(CSTUBS))
+C_STUBS_O = $(patsubst %.c, %.o, $(CSTUBS))
 
-MLI_FILES_BASE := $(patsubst %.ml, %.mli, $(ML_FILES_BASE))
+MLI_FILES_BASE = $(patsubst %.ml, %.mli, $(ML_FILES_BASE))
 
 
 
-CMO_FILES_BA := $(patsubst %.ml, %.cmo, $(ML_FILES_BA))
-CMX_FILES_BA := $(patsubst %.ml, %.cmx, $(ML_FILES_BA))
-CMI_FILES_BA := $(patsubst %.ml, %.cmi, $(ML_FILES_BA))
-MLI_FILES_BA := $(patsubst %.ml, %.mli, $(ML_FILES_BA))
+CMO_FILES_BA = $(patsubst %.ml, %.cmo, $(ML_FILES_BA))
+CMX_FILES_BA = $(patsubst %.ml, %.cmx, $(ML_FILES_BA))
+CMI_FILES_BA = $(patsubst %.ml, %.cmi, $(ML_FILES_BA))
+MLI_FILES_BA = $(patsubst %.ml, %.mli, $(ML_FILES_BA))
 
-C_STUBS_BA_O := $(patsubst %.c, %.o, $(CSTUBS_BA))
+C_STUBS_BA_O = $(patsubst %.c, %.o, $(CSTUBS_BA))
 
-MLI_FILES_BA_BASE := $(patsubst %.ml, %.mli, $(ML_FILES_BA_BASE))
+MLI_FILES_BA_BASE = $(patsubst %.ml, %.mli, $(ML_FILES_BA_BASE))
 
 
 # Dependencies
@@ -227,7 +227,7 @@ gen: sdl_scancode.gen.c sdl_keycode.gen.c
 
 # API documentation generation
 
-OCAMLDOC_PRM := -colorize-code -html
+OCAMLDOC_PRM = -colorize-code -html
 
 .PHONY: doc cmi
 cmi: $(CMI_FILES)
@@ -292,8 +292,8 @@ install_h:
 
 .PHONY: depviz
 depviz: deps.svg
-#DEP_VIZ_FILES := sdl.mli sdl*.mli
-DEP_VIZ_FILES := \
+#DEP_VIZ_FILES = sdl.mli sdl*.mli
+DEP_VIZ_FILES = \
   sdlpixel.ml sdlwindow.ml sdlrender.ml sdltexture.ml sdlsurface.ml \
   #End
 
