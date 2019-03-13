@@ -190,7 +190,7 @@ caml_SDL_SurfaceGetDims(value surface)
 CAMLprim value
 caml_SDL_SurfaceGetPixel32(value surface, value x, value y)
 {
-    int32 *pixels = (int32 *) SDL_Surface_val(surface)->pixels;
+    Uint32 *pixels = (Uint32 *) SDL_Surface_val(surface)->pixels;
     int width = SDL_Surface_val(surface)->w;
     int ofs = (Long_val(y) * width) + Long_val(x);
     return caml_copy_int32(pixels[ofs]);
