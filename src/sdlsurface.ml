@@ -76,6 +76,9 @@ external get_bits_per_pixel : t -> int
 external has_palette : t -> bool
   = "caml_SDL_SurfaceHasPalette"
 
+external palette_num_colors : t -> int
+  = "caml_SDL_SurfacePaletteColors"
+
 external set_blend_mode : t -> SdlblendMode.t -> unit
   = "caml_SDL_SetSurfaceBlendMode"
 

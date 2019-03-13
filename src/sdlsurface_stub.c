@@ -1,10 +1,10 @@
 /* OCamlSDL2 - An OCaml interface to the SDL2 library
  Copyright (C) 2013 Florent Monnier
-
+ 
  This software is provided "AS-IS", without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
  the use of this software.
-
+ 
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it freely.
 */
@@ -227,11 +227,28 @@ SDL_SurfaceHasPalette(SDL_Surface * surface)
     return ((surface->format->palette) != 0);
 }
 
+static inline int
+SDL_SurfacePaletteColors(SDL_Surface * surface)
+{
+    if ((surface->format->palette) != 0)
+    {
+        return (surface->format->palette->ncolors);
+    }
+    else return (-1);
+}
+
 CAMLprim value
 caml_SDL_SurfaceHasPalette(value surface)
 {
     SDL_bool b = SDL_SurfaceHasPalette(SDL_Surface_val(surface));
     return Val_bool(b);
+}
+
+CAMLprim value
+caml_SDL_SurfacePaletteColors(value surface)
+{
+    return Val_int(
+        SDL_SurfacePaletteColors(SDL_Surface_val(surface)));
 }
 
 CAMLprim value
