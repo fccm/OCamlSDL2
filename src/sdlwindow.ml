@@ -62,6 +62,12 @@ external get_surface :
 external update_surface : t -> unit
   = "caml_SDL_UpdateWindowSurface"
 
+external set_brightness : t -> brightness:float -> unit
+  = "caml_SDL_SetWindowBrightness"
+
+external get_brightness : t -> float
+  = "caml_SDL_GetWindowBrightness"
+
 external destroy : t -> unit
   = "caml_SDL_DestroyWindow"
 

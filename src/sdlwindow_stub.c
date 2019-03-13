@@ -452,18 +452,31 @@ caml_SDL_UpdateWindowSurface(value window)
     return Val_unit;
 }
 
-/*
+/* TODO
 int SDL_UpdateWindowSurfaceRects(
       SDL_Window * window, SDL_Rect * rects, int numrects);
 
 void SDL_SetWindowGrab(SDL_Window * window, SDL_bool grabbed);
 
 SDL_bool SDL_GetWindowGrab(SDL_Window * window);
+*/
 
-int SDL_SetWindowBrightness(SDL_Window * window, float brightness);
+CAMLprim value
+caml_SDL_SetWindowBrightness(value window, value brightness)
+{
+    int r = SDL_SetWindowBrightness(SDL_Window_val(window), Double_val(brightness));
+    if (r) caml_failwith("Sdlwindow.set_brightness");
+    return Val_unit;
+}
 
-float SDL_GetWindowBrightness(SDL_Window * window);
+CAMLprim value
+caml_SDL_GetWindowBrightness(value window)
+{
+    float brightness = SDL_GetWindowBrightness(SDL_Window_val(window));
+    return caml_copy_double(brightness);
+}
 
+/* TODO
 int SDL_SetWindowGammaRamp(
       SDL_Window * window,
       const Uint16 * red,

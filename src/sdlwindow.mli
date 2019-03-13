@@ -80,6 +80,12 @@ external get_surface : t -> Sdlsurface.t = "caml_SDL_GetWindowSurface"
 external update_surface : t -> unit = "caml_SDL_UpdateWindowSurface"
 (** {{:http://wiki.libsdl.org/SDL_UpdateWindowSurface}api doc} *)
 
+external set_brightness : t -> brightness:float -> unit = "caml_SDL_SetWindowBrightness"
+(** {{:http://wiki.libsdl.org/SDL_SetWindowBrightness}api doc} *)
+
+external get_brightness : t -> float = "caml_SDL_GetWindowBrightness"
+(** {{:http://wiki.libsdl.org/SDL_GetWindowBrightness}api doc} *)
+
 external destroy : t -> unit = "caml_SDL_DestroyWindow"
 (** {{:http://wiki.libsdl.org/SDL_DestroyWindow}api doc} *)
 
