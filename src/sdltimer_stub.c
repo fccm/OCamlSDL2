@@ -26,6 +26,7 @@ caml_SDL_GetTicks(value unit)
 CAMLprim value
 caml_SDL_GetTicks_d(value unit)
 {
+    CAMLparam1(unit);
     CAMLlocal1(ret);
     static const Uint32 th = 1000;
     Uint32 ticks = SDL_GetTicks();
@@ -34,7 +35,7 @@ caml_SDL_GetTicks_d(value unit)
     ret = caml_alloc(2, 0);
     Store_field(ret, 0, Val_int(sec));
     Store_field(ret, 1, Val_int(msec));
-    return ret;
+    CAMLreturn(ret);
 }
 
 CAMLprim value
