@@ -25,13 +25,12 @@ If SDL changes again its license in the future to any
 Floss / OSI approved license, you can use these
 bindings under the terms of the same license.
 
-## Current State
 
-These relays are currently in a very early draft state.
-You may expect to get segfaults.
-These pieces of code are currently called "relays"
-and not bindings while there is currently no memory
-management and no integration with the garbage collector.
+## Install
+
+Read the file "INSTALL.txt" for instructions about how
+to compile and install.
+
 
 ## License
 
