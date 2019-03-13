@@ -26,6 +26,12 @@ Floss / OSI approved license, you can use these
 bindings under the terms of the same license.
 
 
+## Versions
+
+This version of the bindings is known to work with
+SDL 2.0.9 and OCaml 4.07.1
+
+
 ## Install
 
 Read the file "INSTALL.txt" for instructions about how
