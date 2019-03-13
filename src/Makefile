@@ -25,7 +25,7 @@ PREFIX =
 DESTDIR = $(PREFIX)$(DIRSEP)$(OCAMLDIR)$(DIRSEP)$(BINDINGS_DIR)
 DESTDIR_H = $(DESTDIR)$(DIRSEP)include
 # This is defined only after make findinstall
-OCAMLFINDDESTDIR_H := $(shell $(OCAMLFIND) query sdl2)$(DIRSEP)include
+OCAMLFINDDESTDIR_H = $(shell $(OCAMLFIND) query sdl2)$(DIRSEP)include
 UNINSTALL_DIR = rm -Rf
 INSTALL_DIR = mkdir -p
 INSTALL_FILES = cp -f

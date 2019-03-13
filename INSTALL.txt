@@ -45,6 +45,11 @@ $ make uninstall
 or
 $ make finduninstall
 
+=== Documentation ===
+
+The API documentation can be generated with:
+$ make doc
+
 === Other Environments ===
 
 Please tell me how to do in other environments.
