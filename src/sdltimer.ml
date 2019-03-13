@@ -11,7 +11,7 @@
 (** Time management *)
 
 external get_ticks : unit -> int
-  = "caml_SDL_GetTicks" "noalloc"
+  = "caml_SDL_GetTicks" [@@noalloc]
 
 module D = struct
 external get_ticks : unit -> int * int

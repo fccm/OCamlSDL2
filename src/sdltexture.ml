@@ -20,7 +20,7 @@ external destroy : t -> unit
   = "caml_SDL_DestroyTexture"
 
 external set_blend_mode : t -> SdlblendMode.t -> unit
-  = "caml_SDL_SetTextureBlendMode" "noalloc"
+  = "caml_SDL_SetTextureBlendMode" [@@noalloc]
 
 external get_blend_mode : t -> SdlblendMode.t
   = "caml_SDL_GetTextureBlendMode"

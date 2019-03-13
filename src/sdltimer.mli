@@ -13,7 +13,7 @@
 (** API Doc:
   {{:http://wiki.libsdl.org/CategoryTimer}Timer category} *)
 
-external get_ticks : unit -> int = "caml_SDL_GetTicks" "noalloc"
+external get_ticks : unit -> int = "caml_SDL_GetTicks" [@@noalloc]
 (** {{:http://wiki.libsdl.org/SDL_GetTicks}api doc} *)
 
 module D : sig
