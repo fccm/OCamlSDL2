@@ -339,17 +339,20 @@ Val_SDL_JoyDeviceEvent(SDL_JoyDeviceEvent * e, int tag)
 #define Val_SDL_JoyDeviceRemoved(ev)  Val_SDL_JoyDeviceEvent(ev, Tag_Joy_Device_Removed)
 
 
-#define Val_WindowEvent_Shown           Val_int(0)
-#define Val_WindowEvent_Hidden          Val_int(1)
-#define Val_WindowEvent_Exposed         Val_int(2)
-#define Val_WindowEvent_Minimized       Val_int(3)
-#define Val_WindowEvent_Maximized       Val_int(4)
-#define Val_WindowEvent_Restored        Val_int(5)
-#define Val_WindowEvent_Enter           Val_int(6)
-#define Val_WindowEvent_Leave           Val_int(7)
-#define Val_WindowEvent_Focus_Gained    Val_int(8)
-#define Val_WindowEvent_Focus_Lost      Val_int(9)
-#define Val_WindowEvent_Close           Val_int(10)
+#define Val_WindowEvent_None            Val_int(0)
+#define Val_WindowEvent_Shown           Val_int(1)
+#define Val_WindowEvent_Hidden          Val_int(2)
+#define Val_WindowEvent_Exposed         Val_int(3)
+#define Val_WindowEvent_Minimized       Val_int(4)
+#define Val_WindowEvent_Maximized       Val_int(5)
+#define Val_WindowEvent_Restored        Val_int(6)
+#define Val_WindowEvent_Enter           Val_int(7)
+#define Val_WindowEvent_Leave           Val_int(8)
+#define Val_WindowEvent_Focus_Gained    Val_int(9)
+#define Val_WindowEvent_Focus_Lost      Val_int(10)
+#define Val_WindowEvent_Close           Val_int(11)
+#define Val_WindowEvent_Take_Focus      Val_int(12)
+#define Val_WindowEvent_Hit_Test        Val_int(13)
 
 #define Tag_WindowEvent_Moved           (0)
 #define Tag_WindowEvent_Resized         (1)
@@ -376,6 +379,7 @@ static inline value
 Val_WindowEvent_Kind(SDL_WindowEvent * e)
 {
     switch (e->event) {
+    case SDL_WINDOWEVENT_NONE:          return Val_WindowEvent_None;
     case SDL_WINDOWEVENT_SHOWN:         return Val_WindowEvent_Shown;
     case SDL_WINDOWEVENT_HIDDEN:        return Val_WindowEvent_Hidden;
     case SDL_WINDOWEVENT_EXPOSED:       return Val_WindowEvent_Exposed;
@@ -390,6 +394,8 @@ Val_WindowEvent_Kind(SDL_WindowEvent * e)
     case SDL_WINDOWEVENT_FOCUS_GAINED:  return Val_WindowEvent_Focus_Gained;
     case SDL_WINDOWEVENT_FOCUS_LOST:    return Val_WindowEvent_Focus_Lost;
     case SDL_WINDOWEVENT_CLOSE:         return Val_WindowEvent_Close;
+    case SDL_WINDOWEVENT_TAKE_FOCUS:    return Val_WindowEvent_Take_Focus;
+    case SDL_WINDOWEVENT_HIT_TEST:      return Val_WindowEvent_Hit_Test;
 
     default:
         caml_failwith("window_event_kind");

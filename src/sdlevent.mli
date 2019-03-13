@@ -103,6 +103,7 @@ type window_event_xy = {
 }
 
 type window_event_kind =
+  | WindowEvent_None
   | WindowEvent_Shown
   | WindowEvent_Hidden
   | WindowEvent_Exposed
@@ -117,6 +118,8 @@ type window_event_kind =
   | WindowEvent_Focus_Gained
   | WindowEvent_Focus_Lost
   | WindowEvent_Close
+  | WindowEvent_Take_Focus
+  | WindowEvent_Hit_Test
 
 val string_of_window_event_kind :
   window_event_kind -> string

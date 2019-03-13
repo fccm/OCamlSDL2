@@ -96,6 +96,7 @@ type window_event_xy = {
 }
 
 type window_event_kind =
+  | WindowEvent_None
   | WindowEvent_Shown
   | WindowEvent_Hidden
   | WindowEvent_Exposed
@@ -110,8 +111,11 @@ type window_event_kind =
   | WindowEvent_Focus_Gained
   | WindowEvent_Focus_Lost
   | WindowEvent_Close
+  | WindowEvent_Take_Focus
+  | WindowEvent_Hit_Test
 
 let string_of_window_event_kind = function
+  | WindowEvent_None          -> "WindowEvent_None"
   | WindowEvent_Shown         -> "WindowEvent_Shown"
   | WindowEvent_Hidden        -> "WindowEvent_Hidden"
   | WindowEvent_Exposed       -> "WindowEvent_Exposed"
@@ -123,6 +127,8 @@ let string_of_window_event_kind = function
   | WindowEvent_Focus_Gained  -> "WindowEvent_Focus_Gained"
   | WindowEvent_Focus_Lost    -> "WindowEvent_Focus_Lost"
   | WindowEvent_Close         -> "WindowEvent_Close"
+  | WindowEvent_Take_Focus    -> "WindowEvent_Take_Focus"
+  | WindowEvent_Hit_Test      -> "WindowEvent_Hit_Test"
   | WindowEvent_Moved p ->
       Printf.sprintf "WindowEvent_Moved(%d, %d)" p.win_x p.win_y
   | WindowEvent_Resized p ->
