@@ -36,7 +36,7 @@ let string_of_dir = function
   | Left_Down   -> "Left_Down"
 
 let dir_of_string s =
-  match String.lowercase s with
+  match String.lowercase_ascii s with
   | "centered"      -> Centered
   | "up"            -> Up
   | "right"         -> Right

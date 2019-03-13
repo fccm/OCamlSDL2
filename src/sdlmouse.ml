@@ -45,7 +45,7 @@ let to_string = function
   | Button_X5     -> "Button_X5"
 
 let of_string s =
-  match String.lowercase s with
+  match String.lowercase_ascii s with
   | "button_left"   -> Button_Left
   | "button_middle" -> Button_Middle
   | "button_right"  -> Button_Right

@@ -25,7 +25,7 @@ let to_string = function
   | MODE   -> "MODE"
 
 let of_string s =
-  match String.lowercase s with
+  match String.lowercase_ascii s with
   | "lshift" -> LShift
   | "rshift" -> RShift
   | "lctrl"  -> LCtrl

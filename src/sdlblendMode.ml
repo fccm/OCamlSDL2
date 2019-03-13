@@ -23,7 +23,7 @@ let to_string = function
   | Mod     -> "blend_mode_mod"
 
 let of_string s =
-  match String.lowercase s with
+  match String.lowercase_ascii s with
   | "blend_mode_none"   -> BNone
   | "blend_mode_blend"  -> Blend
   | "blend_mode_add"    -> Add

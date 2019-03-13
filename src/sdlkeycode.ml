@@ -487,7 +487,7 @@ let to_string = function
   | Sleep               -> "Sleep"
 
 let of_string s =
-  match String.lowercase s with
+  match String.lowercase_ascii s with
   | "unknown"           -> Unknown
   | "return"            -> Return
   | "escape"            -> Escape

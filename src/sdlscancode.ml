@@ -481,7 +481,7 @@ let to_string = function
   | SLEEP               -> "SLEEP"
 
 let of_string s =
-  match String.uppercase s with
+  match String.uppercase_ascii s with
   | "UNKNOWN"           -> UNKNOWN
   | "A"                 -> A
   | "B"                 -> B

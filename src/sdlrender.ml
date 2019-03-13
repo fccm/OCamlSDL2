@@ -31,7 +31,7 @@ let string_of_renderer_flags = function
   | TargetTexture   -> "TargetTexture"
 
 let renderer_flags_of_string s =
-  match String.lowercase s with
+  match String.lowercase_ascii s with
   | "software"      -> Software
   | "accelerated"   -> Accelerated
   | "presentvsync"  -> PresentVSync

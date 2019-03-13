@@ -78,7 +78,7 @@ let to_string = function
 
 
 let of_string s =
-  match String.uppercase s with
+  match String.uppercase_ascii s with
   | "SDL_PIXELFORMAT_UNKNOWN"     -> Unknown
   | "SDL_PIXELFORMAT_INDEX1LSB"   -> Index1LSB
   | "SDL_PIXELFORMAT_INDEX1MSB"   -> Index1MSB
