@@ -422,7 +422,7 @@ Val_SDL_TextEditingEvent(SDL_TextEditingEvent * e)
     CAMLparam0();
     CAMLlocal2(ret, rec);
     ret = caml_alloc(1, Tag_Text_Editing);
-    rec = caml_alloc(4, 0);
+    rec = caml_alloc(5, 0);
     Store_field(rec, 0, caml_copy_int32(e->timestamp));
     Store_field(rec, 1, caml_copy_int32(e->windowID));
     Store_field(rec, 2, caml_copy_string(e->text));
