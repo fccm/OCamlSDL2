@@ -21,3 +21,4 @@
 - ex_mouse_pos.ml : demonstrates how to get the mouse state.
 - ex_gl.ml : shows how to use SDL2 for OpenGL windowing.
 - ex_render_points.ml : draws points using the "Render" API.
+- ex_simple_wav.ml : load and play a .wav file.
