@@ -79,3 +79,44 @@ external close : unit -> unit
   = "caml_SDL_CloseAudio"
 (** {{:http://wiki.libsdl.org/SDL_CloseAudio}api doc} *)
 
+type audio_spec
+(** {{:http://wiki.libsdl.org/SDL_AudioSpec}api doc} *)
+
+external new_audio_spec : unit -> audio_spec
+  = "caml_SDL_alloc_audio_spec"
+
+external free_audio_spec : audio_spec -> unit
+  = "caml_SDL_free_audio_spec"
+
+type audio_buffer
+
+external load_wav : filename:string -> spec:audio_spec -> audio_buffer * int32
+  = "caml_SDL_LoadWAV"
+(** {{:http://wiki.libsdl.org/SDL_LoadWAV}api doc} *)
+
+external free_wav : audio_buffer -> unit
+  = "caml_SDL_FreeWAV"
+(** {{:http://wiki.libsdl.org/SDL_FreeWAV}api doc} *)
+
+type audio_device_id
+
+external open_audio_device_simple : audio_spec -> audio_device_id
+  = "caml_SDL_OpenAudioDevice_simple"
+(** {{:http://wiki.libsdl.org/SDL_OpenAudioDevice}api doc} *)
+
+external queue_audio : audio_device_id -> audio_buffer -> int32 -> unit
+  = "caml_SDL_QueueAudio"
+(** {{:http://wiki.libsdl.org/SDL_QueueAudio}api doc} *)
+
+external unpause_audio_device : audio_device_id -> unit
+  = "caml_SDL_UnpauseAudioDevice"
+(** {{:http://wiki.libsdl.org/SDL_PauseAudioDevice}api doc} *)
+
+external pause_audio_device : audio_device_id -> unit
+  = "caml_SDL_PauseAudioDevice"
+(** {{:http://wiki.libsdl.org/SDL_PauseAudioDevice}api doc} *)
+
+external close_audio_device : audio_device_id -> unit
+  = "caml_SDL_CloseAudioDevice"
+(** {{:http://wiki.libsdl.org/SDL_CloseAudioDevice}api doc} *)
+

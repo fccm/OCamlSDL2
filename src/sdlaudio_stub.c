@@ -162,12 +162,112 @@ caml_SDL_CloseAudio(value unit)
     return Val_unit;
 }
 
+#define SDL_AudioSpec_val(v) ((SDL_AudioSpec *)v)
+#define Val_SDL_AudioSpec(v) ((value)v)
+
+CAMLprim value
+caml_SDL_alloc_audio_spec(value unit)
+{
+    SDL_AudioSpec *audio_spec;
+    audio_spec = malloc(sizeof(SDL_AudioSpec));
+    return Val_SDL_AudioSpec(audio_spec);
+}
+
+CAMLprim value
+caml_SDL_free_audio_spec(value audio_spec)
+{
+    free(SDL_AudioSpec_val(audio_spec));
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_LoadWAV(
+        value filename,
+        value audio_spec)
+{
+    CAMLparam2(filename, audio_spec);
+    CAMLlocal1(ret);
+    Uint8 *audio_buf;
+    Uint32 audio_len;
+    if (SDL_LoadWAV(String_val(filename),
+            SDL_AudioSpec_val(audio_spec),
+            &audio_buf,
+            &audio_len) == NULL) {
+        caml_failwith("Sdlaudio.load_wav");
+    }
+    ret = caml_alloc(2, 0);
+    Store_field(ret, 0, ((value)audio_buf));
+    Store_field(ret, 1, caml_copy_int32(audio_len));
+    CAMLreturn(ret);
+}
+
+CAMLprim value
+caml_SDL_FreeWAV(value audio_buf)
+{
+    SDL_FreeWAV((Uint8 *) audio_buf);
+    return Val_unit;
+}
+
+#define Val_SDL_AudioDeviceID caml_copy_int32
+#define SDL_AudioDeviceID_val Int32_val
+
+CAMLprim value
+caml_SDL_OpenAudioDevice_simple(value spec)
+{
+    SDL_AudioDeviceID deviceId =
+        SDL_OpenAudioDevice(
+                NULL, 0, SDL_AudioSpec_val(spec), NULL, 0);
+    if (deviceId == 0)
+        caml_failwith("Sdlaudio.open_audio_device_simple");
+    return Val_SDL_AudioDeviceID(deviceId);
+}
+
+CAMLprim value
+caml_SDL_QueueAudio(value dev, value data, value len)
+{
+    int success =
+        SDL_QueueAudio(
+                SDL_AudioDeviceID_val(dev),
+                (void *)data,
+                (Uint32)Int32_val(len));
+    if (success != 0)
+        caml_failwith("Sdlaudio.queue_audio");
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_UnpauseAudioDevice(value dev)
+{
+    int pause_on = 0;
+    SDL_PauseAudioDevice(
+            SDL_AudioDeviceID_val(dev),
+            pause_on);
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_PauseAudioDevice(value dev)
+{
+    int pause_on = 1;
+    SDL_PauseAudioDevice(
+            SDL_AudioDeviceID_val(dev),
+            pause_on);
+    return Val_unit;
+}
+
+CAMLprim value
+caml_SDL_CloseAudioDevice(value dev)
+{
+    SDL_CloseAudioDevice(SDL_AudioDeviceID_val(dev));
+    return Val_unit;
+}
+
 #if 0
 int
 SDL_OpenAudio(
             SDL_AudioSpec * desired,
             SDL_AudioSpec * obtained);
-typedef Uint32 SDL_AudioDeviceID;
+
 int SDL_GetNumAudioDevices(int iscapture);
 const char *
 SDL_GetAudioDeviceName(
@@ -184,9 +284,6 @@ SDL_OpenAudioDevice(
 
 SDL_AudioStatus
 SDL_GetAudioDeviceStatus(SDL_AudioDeviceID dev);
-void SDL_PauseAudioDevice(
-            SDL_AudioDeviceID dev,
-            int pause_on);
 SDL_AudioSpec *
 SDL_LoadWAV_RW(
             SDL_RWops * src,
@@ -198,7 +295,6 @@ SDL_LoadWAV_RW(
 #define SDL_LoadWAV(file, spec, audio_buf, audio_len) \
 	SDL_LoadWAV_RW(SDL_RWFromFile(file, "rb"),1, spec,audio_buf,audio_len)
 
-void SDL_FreeWAV(Uint8 * audio_buf);
 
 int
 SDL_BuildAudioCVT(
@@ -227,7 +323,6 @@ SDL_MixAudioFormat(
 
 void SDL_LockAudioDevice(SDL_AudioDeviceID dev);
 void SDL_UnlockAudioDevice(SDL_AudioDeviceID dev);
-void SDL_CloseAudioDevice(SDL_AudioDeviceID dev);
 int SDL_AudioDeviceConnected(SDL_AudioDeviceID dev);
 
 #endif
