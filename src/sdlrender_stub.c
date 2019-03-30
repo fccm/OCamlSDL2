@@ -210,7 +210,7 @@ caml_SDL_RenderDrawLine2(value renderer, value p1, value p2)
                 Int_val(Field(p1, 1)),
                 Int_val(Field(p2, 0)),
                 Int_val(Field(p2, 1)));
-    if (r) caml_failwith("Sdlrender.draw_line");
+    if (r) caml_failwith("Sdlrender.draw_line2");
     return Val_unit;
 }
 
