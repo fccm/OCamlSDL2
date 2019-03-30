@@ -172,6 +172,7 @@ type t =
   | Controller_Button_Up
   | Controller_Device_Added
   | Controller_Device_Removed
+  | Controller_Device_Remapped
   | Finger_Down
   | Finger_Up
   | Finger_Motion
@@ -183,6 +184,23 @@ type t =
   | User_Event
   | Window_Event of window_event
   | SysWM_Event
+  | APP_Terminating
+  | APP_LowMemory
+  | APP_Will_Enter_Background
+  | APP_Did_Enter_Background
+  | APP_Will_Enter_Foreground
+  | APP_Did_Enter_Foreground
+  | Display_Event
+  | Keymap_Changed
+  | Drop_Text
+  | Drop_Begin
+  | Drop_Complete
+  | Audio_Device_Added
+  | Audio_Device_Removed
+  | Sensor_Update
+  | Render_Targets_Reset
+  | Render_Device_Reset
+
 
 external poll_event : unit -> t option
   = "caml_SDL_PollEvent"

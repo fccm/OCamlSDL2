@@ -182,6 +182,7 @@ type t =
   | Controller_Button_Up
   | Controller_Device_Added
   | Controller_Device_Removed
+  | Controller_Device_Remapped
   | Finger_Down
   | Finger_Up
   | Finger_Motion
@@ -193,6 +194,22 @@ type t =
   | User_Event
   | Window_Event of window_event
   | SysWM_Event
+  | APP_Terminating
+  | APP_LowMemory
+  | APP_Will_Enter_Background
+  | APP_Did_Enter_Background
+  | APP_Will_Enter_Foreground
+  | APP_Did_Enter_Foreground
+  | Display_Event
+  | Keymap_Changed
+  | Drop_Text
+  | Drop_Begin
+  | Drop_Complete
+  | Audio_Device_Added
+  | Audio_Device_Removed
+  | Sensor_Update
+  | Render_Targets_Reset
+  | Render_Device_Reset
 
 
 external poll_event : unit -> t option
@@ -219,6 +236,7 @@ let to_string = function
   | Controller_Button_Up      -> "Controller_Button_Up"
   | Controller_Device_Added   -> "Controller_Device_Added"
   | Controller_Device_Removed -> "Controller_Device_Removed"
+  | Controller_Device_Remapped -> "Controller_Device_Remapped"
   | Finger_Down               -> "Finger_Down"
   | Finger_Up                 -> "Finger_Up"
   | Finger_Motion             -> "Finger_Motion"
@@ -231,3 +249,20 @@ let to_string = function
   | Window_Event _            -> "Window_Event"
   | SysWM_Event               -> "SysWM_Event"
   | Quit _                    -> "Quit"
+  | APP_Terminating           -> "APP_Terminating"
+  | APP_LowMemory             -> "APP_LowMemory"
+  | APP_Will_Enter_Background -> "APP_Will_Enter_Background"
+  | APP_Did_Enter_Background  -> "APP_Did_Enter_Background"
+  | APP_Will_Enter_Foreground -> "APP_Will_Enter_Foreground"
+  | APP_Did_Enter_Foreground  -> "APP_Did_Enter_Foreground"
+  | Display_Event             -> "Display_Event"
+  | Keymap_Changed            -> "Keymap_Changed"
+  | Drop_Text                 -> "Drop_Text"
+  | Drop_Begin                -> "Drop_Begin"
+  | Drop_Complete             -> "Drop_Complete"
+  | Audio_Device_Added        -> "Audio_Device_Added"
+  | Audio_Device_Removed      -> "Audio_Device_Removed"
+  | Sensor_Update             -> "Sensor_Update"
+  | Render_Targets_Reset      -> "Render_Targets_Reset"
+  | Render_Device_Reset       -> "Render_Device_Reset"
+

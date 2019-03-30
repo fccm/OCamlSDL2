@@ -62,16 +62,34 @@ Val_some(value v)
 #define Val_Controller_Button_Up        Val_int(3)
 #define Val_Controller_Device_Added     Val_int(4)
 #define Val_Controller_Device_Removed   Val_int(5)
-#define Val_Finger_Down                 Val_int(6)
-#define Val_Finger_Up                   Val_int(7)
-#define Val_Finger_Motion               Val_int(8)
-#define Val_Dollar_Gesture              Val_int(9)
-#define Val_Dollar_Record               Val_int(10)
-#define Val_Multi_Gesture               Val_int(11)
-#define Val_Clipboard_Update            Val_int(12)
-#define Val_Drop_File                   Val_int(13)
-#define Val_User_Event                  Val_int(14)
-#define Val_SYSWM_Event                 Val_int(15)
+#define Val_Controller_Device_Remapped  Val_int(6)
+#define Val_Finger_Down                 Val_int(7)
+#define Val_Finger_Up                   Val_int(8)
+#define Val_Finger_Motion               Val_int(9)
+#define Val_Dollar_Gesture              Val_int(10)
+#define Val_Dollar_Record               Val_int(11)
+#define Val_Multi_Gesture               Val_int(12)
+#define Val_Clipboard_Update            Val_int(13)
+#define Val_Drop_File                   Val_int(14)
+#define Val_User_Event                  Val_int(15)
+#define Val_SYSWM_Event                 Val_int(16)
+#define Val_SDL_APP_TERMINATING         Val_int(17)
+#define Val_SDL_APP_LOWMEMORY           Val_int(18)
+#define Val_SDL_APP_WILLENTERBACKGROUND Val_int(19)
+#define Val_SDL_APP_DIDENTERBACKGROUND  Val_int(20)
+#define Val_SDL_APP_WILLENTERFOREGROUND Val_int(21)
+#define Val_SDL_APP_DIDENTERFOREGROUND  Val_int(22)
+#define Val_SDL_DISPLAYEVENT            Val_int(23)
+#define Val_SDL_KEYMAPCHANGED           Val_int(24)
+#define Val_SDL_DROPTEXT                Val_int(25)
+#define Val_SDL_DROPBEGIN               Val_int(26)
+#define Val_SDL_DROPCOMPLETE            Val_int(27)
+#define Val_SDL_AUDIODEVICEADDED        Val_int(28)
+#define Val_SDL_AUDIODEVICEREMOVED      Val_int(29)
+#define Val_SDL_SENSORUPDATE            Val_int(30)
+#define Val_SDL_RENDER_TARGETS_RESET    Val_int(31)
+#define Val_SDL_RENDER_DEVICE_RESET     Val_int(32)
+
 
 
 #define Tag_Quit                        (0)
@@ -471,6 +489,7 @@ Val_SDL_Event(SDL_Event * event)
     case SDL_CONTROLLERBUTTONUP:        return Val_Controller_Button_Up;
     case SDL_CONTROLLERDEVICEADDED:     return Val_Controller_Device_Added;
     case SDL_CONTROLLERDEVICEREMOVED:   return Val_Controller_Device_Removed;
+    case SDL_CONTROLLERDEVICEREMAPPED:  return Val_Controller_Device_Remapped;
     case SDL_FINGERDOWN:        return Val_Finger_Down;
     case SDL_FINGERUP:          return Val_Finger_Up;
     case SDL_FINGERMOTION:      return Val_Finger_Motion;
@@ -483,6 +502,22 @@ Val_SDL_Event(SDL_Event * event)
     case SDL_WINDOWEVENT:       return Val_SDL_WindowEvent(&(event->window));
     case SDL_SYSWMEVENT:        return Val_SYSWM_Event;
     case SDL_QUIT:              return Val_SDL_QuitEvent(&(event->quit));
+    case SDL_APP_TERMINATING:            return Val_SDL_APP_TERMINATING;
+    case SDL_APP_LOWMEMORY:              return Val_SDL_APP_LOWMEMORY;
+    case SDL_APP_WILLENTERBACKGROUND:    return Val_SDL_APP_WILLENTERBACKGROUND;
+    case SDL_APP_DIDENTERBACKGROUND:     return Val_SDL_APP_DIDENTERBACKGROUND;
+    case SDL_APP_WILLENTERFOREGROUND:    return Val_SDL_APP_WILLENTERFOREGROUND;
+    case SDL_APP_DIDENTERFOREGROUND:     return Val_SDL_APP_DIDENTERFOREGROUND;
+    case SDL_DISPLAYEVENT:               return Val_SDL_DISPLAYEVENT;
+    case SDL_KEYMAPCHANGED:              return Val_SDL_KEYMAPCHANGED;
+    case SDL_DROPTEXT:                   return Val_SDL_DROPTEXT;
+    case SDL_DROPBEGIN:                  return Val_SDL_DROPBEGIN;
+    case SDL_DROPCOMPLETE:               return Val_SDL_DROPCOMPLETE;
+    case SDL_AUDIODEVICEADDED:           return Val_SDL_AUDIODEVICEADDED;
+    case SDL_AUDIODEVICEREMOVED:         return Val_SDL_AUDIODEVICEREMOVED;
+    case SDL_SENSORUPDATE:               return Val_SDL_SENSORUPDATE;
+    case SDL_RENDER_TARGETS_RESET:       return Val_SDL_RENDER_TARGETS_RESET;
+    case SDL_RENDER_DEVICE_RESET:        return Val_SDL_RENDER_DEVICE_RESET;
 
     default: caml_failwith("SDL Event");
     }
