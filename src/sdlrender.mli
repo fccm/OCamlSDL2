@@ -158,3 +158,6 @@ external get_render_drivers : unit -> renderer_info array
   = "caml_SDL_GetRenderDrivers"
 (** {{:http://wiki.libsdl.org/SDL_GetRenderDrivers}api doc} *)
 
+external read_pixels : t -> ?rect:Sdlrect.t -> Sdlsurface.t -> unit
+  = "caml_SDL_RenderReadPixels"
+(** {{:http://wiki.libsdl.org/SDL_RenderReadPixels}api doc} *)

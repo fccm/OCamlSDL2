@@ -18,6 +18,7 @@
 #include "sdlrender_stub.h"
 #include "sdlwindow_stub.h"
 #include "sdltexture_stub.h"
+#include "sdlsurface_stub.h"
 #include "sdlrect_stub.h"
 #include "sdlpoint_stub.h"
 #include "sdlblendMode_stub.h"
@@ -481,6 +482,32 @@ caml_SDL_GetRenderDrivers(value unit)
         Store_field(ret, i, Val_SDL_RendererInfo(&info));
     }
     CAMLreturn(ret);
+}
+
+CAMLprim value
+caml_SDL_RenderReadPixels(value renderer, value _rect, value surf)
+{
+    SDL_Rect rect;
+    SDL_Rect *rect_;
+    SDL_Surface *surface = SDL_Surface_val(surf);
+
+    if (_rect == Val_none) {
+        rect_ = NULL;
+    } else {
+        SDL_Rect_val(&rect, Some_val(_rect));
+        rect_ = &rect;
+    }
+
+    int r = SDL_RenderReadPixels(
+                SDL_Renderer_val(renderer),
+                rect_,
+                surface->format->format,
+                surface->pixels,
+                surface->pitch);
+
+    if (r != 0) caml_failwith("Sdlrender.read_pixels");
+
+    return Val_unit;
 }
 
 /* vim: set ts=4 sw=4 et: */
