@@ -22,3 +22,4 @@
 - ex_gl.ml : shows how to use SDL2 for OpenGL windowing.
 - ex_render_points.ml : draws points using the "Render" API.
 - ex_simple_wav.ml : load and play a .wav file.
+- ex_sprite.ml : demonstrate how to set a transparent background for a sprite.
