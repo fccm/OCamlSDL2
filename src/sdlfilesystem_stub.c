@@ -14,6 +14,8 @@
 #include <caml/alloc.h>
 #include <caml/fail.h>
 
+#include <SDL_filesystem.h>
+
 CAMLprim value
 caml_SDL_GetBasePath(value unit)
 {
