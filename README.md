@@ -38,9 +38,28 @@ Read the file "INSTALL.txt" for instructions about how
 to compile and install.
 
 
+## Opam
+
+You can install ocamlsdl2 with opam.
+
+If you installed SDL2 version 2.0.9 or later you can install the last version:
+```
+$ opam install ocamlsdl2
+```
+But if you still use an older version of SDL2 like for example SDL2 version
+2.0.6 then you should install a previous version of the bindings:
+```
+$ opam install ocamlsdl2.0.02
+```
+To know which version of the SDL2 is on your system, you can use the command:
+```
+$ sdl2-config --version
+```
+
+
 ## Accompanying libraries
 
-There are also bindings for the accompanying libraries:
+There are also bindings for the accompanying libraries:  
 (unlike the main ocamlsdl2 these are not tested on Windows yet)
 
 - https://github.com/fccm/OCamlSDL2_TTF
