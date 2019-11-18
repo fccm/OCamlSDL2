@@ -34,3 +34,7 @@ val move : t -> x:int -> y:int -> t
 external has_intersection : a:t -> b:t -> bool
   = "caml_SDL_HasIntersection"
 
+external intersect_rect_and_line : rect:t -> p1:int * int -> p2:int * int ->
+  (int * int * int * int) option
+  = "caml_SDL_IntersectRectAndLine"
+

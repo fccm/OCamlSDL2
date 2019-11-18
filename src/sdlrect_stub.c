@@ -17,6 +17,16 @@
 #include <SDL_rect.h>
 #include "sdlrect_stub.h"
 
+#define Val_none Val_int(0)
+
+static value
+Val_some(value v)
+{
+    value some = caml_alloc(1, 0);
+    Store_field(some, 0, v);
+    return some;
+}
+
 CAMLprim value
 caml_SDL_HasIntersection(value a, value b)
 {
@@ -29,6 +39,42 @@ caml_SDL_HasIntersection(value a, value b)
         SDL_HasIntersection(&_a, &_b);
 
     return Val_bool(r);
+}
+
+CAMLprim value
+caml_SDL_IntersectRectAndLine(value rect, value p1, value p2)
+{
+    CAMLparam3(rect, p1, p2);
+    CAMLlocal2(ret, r);
+
+    SDL_Rect _rect;
+    SDL_Rect_val(&_rect, rect);
+
+    int X1 = Int_val(Field(p1, 0));
+    int Y1 = Int_val(Field(p1, 1));
+    int X2 = Int_val(Field(p2, 0));
+    int Y2 = Int_val(Field(p2, 1));
+
+    SDL_bool res =
+        SDL_IntersectRectAndLine(
+                &_rect,
+                &X1, &Y1,
+                &X2, &Y2);
+
+    if (res == SDL_TRUE) {
+        r = caml_alloc(4, 0);
+
+        Store_field(r, 0, Val_int(X1));
+        Store_field(r, 1, Val_int(Y1));
+        Store_field(r, 2, Val_int(X2));
+        Store_field(r, 3, Val_int(Y2));
+
+        ret = Val_some(r);
+    } else {
+        ret = Val_none;
+    }
+
+    CAMLreturn(ret);
 }
 
 /* vim: set ts=4 sw=4 et: */
