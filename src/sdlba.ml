@@ -10,7 +10,7 @@
 *)
 (** Prefixless modules, with Bigarray interactions *)
 
-module Surface = struct
+module Surface_ba = struct
   include Sdlsurface_ba
 end
 
