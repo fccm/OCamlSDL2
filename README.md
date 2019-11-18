@@ -38,6 +38,17 @@ Read the file "INSTALL.txt" for instructions about how
 to compile and install.
 
 
+## Accompanying libraries
+
+There are also bindings for the accompanying libraries:
+(unlike the main ocamlsdl2 these are not tested on Windows yet)
+
+- https://github.com/fccm/OCamlSDL2_TTF
+- https://github.com/fccm/OCamlSDL2_Image
+- https://github.com/fccm/OCamlSDL2_Mixer
+- https://github.com/fccm/OCamlSDL2_Net
+
+
 ## License
 
 This software is provided "AS-IS", without any express
