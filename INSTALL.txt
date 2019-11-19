@@ -30,8 +30,11 @@ $ make install DESTDIR="/tmp/mysdl2"
 
 ----------------
 
-It's possible to install the C headers of the stubs with:
+If you wish to install the accompanying libraries then
+you should install the C headers of the stubs with:
 $ make install_h
+or
+$ make findinstall_h
 
 ----------------
 
