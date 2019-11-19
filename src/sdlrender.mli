@@ -46,6 +46,11 @@ external set_logical_size2 : t -> x:int -> y:int -> unit
   = "caml_SDL_RenderSetLogicalSize2"
 (** {{:http://wiki.libsdl.org/SDL_RenderSetLogicalSize}api doc} *)
 
+external set_viewport :
+  t -> Sdlrect.t -> unit
+  = "caml_SDL_RenderSetViewport"
+(** {{:http://wiki.libsdl.org/SDL_RenderSetViewport}api doc} *)
+
 external set_draw_color :
   t -> rgb:(int * int * int) -> a:int -> unit
   = "caml_SDL_SetRenderDrawColor"

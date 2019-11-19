@@ -109,6 +109,18 @@ caml_SDL_RenderSetLogicalSize2(value renderer, value w, value h)
     return Val_unit;
 }
 
+CAMLprim value
+caml_SDL_RenderSetViewport(value renderer, value _rect)
+{
+    SDL_Rect rect;
+    SDL_Rect_val(&rect, _rect);
+    int r = SDL_RenderSetViewport(
+                SDL_Renderer_val(renderer),
+                &rect);
+    if (r) caml_failwith("Sdlrender.set_viewport");
+    return Val_unit;
+}
+
 #define Uint8_val Int_val
 CAMLprim value
 caml_SDL_SetRenderDrawColor(
