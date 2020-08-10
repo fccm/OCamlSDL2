@@ -38,3 +38,6 @@ external intersect_rect_and_line : rect:t -> p1:int * int -> p2:int * int ->
   (int * int * int * int) option
   = "caml_SDL_IntersectRectAndLine"
 
+external point_in_rect : p:int * int -> r:t -> bool
+  = "caml_SDL_PointInRect"
+

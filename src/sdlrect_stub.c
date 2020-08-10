@@ -16,6 +16,7 @@
 
 #include <SDL_rect.h>
 #include "sdlrect_stub.h"
+#include "sdlpoint_stub.h"
 
 #define Val_none Val_int(0)
 
@@ -37,6 +38,20 @@ caml_SDL_HasIntersection(value a, value b)
 
     SDL_bool r =
         SDL_HasIntersection(&_a, &_b);
+
+    return Val_bool(r);
+}
+
+CAMLprim value
+caml_SDL_PointInRect(value pt, value rct)
+{
+    SDL_Point _pt;
+    SDL_Rect _rct;
+    SDL_Rect_val(&_rct, rct);
+    SDL_Point_val(&_pt, pt);
+
+    SDL_bool r =
+        SDL_PointInRect(&_pt, &_rct);
 
     return Val_bool(r);
 }
