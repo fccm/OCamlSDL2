@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Sdlerror.html">
+<link rel="next" href="Sdl.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Sdlinit" rel="Chapter" href="Sdlinit.html">
+<link title="Sdlquit" rel="Chapter" href="Sdlquit.html">
+<link title="Sdlrect" rel="Chapter" href="Sdlrect.html">
+<link title="SdlblendMode" rel="Chapter" href="SdlblendMode.html">
+<link title="Sdlsurface" rel="Chapter" href="Sdlsurface.html">
+<link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
+<link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
+<link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
+<link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
+<link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
+<link title="Sdlkeyboard" rel="Chapter" href="Sdlkeyboard.html">
+<link title="Sdlkeycode" rel="Chapter" href="Sdlkeycode.html">
+<link title="Sdlscancode" rel="Chapter" href="Sdlscancode.html">
+<link title="Sdlkeymod" rel="Chapter" href="Sdlkeymod.html">
+<link title="Sdlhat" rel="Chapter" href="Sdlhat.html">
+<link title="Sdlmouse" rel="Chapter" href="Sdlmouse.html">
+<link title="Sdljoystick" rel="Chapter" href="Sdljoystick.html">
+<link title="Sdlclipboard" rel="Chapter" href="Sdlclipboard.html">
+<link title="Sdltimer" rel="Chapter" href="Sdltimer.html">
+<link title="Sdlaudio" rel="Chapter" href="Sdlaudio.html">
+<link title="Sdlfilesystem" rel="Chapter" href="Sdlfilesystem.html">
+<link title="Sdlversion" rel="Chapter" href="Sdlversion.html">
+<link title="Sdlcpuinfo" rel="Chapter" href="Sdlcpuinfo.html">
+<link title="Sdlpower" rel="Chapter" href="Sdlpower.html">
+<link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
+<link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
+<link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdl" rel="Chapter" href="Sdl.html">
+<link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlgl</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Sdlerror.html" title="Sdlerror">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Sdl.html" title="Sdl">Next</a>
+</div>
+<h1>Module <a href="type_Sdlgl.html">Sdlgl</a></h1>
+
+<pre><span id="MODULESdlgl"><span class="keyword">module</span> Sdlgl</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdlgl.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>OpenGL windowing</p>
+</div>
+</div>
+<hr width="100%">
+<p>This module provides windowing for OpenGL applications</p>
+<p>API Doc:
+  <a href="http://wiki.libsdl.org/CategoryVideo">Video category</a></p>
+
+<pre><span id="TYPEcontext"><span class="keyword">type</span> <code class="type"></code>context</span> </pre>
+
+
+<pre><span id="VALcreate_context"><span class="keyword">val</span> create_context</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> <a href="Sdlgl.html#TYPEcontext">context</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_CreateContext">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALmake_current"><span class="keyword">val</span> make_current</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> ctx:<a href="Sdlgl.html#TYPEcontext">context</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_MakeCurrent">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALunload_library"><span class="keyword">val</span> unload_library</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_UnloadLibrary">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALextension_supported"><span class="keyword">val</span> extension_supported</span> : <code class="type">extension:string -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_ExtensionSupported">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALset_swap_interval"><span class="keyword">val</span> set_swap_interval</span> : <code class="type">interval:int -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_SetSwapInterval">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALget_swap_interval"><span class="keyword">val</span> get_swap_interval</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_GetSwapInterval">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALswap_window"><span class="keyword">val</span> swap_window</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_SwapWindow">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALdelete_context"><span class="keyword">val</span> delete_context</span> : <code class="type"><a href="Sdlgl.html#TYPEcontext">context</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_DeleteContext">api doc</a></p>
+</div>
+</div>
+
+<pre><code><span id="TYPEgl_attr"><span class="keyword">type</span> <code class="type"></code>gl_attr</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_RED_SIZE"><span class="constructor">GL_RED_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_GREEN_SIZE"><span class="constructor">GL_GREEN_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_BLUE_SIZE"><span class="constructor">GL_BLUE_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_ALPHA_SIZE"><span class="constructor">GL_ALPHA_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_BUFFER_SIZE"><span class="constructor">GL_BUFFER_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_DOUBLEBUFFER"><span class="constructor">GL_DOUBLEBUFFER</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_DEPTH_SIZE"><span class="constructor">GL_DEPTH_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_STENCIL_SIZE"><span class="constructor">GL_STENCIL_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_ACCUM_RED_SIZE"><span class="constructor">GL_ACCUM_RED_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_ACCUM_GREEN_SIZE"><span class="constructor">GL_ACCUM_GREEN_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_ACCUM_BLUE_SIZE"><span class="constructor">GL_ACCUM_BLUE_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_ACCUM_ALPHA_SIZE"><span class="constructor">GL_ACCUM_ALPHA_SIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_STEREO"><span class="constructor">GL_STEREO</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_MULTISAMPLEBUFFERS"><span class="constructor">GL_MULTISAMPLEBUFFERS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_MULTISAMPLESAMPLES"><span class="constructor">GL_MULTISAMPLESAMPLES</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_ACCELERATED_VISUAL"><span class="constructor">GL_ACCELERATED_VISUAL</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_RETAINED_BACKING"><span class="constructor">GL_RETAINED_BACKING</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_CONTEXT_MAJOR_VERSION"><span class="constructor">GL_CONTEXT_MAJOR_VERSION</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_CONTEXT_MINOR_VERSION"><span class="constructor">GL_CONTEXT_MINOR_VERSION</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_CONTEXT_EGL"><span class="constructor">GL_CONTEXT_EGL</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_CONTEXT_FLAGS"><span class="constructor">GL_CONTEXT_FLAGS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_CONTEXT_PROFILE_MASK"><span class="constructor">GL_CONTEXT_PROFILE_MASK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgl_attr.GL_SHARE_WITH_CURRENT_CONTEXT"><span class="constructor">GL_SHARE_WITH_CURRENT_CONTEXT</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GLattr">api doc</a></p>
+</div>
+</div>
+
+
+<pre><span id="VALset_attribute"><span class="keyword">val</span> set_attribute</span> : <code class="type"><a href="Sdlgl.html#TYPEgl_attr">gl_attr</a> -> int -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_SetAttribute">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALget_attribute"><span class="keyword">val</span> get_attribute</span> : <code class="type"><a href="Sdlgl.html#TYPEgl_attr">gl_attr</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GL_GetAttribute">api doc</a></p>
+</div>
+</div>
+</body></html>
