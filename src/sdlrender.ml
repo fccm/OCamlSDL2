@@ -46,7 +46,7 @@ external create_renderer :
 external set_logical_size : t -> int * int -> unit
   = "caml_SDL_RenderSetLogicalSize"
 
-external set_logical_size2 : t -> x:int -> y:int -> unit
+external set_logical_size2 : t -> width:int -> height:int -> unit
   = "caml_SDL_RenderSetLogicalSize2"
 
 external set_viewport :

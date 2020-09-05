@@ -42,7 +42,7 @@ external set_logical_size : t -> int * int -> unit
   = "caml_SDL_RenderSetLogicalSize"
 (** {{:http://wiki.libsdl.org/SDL_RenderSetLogicalSize}api doc} *)
 
-external set_logical_size2 : t -> x:int -> y:int -> unit
+external set_logical_size2 : t -> width:int -> height:int -> unit
   = "caml_SDL_RenderSetLogicalSize2"
 (** {{:http://wiki.libsdl.org/SDL_RenderSetLogicalSize}api doc} *)
 
