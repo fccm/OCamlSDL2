@@ -53,6 +53,10 @@ external set_viewport :
   t -> Sdlrect.t -> unit
   = "caml_SDL_RenderSetViewport"
 
+external set_clip_rect :
+  t -> Sdlrect.t -> unit
+  = "caml_SDL_RenderSetClipRect"
+
 external set_draw_color :
   t -> rgb:(int * int * int) -> a:int -> unit
   = "caml_SDL_SetRenderDrawColor"

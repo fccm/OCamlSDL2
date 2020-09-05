@@ -121,6 +121,18 @@ caml_SDL_RenderSetViewport(value renderer, value _rect)
     return Val_unit;
 }
 
+CAMLprim value
+caml_SDL_RenderSetClipRect(value renderer, value _rect)
+{
+    SDL_Rect rect;
+    SDL_Rect_val(&rect, _rect);
+    int r = SDL_RenderSetClipRect(
+                SDL_Renderer_val(renderer),
+                &rect);
+    if (r) caml_failwith("Sdlrender.set_clip_rect");
+    return Val_unit;
+}
+
 #define Uint8_val Int_val
 CAMLprim value
 caml_SDL_SetRenderDrawColor(
