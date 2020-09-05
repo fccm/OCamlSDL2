@@ -159,6 +159,23 @@ caml_SDL_SetColorKey(value surface, value flag, value key)
 }
 
 CAMLprim value
+caml_SDL_SetColorKey_MapRGB(value surface, value flag, value rgb)
+{
+    int r = SDL_SetColorKey(
+        SDL_Surface_val(surface),
+        Bool_val(flag),
+        SDL_MapRGB(
+            SDL_Surface_val(surface)->format,
+            Int_val(Field(rgb,0)),
+            Int_val(Field(rgb,1)),
+            Int_val(Field(rgb,2)) ) );
+
+    if (r) caml_failwith("Sdlsurface.set_color_key_map_rgb");
+
+    return Val_unit;
+}
+
+CAMLprim value
 caml_SDL_SurfaceGetWidth(value surface)
 {
     return Val_int(SDL_Surface_val(surface)->w);

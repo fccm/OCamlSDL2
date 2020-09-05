@@ -67,6 +67,10 @@ external set_color_key : t -> enable:bool -> key:int32 -> unit
   = "caml_SDL_SetColorKey"
 (** {{:http://wiki.libsdl.org/SDL_SetColorKey}api doc} *)
 
+external set_color_key_map_rgb : t -> enable:bool ->
+  rgb:(int * int * int) -> unit
+  = "caml_SDL_SetColorKey_MapRGB"
+
 external get_width : t -> int = "caml_SDL_SurfaceGetWidth"
 external get_height : t -> int = "caml_SDL_SurfaceGetHeight"
 external get_dims : t -> int * int = "caml_SDL_SurfaceGetDims"
