@@ -1,7 +1,14 @@
 #ifndef _CAML_SDL_SURFACE_
 #define _CAML_SDL_SURFACE_
 
-#define SDL_Surface_val(surf) ((SDL_Surface *)(surf))
-#define Val_SDL_Surface(surf) ((value)(surf))
+static value Val_SDL_Surface(SDL_Surface * p)
+{
+    return caml_copy_nativeint((intnat) p);
+}
+
+static SDL_Surface * SDL_Surface_val(value v)
+{
+    return (SDL_Surface *) Nativeint_val(v);
+}
 
 #endif /* _CAML_SDL_SURFACE_ */

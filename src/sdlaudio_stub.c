@@ -162,8 +162,15 @@ caml_SDL_CloseAudio(value unit)
     return Val_unit;
 }
 
-#define SDL_AudioSpec_val(v) ((SDL_AudioSpec *)v)
-#define Val_SDL_AudioSpec(v) ((value)v)
+static value Val_SDL_AudioSpec(SDL_AudioSpec * p)
+{
+    return caml_copy_nativeint((intnat) p);
+}
+
+static SDL_AudioSpec * SDL_AudioSpec_val(value v)
+{
+    return (SDL_AudioSpec *) Nativeint_val(v);
+}
 
 CAMLprim value
 caml_SDL_alloc_audio_spec(value unit)

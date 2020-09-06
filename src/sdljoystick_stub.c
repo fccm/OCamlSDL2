@@ -30,8 +30,15 @@ caml_SDL_JoystickNameForIndex(value device_index)
     return caml_copy_string(name);
 }
 
-#define Val_SDL_Joystick(joy)  ((value)(joy))
-#define SDL_Joystick_val(joy)  ((SDL_Joystick *)(joy))
+static value Val_SDL_Joystick(SDL_Joystick * p)
+{
+    return caml_copy_nativeint((intnat) p);
+}
+
+static SDL_Joystick * SDL_Joystick_val(value v)
+{
+    return (SDL_Joystick *) Nativeint_val(v);
+}
 
 CAMLprim value
 caml_SDL_JoystickOpen(value device_index)

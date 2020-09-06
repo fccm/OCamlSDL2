@@ -25,8 +25,15 @@ caml_SDL_GetPixelFormatName(value format)
     return caml_copy_string(name);
 }
 
-#define Val_SDL_PixelFormat(format) ((value)(format))
-#define SDL_PixelFormat_val(format) ((SDL_PixelFormat *)(format))
+static value Val_SDL_PixelFormat(SDL_PixelFormat * p)
+{
+    return caml_copy_nativeint((intnat) p);
+}
+
+static SDL_PixelFormat * SDL_PixelFormat_val(value v)
+{
+    return (SDL_PixelFormat *) Nativeint_val(v);
+}
 
 CAMLprim value
 caml_SDL_AllocFormat(value pixel_format)
