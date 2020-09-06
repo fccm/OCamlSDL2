@@ -23,4 +23,14 @@ let () =
   Printf.printf "test 3: %s\n%!" (check r3 should3);
   Printf.printf "test 4: %s\n%!" (check r4 should4);
 
+  assert ((Sdlrect.point_in_rect (5, 5) (Sdlrect.make4 0 0 10 10)) = true);
+  assert ((Sdlrect.point_in_rect (2, 2) (Sdlrect.make4 5 5 10 10)) = false);
+
+  let r5 = Sdlrect.point_in_rect (5, 5) (Sdlrect.make4 0 0 10 10) in
+  let r6 = Sdlrect.point_in_rect (2, 2) (Sdlrect.make4 5 5 10 10) in
+  let should5 = true in
+  let should6 = false in
+  Printf.printf "test 5: %s\n%!" (check r5 should5);
+  Printf.printf "test 6: %s\n%!" (check r6 should6);
+
   exit !status
