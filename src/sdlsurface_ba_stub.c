@@ -34,4 +34,35 @@ caml_SDL_Surface_ba_get_pixels(value surface)
     return caml_ba_alloc(b_flag, 1, surf->pixels, &dim);
 }
 
+#define Uint32_val(d) (Int32_val(d))
+
+CAMLprim value
+caml_SDL_CreateRGBSurfaceFrom(
+        value pixels, value width, value height, value depth, value pitch,
+        value Rmask, value Gmask, value Bmask, value Amask)
+{
+    SDL_Surface *surf =
+        SDL_CreateRGBSurfaceFrom(
+            (void *) Caml_ba_data_val(pixels),
+            Int_val(width),
+            Int_val(height),
+            Int_val(depth),
+            Int_val(pitch),
+            Uint32_val(Rmask),
+            Uint32_val(Gmask),
+            Uint32_val(Bmask),
+            Uint32_val(Amask));
+
+    return Val_SDL_Surface(surf);
+}
+
+CAMLprim value
+caml_SDL_CreateRGBSurfaceFrom_bytecode(value * argv, int argn)
+{
+    return caml_SDL_CreateRGBSurfaceFrom(
+            argv[0], argv[1], argv[2],
+            argv[3], argv[4], argv[5],
+            argv[6], argv[7], argv[8] );
+}
+
 /* vim: set ts=4 sw=4 et: */

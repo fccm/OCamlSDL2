@@ -19,3 +19,13 @@ external get_pixels :
   t -> (int, Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t
   = "caml_SDL_Surface_ba_get_pixels"
 
+external create_rgb_surface_from :
+  pixels:(int, Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t ->
+  width:int -> height:int -> depth:int -> pitch:int ->
+  r_mask:int32 ->
+  g_mask:int32 ->
+  b_mask:int32 ->
+  a_mask:int32 -> t
+  = "caml_SDL_CreateRGBSurfaceFrom_bytecode"
+    "caml_SDL_CreateRGBSurfaceFrom"
+
