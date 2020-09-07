@@ -13,15 +13,30 @@
 #include <caml/memory.h>
 #include <caml/alloc.h>
 #include <caml/fail.h>
+#include <caml/version.h>
  
 #include <SDL_rwops.h>
 #include "sdlrwops_stub.h"
+
+#if OCAML_VERSION < 40600
+#define Bytes_val(x) String_val(x)
+#endif
 
 CAMLprim value
 caml_SDL_RWFromMem(value str)
 {
     SDL_RWops * rwo =
         SDL_RWFromMem(
+                Bytes_val(str),
+                caml_string_length(str));
+    return Val_SDL_RWops(rwo);
+}
+
+CAMLprim value
+caml_SDL_RWFromConstMem(value str)
+{
+    SDL_RWops * rwo =
+        SDL_RWFromConstMem(
                 String_val(str),
                 caml_string_length(str));
     return Val_SDL_RWops(rwo);

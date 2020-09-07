@@ -15,9 +15,13 @@
 
 type t
 
-external from_mem : string -> t
+external from_mem : bytes -> t
   = "caml_SDL_RWFromMem"
 (** {{:http://wiki.libsdl.org/SDL_RWFromMem}api doc} *)
+
+external from_const_mem : string -> t
+  = "caml_SDL_RWFromConstMem"
+(** {{:http://wiki.libsdl.org/SDL_RWFromConstMem}api doc} *)
 
 external from_file : filename:string -> mode:string -> t
   = "caml_SDL_RWFromFile"
@@ -25,14 +29,15 @@ external from_file : filename:string -> mode:string -> t
 
 type input = [
   | `Filename of string   (** provide the input by its filename *)
-  | `Buffer of string     (** provide the input data as a buffer *)
+  | `Buffer of bytes      (** provide the input data as a bytes buffer *)
+  | `String of string     (** provide the input data as a string buffer *)
   ]
 
 val from_input :
-  [< `Buffer of string | `Filename of string ] -> t
+  [< `Buffer of bytes | `String of string | `Filename of string ] -> t
 
 val from_input_opt :
-  [> `Buffer of string | `Filename of string ] -> t option
+  [> `Buffer of bytes | `String of string | `Filename of string ] -> t option
 
 external alloc : unit -> t = "caml_SDL_AllocRW"
 external free : t -> unit = "caml_SDL_FreeRW"

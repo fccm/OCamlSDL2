@@ -12,24 +12,30 @@
 
 type t
 
-external from_mem : string -> t
+external from_mem : bytes -> t
   = "caml_SDL_RWFromMem"
+
+external from_const_mem : string -> t
+  = "caml_SDL_RWFromConstMem"
 
 external from_file : filename:string -> mode:string -> t
   = "caml_SDL_RWFromFile"
 
 type input = [
   | `Filename of string  (* provide the input by its filename *)
-  | `Buffer of string    (* provide the input data as a buffer *)
+  | `Buffer of bytes     (* provide the input data as a bytes buffer *)
+  | `String of string    (* provide the input data as a string buffer *)
   ]
 
 let from_input = function
   | `Filename(filename) -> from_file ~filename ~mode:"r"
   | `Buffer(mem) -> from_mem mem
+  | `String(mem) -> from_const_mem mem
 
 let from_input_opt = function
   | `Filename(filename) -> Some(from_file ~filename ~mode:"r")
   | `Buffer(mem) -> Some(from_mem mem)
+  | `String(mem) -> Some(from_const_mem mem)
   | _ -> None
 
 external alloc : unit -> t = "caml_SDL_AllocRW"
