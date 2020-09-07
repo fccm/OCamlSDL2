@@ -304,8 +304,7 @@ caml_SDL_Surface_get_pixels(value surface)
         surf->w * surf->h *
         surf->format->BytesPerPixel;
 
-    ml_pixels = caml_alloc_string(len);
-    memcpy(String_val(ml_pixels), surf->pixels, len);
+    ml_pixels = caml_alloc_initialized_string(len, surf->pixels);
 
     CAMLreturn(ml_pixels);
 }
