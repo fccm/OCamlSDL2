@@ -81,6 +81,26 @@ caml_SDL_RWsize(value rwo)
     return caml_copy_int64(size);
 }
 
+static const int ocaml_SDL_RW_SEEK_table[] = {
+    RW_SEEK_SET,
+    RW_SEEK_CUR,
+    RW_SEEK_END,
+};
+#define SDL_RW_SEEK_val(seek) \
+    ocaml_SDL_RW_SEEK_table[Long_val(seek)]
+
+CAMLprim value
+caml_SDL_RWseek(value context, value offset, value whence)
+{
+    // returns the final offset in the data stream, or -1 on error.
+    Sint64 r =
+        SDL_RWseek(
+                SDL_RWops_val(context),
+                Int64_val(offset),
+                SDL_RW_SEEK_val(whence));
+
+    return caml_copy_int64(r);
+}
 
 #define Uint8_val(d) (Int_val(d))
 #define Val_Uint8(d) (Val_int(d))

@@ -45,6 +45,15 @@ external close : t -> unit = "caml_SDL_CloseRW"
 
 external size : t -> int64 = "caml_SDL_RWsize"
 
+type seek =
+  | SEEK_SET
+  | SEEK_CUR
+  | SEEK_END
+
+external seek : t -> offset:int64 -> seek -> int64
+  = "caml_SDL_RWseek"
+
+
 type uint8 = int
 
 type uint16 = int
