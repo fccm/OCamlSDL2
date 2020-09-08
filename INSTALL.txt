@@ -11,6 +11,13 @@ $ make opt byte
 
 ----------------
 
+If you want to use the module 'Sdlsurface_ba' which uses ocaml bigarrays
+you also have to run these targets:
+$ make ba
+$ make baopt
+
+----------------
+
 If you compiled and installed SDL2 with
 ./configure --prefix=/tmp/SDL2-temp
 then you need to make sure that the utility "sdl2-config"
