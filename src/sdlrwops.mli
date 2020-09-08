@@ -45,6 +45,9 @@ external free : t -> unit = "caml_SDL_FreeRW"
 external close : t -> unit = "caml_SDL_CloseRW"
 (** {{:http://wiki.libsdl.org/SDL_RWclose}api doc} *)
 
+external size : t -> int64 = "caml_SDL_RWsize"
+(** {{:http://wiki.libsdl.org/SDL_RWsize}api doc} *)
+
 type uint8 = int
 
 type uint16 = int

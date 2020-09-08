@@ -74,6 +74,14 @@ caml_SDL_CloseRW(value rwo)
     return Val_unit;
 }
 
+CAMLprim value
+caml_SDL_RWsize(value rwo)
+{
+    Sint64 size = SDL_RWsize(SDL_RWops_val(rwo));
+    return caml_copy_int64(size);
+}
+
+
 #define Uint8_val(d) (Int_val(d))
 #define Val_Uint8(d) (Val_int(d))
 
