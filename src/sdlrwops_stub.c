@@ -103,31 +103,34 @@ read_int_stub(Uint32, SDL_ReadBE32)
 read_int_stub(Uint64, SDL_ReadLE64)
 read_int_stub(Uint64, SDL_ReadBE64)
 
-#define Val_size_t  Val_int
 
 #if 0
 CAMLprim value
 caml_SDL_WriteU8(value rwo, Uint8 d)
 {
-    return Val_size_t(
-        SDL_WriteU8(SDL_RWops_val(rwo), Uint8_val(d)));
+    // Returns 1 on successful write, 0 on error.
+    size_t s = SDL_WriteU8(SDL_RWops_val(rwo), Uint8_val(d));
+    if (s == 0) caml_failwith("Sdlrwops.writeU8");
+    return Val_unit;
 }
 #endif
 
-#define write_int_stub(IntT, SDL_WriteT) \
+#define write_int_stub(IntT, SDL_WriteT, ml_writeT) \
   CAMLprim value \
   caml_##SDL_WriteT(value rwo, value d) { \
-      return Val_size_t( \
-          SDL_WriteT(SDL_RWops_val(rwo), IntT##_val(d))); \
+      size_t s = \
+          SDL_WriteT(SDL_RWops_val(rwo), IntT##_val(d)); \
+      if (s == 0) caml_failwith("Sdlrwops." ml_writeT); \
+      return Val_unit; \
   }
 
-write_int_stub(Uint8, SDL_WriteU8)
+write_int_stub(Uint8, SDL_WriteU8, "writeU8")
 
-write_int_stub(Uint16, SDL_WriteLE16)
-write_int_stub(Uint16, SDL_WriteBE16)
-write_int_stub(Uint32, SDL_WriteLE32)
-write_int_stub(Uint32, SDL_WriteBE32)
-write_int_stub(Uint64, SDL_WriteLE64)
-write_int_stub(Uint64, SDL_WriteBE64)
+write_int_stub(Uint16, SDL_WriteLE16, "LittleEndian.write16")
+write_int_stub(Uint16, SDL_WriteBE16, "BigEndian.write16")
+write_int_stub(Uint32, SDL_WriteLE32, "LittleEndian.write32")
+write_int_stub(Uint32, SDL_WriteBE32, "BigEndian.write32")
+write_int_stub(Uint64, SDL_WriteLE64, "LittleEndian.write64")
+write_int_stub(Uint64, SDL_WriteBE64, "BigEndian.write64")
 
 /* vim: set ts=4 sw=4 et: */

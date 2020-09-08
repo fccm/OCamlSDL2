@@ -46,33 +46,33 @@ external close : t -> unit = "caml_SDL_CloseRW"
 type uint8 = int
 
 type uint16 = int
-type uint32 = int
-type uint64 = int
+type uint32 = int32
+type uint64 = int64
 
-external readU8 : t -> uint16 = "caml_SDL_ReadU8"
-external writeU8 : t -> uint16 -> int = "caml_SDL_WriteU8"
+external readU8 : t -> uint8 = "caml_SDL_ReadU8"
+external writeU8 : t -> uint8 -> unit = "caml_SDL_WriteU8"
 
 module BigEndian = struct
 
   external read16 : t -> uint16 = "caml_SDL_ReadBE16"
-  external read32 : t -> uint16 = "caml_SDL_ReadBE32"
-  external read64 : t -> uint16 = "caml_SDL_ReadBE64"
+  external read32 : t -> uint32 = "caml_SDL_ReadBE32"
+  external read64 : t -> uint64 = "caml_SDL_ReadBE64"
 
-  external write16 : t -> uint16 -> int = "caml_SDL_WriteBE16"
-  external write32 : t -> uint16 -> int = "caml_SDL_WriteBE32"
-  external write64 : t -> uint16 -> int = "caml_SDL_WriteBE64"
+  external write16 : t -> uint16 -> unit = "caml_SDL_WriteBE16"
+  external write32 : t -> uint32 -> unit = "caml_SDL_WriteBE32"
+  external write64 : t -> uint64 -> unit = "caml_SDL_WriteBE64"
 
 end
 
 module LittleEndian = struct
 
   external read16 : t -> uint16 = "caml_SDL_ReadLE16"
-  external read32 : t -> uint16 = "caml_SDL_ReadLE32"
-  external read64 : t -> uint16 = "caml_SDL_ReadLE64"
+  external read32 : t -> uint32 = "caml_SDL_ReadLE32"
+  external read64 : t -> uint64 = "caml_SDL_ReadLE64"
 
-  external write16 : t -> uint16 -> int = "caml_SDL_WriteLE16"
-  external write32 : t -> uint16 -> int = "caml_SDL_WriteLE32"
-  external write64 : t -> uint16 -> int = "caml_SDL_WriteLE64"
+  external write16 : t -> uint16 -> unit = "caml_SDL_WriteLE16"
+  external write32 : t -> uint32 -> unit = "caml_SDL_WriteLE32"
+  external write64 : t -> uint64 -> unit = "caml_SDL_WriteLE64"
 
 end
 

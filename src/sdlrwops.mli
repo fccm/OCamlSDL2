@@ -48,32 +48,32 @@ external close : t -> unit = "caml_SDL_CloseRW"
 type uint8 = int
 
 type uint16 = int
-type uint32 = int
-type uint64 = int
+type uint32 = int32
+type uint64 = int64
 
-external readU8 : t -> uint16 = "caml_SDL_ReadU8"
+external readU8 : t -> uint8 = "caml_SDL_ReadU8"
 (** {{:http://wiki.libsdl.org/SDL_ReadU8}api doc} *)
 
-external writeU8 : t -> uint16 -> int = "caml_SDL_WriteU8"
+external writeU8 : t -> uint8 -> unit = "caml_SDL_WriteU8"
 (** {{:http://wiki.libsdl.org/SDL_WriteU8}api doc} *)
 
 module BigEndian : sig
   external read16 : t -> uint16 = "caml_SDL_ReadBE16"
   (** {{:http://wiki.libsdl.org/SDL_ReadBE16}api doc} *)
 
-  external read32 : t -> uint16 = "caml_SDL_ReadBE32"
+  external read32 : t -> uint32 = "caml_SDL_ReadBE32"
   (** {{:http://wiki.libsdl.org/SDL_ReadBE32}api doc} *)
 
-  external read64 : t -> uint16 = "caml_SDL_ReadBE64"
+  external read64 : t -> uint64 = "caml_SDL_ReadBE64"
   (** {{:http://wiki.libsdl.org/SDL_ReadBE64}api doc} *)
 
-  external write16 : t -> uint16 -> int = "caml_SDL_WriteBE16"
+  external write16 : t -> uint16 -> unit = "caml_SDL_WriteBE16"
   (** {{:http://wiki.libsdl.org/SDL_WriteBE16}api doc} *)
 
-  external write32 : t -> uint16 -> int = "caml_SDL_WriteBE32"
+  external write32 : t -> uint32 -> unit = "caml_SDL_WriteBE32"
   (** {{:http://wiki.libsdl.org/SDL_WriteBE32}api doc} *)
 
-  external write64 : t -> uint16 -> int = "caml_SDL_WriteBE64"
+  external write64 : t -> uint64 -> unit = "caml_SDL_WriteBE64"
   (** {{:http://wiki.libsdl.org/SDL_WriteBE64}api doc} *)
 end
 
@@ -81,19 +81,19 @@ module LittleEndian : sig
   external read16 : t -> uint16 = "caml_SDL_ReadLE16"
   (** {{:http://wiki.libsdl.org/SDL_ReadLE16}api doc} *)
 
-  external read32 : t -> uint16 = "caml_SDL_ReadLE32"
+  external read32 : t -> uint32 = "caml_SDL_ReadLE32"
   (** {{:http://wiki.libsdl.org/SDL_ReadLE32}api doc} *)
 
-  external read64 : t -> uint16 = "caml_SDL_ReadLE64"
+  external read64 : t -> uint64 = "caml_SDL_ReadLE64"
   (** {{:http://wiki.libsdl.org/SDL_ReadLE64}api doc} *)
 
-  external write16 : t -> uint16 -> int = "caml_SDL_WriteLE16"
+  external write16 : t -> uint16 -> unit = "caml_SDL_WriteLE16"
   (** {{:http://wiki.libsdl.org/SDL_WriteLE16}api doc} *)
 
-  external write32 : t -> uint16 -> int = "caml_SDL_WriteLE32"
+  external write32 : t -> uint32 -> unit = "caml_SDL_WriteLE32"
   (** {{:http://wiki.libsdl.org/SDL_WriteLE32}api doc} *)
 
-  external write64 : t -> uint16 -> int = "caml_SDL_WriteLE64"
+  external write64 : t -> uint64 -> unit = "caml_SDL_WriteLE64"
   (** {{:http://wiki.libsdl.org/SDL_WriteLE64}api doc} *)
 end
 
