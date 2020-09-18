@@ -1,9 +1,13 @@
-Florent Monnier <monnier.florent on gmail>
+Florent Monnier <monnier.florent at gmail>
   Main author and current maintainer
 
-David Cade <codename68 on gmail>
+David Cade <codename68 at gmail>
   Provided events handling of SDL_TextInputEvent and SDL_TextEditingEvent
 
 Piotr Mardziel <@piotrm0>
   Provided Sdlsurface_ba.get_pixels
+
+Alexandru Scvortov <scvalex at gmail>
+  wrapped SDL_GetWindowSize() as Sdlwindow.get_size
+  wrapped SDL_RWclose() as RWops.close
 
