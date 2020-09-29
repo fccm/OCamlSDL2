@@ -89,8 +89,16 @@ caml_SDL_GL_GetAttribute(
     return Val_int(val);
 }
 
-#define SDL_GLContext_val(ctx) ((SDL_GLContext)(ctx))
-#define Val_SDL_GLContext(ctx) ((value)(ctx))
+// SDL_GLContext is an alias for void*
+static value Val_SDL_GLContext(SDL_GLContext p)
+{
+    return caml_copy_nativeint((intnat) p);
+}
+
+static SDL_GLContext SDL_GLContext_val(value v)
+{
+    return (SDL_GLContext) Nativeint_val(v);
+}
 
 CAMLprim value
 caml_SDL_GL_CreateContext(value window)
