@@ -5,8 +5,8 @@ version = "0.03"
 
 archive(byte) = "sdl2.cma"
 archive(native) = "sdl2.cmxa"
-archive(byte,plugin) = "sdl2.cma"
-archive(native,plugin) = "sdl2.cmxs"
+plugin(byte) = "sdl2.cma"
+plugin(native) = "sdl2.cmxs"
 
 package "ba" (
   description = "SDL2 with Bigarrays for buffer interexchange"
@@ -14,7 +14,7 @@ package "ba" (
   
   archive(byte) = "sdl2-ba.cma"
   archive(native) = "sdl2-ba.cmxa"
-  archive(byte,plugin) = "sdl2-ba.cma"
-  archive(native,plugin) = "sdl2-ba.cmxs"
+  plugin(byte) = "sdl2-ba.cma"
+  plugin(native) = "sdl2-ba.cmxs"
 )
 
