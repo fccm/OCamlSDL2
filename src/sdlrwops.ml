@@ -53,6 +53,8 @@ type seek =
 external seek : t -> offset:int64 -> seek -> int64
   = "caml_SDL_RWseek"
 
+external tell : t -> int64
+  = "caml_SDL_RWtell"
 
 type uint8 = int
 

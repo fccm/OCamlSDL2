@@ -102,6 +102,14 @@ caml_SDL_RWseek(value context, value offset, value whence)
     return caml_copy_int64(r);
 }
 
+CAMLprim value
+caml_SDL_RWtell(value context)
+{
+    // returns the current offset in the data stream, or -1 on error.
+    Sint64 r = SDL_RWtell(SDL_RWops_val(context));
+    return caml_copy_int64(r);
+}
+
 #define Uint8_val(d) (Int_val(d))
 #define Val_Uint8(d) (Val_int(d))
 

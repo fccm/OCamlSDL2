@@ -57,6 +57,9 @@ external seek : t -> offset:int64 -> seek -> int64
   = "caml_SDL_RWseek"
 (** {{:http://wiki.libsdl.org/SDL_RWseek}api doc} *)
 
+external tell : t -> int64
+  = "caml_SDL_RWtell"
+(** {{:http://wiki.libsdl.org/SDL_RWtell}api doc} *)
 
 type uint8 = int
 
