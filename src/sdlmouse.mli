@@ -39,6 +39,18 @@ external warp_in_window : Sdlwindow.t -> x:int -> y:int -> unit
   = "caml_SDL_WarpMouseInWindow"
 (** {{:http://wiki.libsdl.org/SDL_WarpMouseInWindow}api doc} *)
 
+external set_relative_mode : enabled:bool -> unit
+  = "caml_SDL_SetRelativeMouseMode"
+(** {{:http://wiki.libsdl.org/SDL_SetRelativeMouseMode}api doc} *)
+
+external show_cursor : toggle:bool -> unit
+  = "caml_SDL_ShowCursor"
+(** {{:http://wiki.libsdl.org/SDL_ShowCursor}api doc} *)
+
+external cursor_is_shown : unit -> bool
+  = "caml_SDL_ShowCursor_Query"
+(** {{:http://wiki.libsdl.org/SDL_ShowCursor}api doc} *)
+
 val to_string : button -> string
 val of_string : string -> button
 

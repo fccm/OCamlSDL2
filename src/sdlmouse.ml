@@ -34,6 +34,15 @@ external get_pos : unit -> pos
 external warp_in_window : Sdlwindow.t -> x:int -> y:int -> unit
   = "caml_SDL_WarpMouseInWindow"
 
+external set_relative_mode : enabled:bool -> unit
+  = "caml_SDL_SetRelativeMouseMode"
+
+external show_cursor : toggle:bool -> unit
+  = "caml_SDL_ShowCursor"
+
+external cursor_is_shown : unit -> bool
+  = "caml_SDL_ShowCursor_Query"
+
 let to_string = function
   | Button_Left   -> "Button_Left"
   | Button_Middle -> "Button_Middle"
