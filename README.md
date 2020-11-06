@@ -55,6 +55,10 @@ To know which version of the SDL2 is on your system, you can use the command:
 ```
 $ sdl2-config --version
 ```
+To install the source directory (tarball release or git clone):
+```
+$ opam install .
+```
 
 
 ## Accompanying libraries
