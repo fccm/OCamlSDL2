@@ -66,6 +66,7 @@ There are also bindings for the accompanying libraries:
 - https://github.com/fccm/OCamlSDL2_Image
 - https://github.com/fccm/OCamlSDL2_Mixer
 - https://github.com/fccm/OCamlSDL2_Net
+- https://github.com/fccm/OCamlSDL2_Gfx
 
 
 ## License
