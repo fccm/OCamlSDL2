@@ -61,6 +61,13 @@ $ opam install .
 ```
 
 
+## API Documentation
+
+The API documentation can be browsed online:
+
+https://fccm.github.io/OCamlSDL2/
+
+
 ## Accompanying libraries
 
 There are also bindings for the accompanying libraries:  
