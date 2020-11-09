@@ -20,9 +20,11 @@ let () =
   Sdl.init [`VIDEO];
   let width, height = (640, 480) in
   let win =
-    Sdlwindow.create
+    Sdlwindow.create2
       ~title:"SDL2, OGL?"
-      ~x:10 ~y:40 ~width ~height
+      ~x:(`pos 10)
+      ~y:(`pos 40)
+      ~width ~height
       ~flags:[OpenGL; Resizable]
   in
   let rndr =
