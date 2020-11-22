@@ -22,5 +22,9 @@ type subsystem = [
 external init :
   [< subsystem | `EVERYTHING | `NOPARACHUTE ] list -> unit
   = "caml_SDL_Init"
+(** {{:https://wiki.libsdl.org/SDL_Init}api doc} *)
+
 
 external init_subsystem : subsystem list -> unit = "caml_SDL_InitSubSystem"
+(** {{:https://wiki.libsdl.org/SDL_InitSubSystem}api doc} *)
+
