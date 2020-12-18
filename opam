@@ -5,6 +5,7 @@ authors: [
   "Florent Monnier"
   "Piotr Mardziel"
   "David Cadé"
+  "Guillaume Munch-Maccagnoni"
 ]
 license: "restrictionless Zlib"
 homepage: "https://github.com/fccm/OCamlSDL2"
