@@ -11,3 +11,6 @@ Alexandru Scvortov <scvalex at gmail>
   wrapped SDL_GetWindowSize() as Sdlwindow.get_size
   wrapped SDL_RWclose() as RWops.close
 
+Guillaume Munch-Maccagnoni <Guillaume.Munch-Maccagnoni at Inria.fr>
+  Naked pointers checks and fixes
+
