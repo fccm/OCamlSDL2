@@ -1,0 +1,92 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Sdlinit" rel="Chapter" href="Sdlinit.html">
+<link title="Sdlquit" rel="Chapter" href="Sdlquit.html">
+<link title="Sdlrect" rel="Chapter" href="Sdlrect.html">
+<link title="SdlblendMode" rel="Chapter" href="SdlblendMode.html">
+<link title="Sdlsurface" rel="Chapter" href="Sdlsurface.html">
+<link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
+<link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
+<link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
+<link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
+<link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
+<link title="Sdlkeyboard" rel="Chapter" href="Sdlkeyboard.html">
+<link title="Sdlkeycode" rel="Chapter" href="Sdlkeycode.html">
+<link title="Sdlscancode" rel="Chapter" href="Sdlscancode.html">
+<link title="Sdlkeymod" rel="Chapter" href="Sdlkeymod.html">
+<link title="Sdlhat" rel="Chapter" href="Sdlhat.html">
+<link title="Sdlmouse" rel="Chapter" href="Sdlmouse.html">
+<link title="Sdljoystick" rel="Chapter" href="Sdljoystick.html">
+<link title="Sdlclipboard" rel="Chapter" href="Sdlclipboard.html">
+<link title="Sdltimer" rel="Chapter" href="Sdltimer.html">
+<link title="Sdlaudio" rel="Chapter" href="Sdlaudio.html">
+<link title="Sdlfilesystem" rel="Chapter" href="Sdlfilesystem.html">
+<link title="Sdlversion" rel="Chapter" href="Sdlversion.html">
+<link title="Sdlcpuinfo" rel="Chapter" href="Sdlcpuinfo.html">
+<link title="Sdlpower" rel="Chapter" href="Sdlpower.html">
+<link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
+<link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
+<link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdl" rel="Chapter" href="Sdl.html">
+<link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.Surface</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;<span class="constructor">Sdlsurface</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;create_rgb&nbsp;:&nbsp;width:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;height:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;depth:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_CreateRGBSurface"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;free&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"caml_SDL_FreeSurface"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;load_bmp&nbsp;:&nbsp;filename:string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;=&nbsp;<span class="string">"caml_SDL_LoadBMP"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;save_bmp&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;filename:string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SaveBMP"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;fill_rect&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dst:<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;rect:<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;color:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_FillRect"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;blit_surface&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src:<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_rect:<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;dst:<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst_rect:<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrect</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_BlitSurface"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;blit_surf&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src:<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst:<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst_rect:<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrect</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_BlitSurf"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;blit_surfs&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src:<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst:<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst_rect:<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_BlitSurfs"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;blit_pixels_unsafe&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_Surface_Blit_Pixels"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_color_key&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;enable:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;key:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetColorKey"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_color_key_map_rgb&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;enable:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;rgb:int&nbsp;*&nbsp;int&nbsp;*&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetColorKey_MapRGB"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_width&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetWidth"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_height&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetHeight"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_dims&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetDims"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_pitch&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetPitch"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_pixel32_unsafe&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int32<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetPixel32"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_pixel16_unsafe&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int32<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetPixel16"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_pixel8_unsafe&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int32<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetPixel8"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_bits_per_pixel&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetBitsPerPixel"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;has_palette&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceHasPalette"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;palette_num_colors&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfacePaletteColors"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_blend_mode&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">SdlblendMode</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetSurfaceBlendMode"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_pixelformat_t&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">SdlpixelFormat</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_Surface_get_pixelformat_t"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_pixels&nbsp;:&nbsp;<span class="constructor">Sdl</span>.<span class="constructor">Surface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_Surface_get_pixels"</span><br>
+<span class="keyword">end</span></code></body></html>

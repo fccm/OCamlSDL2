@@ -45,4 +45,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Sdlsurface_ba</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;(int,&nbsp;<span class="constructor">Stdlib</span>.<span class="constructor">Bigarray</span>.int8_unsigned_elt,&nbsp;<span class="constructor">Stdlib</span>.<span class="constructor">Bigarray</span>.c_layout)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Stdlib</span>.<span class="constructor">Bigarray</span>.<span class="constructor">Array1</span>.t&nbsp;=&nbsp;<span class="string">"caml_SDL_Surface_ba_get_pixels"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;create_rgb_surface_from&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pixels:(int,&nbsp;<span class="constructor">Stdlib</span>.<span class="constructor">Bigarray</span>.int8_unsigned_elt,&nbsp;<span class="constructor">Stdlib</span>.<span class="constructor">Bigarray</span>.c_layout)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Stdlib</span>.<span class="constructor">Bigarray</span>.<span class="constructor">Array1</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;width:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;height:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;depth:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pitch:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;r_mask:int32&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;g_mask:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b_mask:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;a_mask:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlsurface_ba</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_CreateRGBSurfaceFrom_bytecode"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"caml_SDL_CreateRGBSurfaceFrom"</span><br>
 <span class="keyword">end</span></code></body></html>

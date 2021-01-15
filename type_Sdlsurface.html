@@ -64,6 +64,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_Surface_Blit_Pixels"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_color_key&nbsp;:&nbsp;<span class="constructor">Sdlsurface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;enable:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;key:int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetColorKey"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_color_key_map_rgb&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Sdlsurface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;enable:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;rgb:int&nbsp;*&nbsp;int&nbsp;*&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetColorKey_MapRGB"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_width&nbsp;:&nbsp;<span class="constructor">Sdlsurface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetWidth"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_height&nbsp;:&nbsp;<span class="constructor">Sdlsurface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetHeight"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_dims&nbsp;:&nbsp;<span class="constructor">Sdlsurface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_SDL_SurfaceGetDims"</span><br>

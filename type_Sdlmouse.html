@@ -57,6 +57,10 @@
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_pos&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlmouse</span>.pos&nbsp;=&nbsp;<span class="string">"caml_SDL_GetMousePos"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;warp_in_window&nbsp;:&nbsp;<span class="constructor">Sdlwindow</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_WarpMouseInWindow"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_relative_mode&nbsp;:&nbsp;enabled:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetRelativeMouseMode"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;show_cursor&nbsp;:&nbsp;toggle:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"caml_SDL_ShowCursor"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cursor_is_shown&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"caml_SDL_ShowCursor_Query"</span><br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_string&nbsp;:&nbsp;<span class="constructor">Sdlmouse</span>.button&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlmouse</span>.button<br>
 <span class="keyword">end</span></code></body></html>

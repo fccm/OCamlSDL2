@@ -41,12 +41,12 @@
 <body>
 <code class="code"><span class="keyword">sig</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;read16&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint16&nbsp;=&nbsp;<span class="string">"caml_SDL_ReadBE16"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;read32&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint16&nbsp;=&nbsp;<span class="string">"caml_SDL_ReadBE32"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;read64&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint16&nbsp;=&nbsp;<span class="string">"caml_SDL_ReadBE64"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;write16&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint16&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;read32&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint32&nbsp;=&nbsp;<span class="string">"caml_SDL_ReadBE32"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;read64&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint64&nbsp;=&nbsp;<span class="string">"caml_SDL_ReadBE64"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;write16&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint16&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_WriteBE16"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;write32&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint16&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;write32&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_WriteBE32"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;write64&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint16&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;write64&nbsp;:&nbsp;<span class="constructor">Sdlrwops</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrwops</span>.uint64&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_WriteBE64"</span><br>
 <span class="keyword">end</span></code></body></html>

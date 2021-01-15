@@ -55,10 +55,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_CreateRenderer"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_logical_size&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_RenderSetLogicalSize"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_logical_size2&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_logical_size2&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;width:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;height:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_RenderSetLogicalSize2"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_viewport&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_RenderSetViewport"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_clip_rect&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_RenderSetClipRect"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_draw_color&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;rgb:int&nbsp;*&nbsp;int&nbsp;*&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;a:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetRenderDrawColor"</span><br>

@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Sdl.Quit.html">
+<link rel="next" href="Sdl.Surface.html">
+<link rel="Up" href="Sdl.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Sdlinit" rel="Chapter" href="Sdlinit.html">
+<link title="Sdlquit" rel="Chapter" href="Sdlquit.html">
+<link title="Sdlrect" rel="Chapter" href="Sdlrect.html">
+<link title="SdlblendMode" rel="Chapter" href="SdlblendMode.html">
+<link title="Sdlsurface" rel="Chapter" href="Sdlsurface.html">
+<link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
+<link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
+<link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
+<link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
+<link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
+<link title="Sdlkeyboard" rel="Chapter" href="Sdlkeyboard.html">
+<link title="Sdlkeycode" rel="Chapter" href="Sdlkeycode.html">
+<link title="Sdlscancode" rel="Chapter" href="Sdlscancode.html">
+<link title="Sdlkeymod" rel="Chapter" href="Sdlkeymod.html">
+<link title="Sdlhat" rel="Chapter" href="Sdlhat.html">
+<link title="Sdlmouse" rel="Chapter" href="Sdlmouse.html">
+<link title="Sdljoystick" rel="Chapter" href="Sdljoystick.html">
+<link title="Sdlclipboard" rel="Chapter" href="Sdlclipboard.html">
+<link title="Sdltimer" rel="Chapter" href="Sdltimer.html">
+<link title="Sdlaudio" rel="Chapter" href="Sdlaudio.html">
+<link title="Sdlfilesystem" rel="Chapter" href="Sdlfilesystem.html">
+<link title="Sdlversion" rel="Chapter" href="Sdlversion.html">
+<link title="Sdlcpuinfo" rel="Chapter" href="Sdlcpuinfo.html">
+<link title="Sdlpower" rel="Chapter" href="Sdlpower.html">
+<link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
+<link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
+<link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdl" rel="Chapter" href="Sdl.html">
+<link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.Window</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Sdl.Quit.html" title="Sdl.Quit">Previous</a>
+&nbsp;<a class="up" href="Sdl.html" title="Sdl">Up</a>
+&nbsp;<a class="post" href="Sdl.Surface.html" title="Sdl.Surface">Next</a>
+</div>
+<h1>Module <a href="type_Sdl.Window.html">Sdl.Window</a></h1>
+
+<pre><span id="MODULEWindow"><span class="keyword">module</span> Window</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Window.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a></code> </pre>
+
+
+<pre><span id="TYPEwindow_flags"><span class="keyword">type</span> <code class="type"></code>window_flags</span> = <code class="type"><a href="Sdlwindow.html#TYPEwindow_flags">Sdlwindow.window_flags</a></code> = </pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.FullScreen"><span class="constructor">FullScreen</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.OpenGL"><span class="constructor">OpenGL</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Shown"><span class="constructor">Shown</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Hidden"><span class="constructor">Hidden</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Borderless"><span class="constructor">Borderless</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Resizable"><span class="constructor">Resizable</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Minimized"><span class="constructor">Minimized</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Maximized"><span class="constructor">Maximized</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Input_Grabbed"><span class="constructor">Input_Grabbed</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Input_Focus"><span class="constructor">Input_Focus</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Mouse_Focus"><span class="constructor">Mouse_Focus</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.FullScreen_Desktop"><span class="constructor">FullScreen_Desktop</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Foreign"><span class="constructor">Foreign</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="TYPEwindow_pos"><span class="keyword">type</span> <code class="type"></code>window_pos</span> = <code class="type">[ `centered | `pos of int | `undefined ]</code> </pre>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">title:string -><br>       pos:<a href="Sdl.Window.html#TYPEwindow_pos">window_pos</a> * <a href="Sdl.Window.html#TYPEwindow_pos">window_pos</a> -><br>       dims:int * int -> flags:<a href="Sdl.Window.html#TYPEwindow_flags">window_flags</a> list -> <a href="Sdl.Window.html#TYPEt">t</a></code></pre>
+<pre><span id="VALcreate2"><span class="keyword">val</span> create2</span> : <code class="type">title:string -><br>       x:<a href="Sdl.Window.html#TYPEwindow_pos">window_pos</a> -><br>       y:<a href="Sdl.Window.html#TYPEwindow_pos">window_pos</a> -><br>       width:int -> height:int -> flags:<a href="Sdl.Window.html#TYPEwindow_flags">window_flags</a> list -> <a href="Sdl.Window.html#TYPEt">t</a></code></pre>
+<pre><span id="VALset_title"><span class="keyword">val</span> set_title</span> : <code class="type">window:<a href="Sdl.Window.html#TYPEt">t</a> -> title:string -> unit</code></pre>
+<pre><span id="VALshow"><span class="keyword">val</span> show</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALhide"><span class="keyword">val</span> hide</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALraise_win"><span class="keyword">val</span> raise_win</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALmaximize"><span class="keyword">val</span> maximize</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALminimize"><span class="keyword">val</span> minimize</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALrestore"><span class="keyword">val</span> restore</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALget_surface"><span class="keyword">val</span> get_surface</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> <a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a></code></pre>
+<pre><span id="VALupdate_surface"><span class="keyword">val</span> update_surface</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALset_brightness"><span class="keyword">val</span> set_brightness</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> brightness:float -> unit</code></pre>
+<pre><span id="VALget_brightness"><span class="keyword">val</span> get_brightness</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> float</code></pre>
+<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALget_size"><span class="keyword">val</span> get_size</span> : <code class="type"><a href="Sdl.Window.html#TYPEt">t</a> -> int * int</code></pre></body></html>
