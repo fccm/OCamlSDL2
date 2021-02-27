@@ -36,7 +36,7 @@ caml_SDL_RGBAColor(value rgb, value alpha)
 #else
     Uint32 color = a << 24 | b << 16 | g << 8 | r;
 #endif
-    return Val_long(color);
+    return caml_copy_int32(color);
 }
 
 CAMLprim value
