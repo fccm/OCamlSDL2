@@ -15,13 +15,10 @@
 
 type t
 
-external rgba_color :
-  rgb:(int * int * int) ->
-  a:int -> int32
+external rgba_color : rgb:(int * int * int) -> a:int -> int32
   = "caml_SDL_RGBAColor"
 
-external rgb_color :
-  rgb:(int * int * int) -> int32
+external rgb_color : rgb:(int * int * int) -> int32
   = "caml_SDL_RGBColor"
 
 external create_rgb :
