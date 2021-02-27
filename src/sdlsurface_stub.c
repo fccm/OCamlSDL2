@@ -29,11 +29,19 @@ caml_SDL_CreateRGBSurface(
         value height,
         value depth)
 {
-    Uint32 flags = 0;
-    Uint32 Rmask = 0x00ff0000;
+
+#if SDL_BYTEORDER == SDL_BIG_ENDIAN
+    Uint32 Rmask = 0xff000000;
+    Uint32 Gmask = 0x00ff0000;
+    Uint32 Bmask = 0x0000ff00;
+    Uint32 Amask = 0x000000ff;
+#else
+    Uint32 Rmask = 0x000000ff;
     Uint32 Gmask = 0x0000ff00;
-    Uint32 Bmask = 0x000000ff;
+    Uint32 Bmask = 0x00ff0000;
     Uint32 Amask = 0xff000000;
+#endif
+    Uint32 flags = 0;
 
     SDL_Surface *surf = SDL_CreateRGBSurface(
         flags,
