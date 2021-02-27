@@ -23,6 +23,9 @@
 
 #include <string.h>
 
+#define Val_none Val_int(0)
+#define Some_val(v) Field(v,0)
+
 CAMLprim value
 caml_SDL_CreateRGBSurface(
         value width,
@@ -44,6 +47,94 @@ caml_SDL_CreateRGBSurface(
         Gmask,
         Bmask,
         Amask);
+    return Val_SDL_Surface(surf);
+}
+
+CAMLprim value
+caml_SDL_CreateRGBSurface2(
+        value width,
+        value height,
+        value depth,
+        value _Rmask,
+        value _Gmask,
+        value _Bmask,
+        value _Amask,
+        value unit)
+{
+    Uint32 flags = 0;
+
+    Uint32 Rmask = 0;
+    Uint32 Gmask = 0;
+    Uint32 Bmask = 0;
+    Uint32 Amask = 0;
+
+    if (_Rmask != Val_none) Rmask = Int32_val(Some_val(_Rmask));
+    if (_Gmask != Val_none) Gmask = Int32_val(Some_val(_Gmask));
+    if (_Bmask != Val_none) Bmask = Int32_val(Some_val(_Bmask));
+    if (_Amask != Val_none) Amask = Int32_val(Some_val(_Amask));
+
+    SDL_Surface *surf = SDL_CreateRGBSurface(
+        flags,
+        Int_val(width),
+        Int_val(height),
+        Int_val(depth),
+        Rmask,
+        Gmask,
+        Bmask,
+        Amask);
+
+    return Val_SDL_Surface(surf);
+}
+
+CAMLprim value
+caml_SDL_CreateRGBSurface2_bytecode( value * argv, int argn )
+{
+    return caml_SDL_CreateRGBSurface2(
+        argv[0], argv[1], argv[2], argv[3],
+        argv[4], argv[5], argv[6], argv[7] );
+}
+
+CAMLprim value
+caml_SDL_CreateRGBSurface3(
+        value width,
+        value height,
+        value depth,
+        value RGBA_mask,
+        value unit)
+{
+    Uint32 flags = 0;
+
+    Uint32 Rmask = 0;
+    Uint32 Gmask = 0;
+    Uint32 Bmask = 0;
+    Uint32 Amask = 0;
+
+    value _RGBA_mask;
+
+    if (RGBA_mask != Val_none) {
+        _RGBA_mask = Some_val(RGBA_mask);
+
+        value _Rmask = Field(_RGBA_mask, 0);
+        value _Gmask = Field(_RGBA_mask, 1);
+        value _Bmask = Field(_RGBA_mask, 2);
+        value _Amask = Field(_RGBA_mask, 3);
+
+        Rmask = Int32_val(_Rmask);
+        Gmask = Int32_val(_Gmask);
+        Bmask = Int32_val(_Bmask);
+        Amask = Int32_val(_Amask);
+    }
+
+    SDL_Surface *surf = SDL_CreateRGBSurface(
+        flags,
+        Int_val(width),
+        Int_val(height),
+        Int_val(depth),
+        Rmask,
+        Gmask,
+        Bmask,
+        Amask);
+
     return Val_SDL_Surface(surf);
 }
 

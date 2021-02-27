@@ -22,6 +22,28 @@ external create_rgb :
   = "caml_SDL_CreateRGBSurface"
 (** {{:http://wiki.libsdl.org/SDL_CreateRGBSurface}api doc} *)
 
+external create_rgb2 :
+  width:int ->
+  height:int ->
+  depth:int ->
+  ?r_mask:int32 ->
+  ?g_mask:int32 ->
+  ?b_mask:int32 ->
+  ?a_mask:int32 ->
+  unit -> t
+  = "caml_SDL_CreateRGBSurface2_bytecode"
+    "caml_SDL_CreateRGBSurface2"
+(** {{:http://wiki.libsdl.org/SDL_CreateRGBSurface}api doc} *)
+
+external create_rgb3 :
+  width:int ->
+  height:int ->
+  depth:int ->
+  ?rgba_mask:int32 * int32 * int32 * int32 ->
+  unit -> t
+  = "caml_SDL_CreateRGBSurface3"
+(** {{:http://wiki.libsdl.org/SDL_CreateRGBSurface}api doc} *)
+
 external free : t -> unit
   = "caml_SDL_FreeSurface"
 (** {{:http://wiki.libsdl.org/SDL_FreeSurface}api doc} *)
