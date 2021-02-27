@@ -1,10 +1,10 @@
 /* OCamlSDL2 - An OCaml interface to the SDL2 library
  Copyright (C) 2013 Florent Monnier
- 
+
  This software is provided "AS-IS", without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
  the use of this software.
- 
+
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it freely.
 */
@@ -30,10 +30,10 @@ caml_SDL_CreateRGBSurface(
         value depth)
 {
     Uint32 flags = 0;
-    Uint32 Rmask = 0;
-    Uint32 Gmask = 0;
-    Uint32 Bmask = 0;
-    Uint32 Amask = 0;
+    Uint32 Rmask = 0x00ff0000;
+    Uint32 Gmask = 0x0000ff00;
+    Uint32 Bmask = 0x000000ff;
+    Uint32 Amask = 0xff000000;
 
     SDL_Surface *surf = SDL_CreateRGBSurface(
         flags,
