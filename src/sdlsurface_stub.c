@@ -24,6 +24,27 @@
 #include <string.h>
 
 CAMLprim value
+caml_SDL_RGBAColor(value rgb, value alpha)
+{
+    int r = Int_val(Field(rgb, 0)) & 0xff;
+    int g = Int_val(Field(rgb, 1)) & 0xff;
+    int b = Int_val(Field(rgb, 2)) & 0xff;
+    int a = Int_val(alpha) & 0xff;
+
+#if SDL_BYTEORDER == SDL_BIG_ENDIAN
+    Uint32 color = r << 24 | g << 16 | b << 8 | a;
+#else
+    Uint32 color = a << 24 | b << 16 | g << 8 | r;
+#endif
+    return Val_long(color);
+}
+
+CAMLprim value
+caml_SDL_RGBColor(value rgb) {
+    return caml_SDL_RGBAColor(rgb, Val_int(0xff));
+}
+
+CAMLprim value
 caml_SDL_CreateRGBSurface(
         value width,
         value height,
