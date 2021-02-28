@@ -1,7 +1,7 @@
 name = "sdl2"
 description = "bindings to the SDL2 library"
 license = "Zlib"
-version = "0.04"
+version = "0.05"
 
 archive(byte) = "sdl2.cma"
 archive(native) = "sdl2.cmxa"
