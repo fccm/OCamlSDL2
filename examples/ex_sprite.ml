@@ -1,8 +1,8 @@
 open Sdl
 
 let proc_events = function
-  | Event.KeyDown { keycode = Keycode.Q }
-  | Event.KeyDown { keycode = Keycode.Escape }
+  | Event.KeyDown { keycode = Keycode.Q; _ }
+  | Event.KeyDown { keycode = Keycode.Escape; _ }
   | Event.Quit _ -> Sdl.quit (); exit 0
   | _ -> ()
 
