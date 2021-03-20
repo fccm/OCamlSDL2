@@ -80,6 +80,14 @@ There are also bindings for the accompanying libraries:
 - https://github.com/fccm/OCamlSDL2_Gfx
 
 
+## Dune
+
+If you use Dune to build your project, you can use this instruction
+to your dune file:
+```
+  (libraries sdl2)
+```
+
 ## License
 
 This software is provided "AS-IS", without any express
