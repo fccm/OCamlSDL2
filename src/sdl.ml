@@ -100,4 +100,7 @@ end
 module Error = struct
   include Sdlerror
 end
+module Hint = struct
+  include Sdlhint
+end
   
