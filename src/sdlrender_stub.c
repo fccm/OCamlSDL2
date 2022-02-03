@@ -534,4 +534,20 @@ caml_SDL_RenderReadPixels(value renderer, value _rect, value surf)
     return Val_unit;
 }
 
+CAMLprim value
+caml_SDL_SetRenderTarget(value renderer, value texture_opt)
+{
+    SDL_Texture* texture =
+        Is_some(texture_opt) ? SDL_Texture_val(Some_val(texture_opt)) : NULL;
+
+    int r =
+        SDL_SetRenderTarget(
+            SDL_Renderer_val(renderer), 
+            texture);
+
+    if (r != 0) caml_failwith("Sdlrender.set_render_target");
+
+    return Val_unit;
+}
+
 /* vim: set ts=4 sw=4 et: */
