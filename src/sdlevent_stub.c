@@ -13,6 +13,7 @@
 #include <caml/memory.h>
 #include <caml/alloc.h>
 #include <caml/fail.h>
+#include <caml/version.h>
 
 #include <SDL_events.h>
 #include <SDL_keyboard.h>
@@ -20,6 +21,7 @@
 #include <SDL_scancode.h>
 #include "sdlkeymod_stub.h"
 
+#if OCAML_VERSION < 41200
 #define Val_none Val_int(0)
 
 static value
@@ -31,6 +33,9 @@ Val_some(value v)
     Store_field(some, 0, v);
     CAMLreturn(some);
 }
+#else
+#define Val_some caml_alloc_some
+#endif
 
 #if 0
     SDL_WindowEvent window;           /* Window */

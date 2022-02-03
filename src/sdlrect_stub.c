@@ -13,11 +13,13 @@
 #include <caml/memory.h>
 #include <caml/alloc.h>
 #include <caml/fail.h>
+#include <caml/version.h>
 
 #include <SDL_rect.h>
 #include "sdlrect_stub.h"
 #include "sdlpoint_stub.h"
 
+#if OCAML_VERSION < 41200
 #define Val_none Val_int(0)
 
 static value
@@ -29,6 +31,9 @@ Val_some(value v)
     Store_field(some, 0, v);
     CAMLreturn(some);
 }
+#else
+#define Val_some caml_alloc_some
+#endif
 
 CAMLprim value
 caml_SDL_HasIntersection(value a, value b)
