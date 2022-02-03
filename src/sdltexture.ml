@@ -12,6 +12,10 @@
 
 type t
 
+external create :
+  Sdltype.renderer -> SdlpixelFormat.t -> SdltextureAccess.t -> int -> int -> t
+  = "caml_SDL_CreateTexture"
+
 external create_from_surface :
   Sdltype.renderer -> Sdlsurface.t -> t
   = "caml_SDL_CreateTextureFromSurface"
