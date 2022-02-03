@@ -17,6 +17,7 @@ type subsystem = [
   | `JOYSTICK
   | `HAPTIC
   | `GAMECONTROLLER
+  | `EVENTS
   ]
 
 external init :
