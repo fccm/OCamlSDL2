@@ -43,6 +43,9 @@ external create_renderer :
   flags:renderer_flags list -> t
   = "caml_SDL_CreateRenderer"
 
+external get_output_size : t -> int * int
+  = "caml_SDL_GetRendererOutputSize"
+
 external set_logical_size : t -> int * int -> unit
   = "caml_SDL_RenderSetLogicalSize"
 

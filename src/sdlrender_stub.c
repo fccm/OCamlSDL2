@@ -88,6 +88,25 @@ caml_SDL_CreateRenderer(value window, value index, value _flags)
 }
 
 CAMLprim value
+caml_SDL_GetRendererOutputSize(value renderer)
+{
+    CAMLparam1(renderer);
+    CAMLlocal1(dims);
+
+    int w, h;
+    int r = SDL_GetRendererOutputSize(
+                SDL_Renderer_val(renderer),
+                &w, &h);
+    if (r) caml_failwith("Sdlrender.get_output_size");
+
+    dims = caml_alloc_tuple(2);
+    Field(dims, 0) = Val_int(w);
+    Field(dims, 1) = Val_int(h);
+
+    CAMLreturn(dims);
+}
+
+CAMLprim value
 caml_SDL_RenderSetLogicalSize(value renderer, value dims)
 {
     value w = Field(dims,0);

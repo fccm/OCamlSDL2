@@ -195,6 +195,7 @@ static const Uint32 caml_sdl_windowflags_table[] = {
     SDL_WINDOW_MOUSE_FOCUS,
     SDL_WINDOW_FULLSCREEN_DESKTOP,
     SDL_WINDOW_FOREIGN,
+    SDL_WINDOW_ALLOW_HIGHDPI
 };
 
 Uint32
