@@ -73,6 +73,7 @@ ML_FILES_BASE = \
   sdlrwops.ml \
   sdlerror.ml \
   sdlgl.ml \
+  sdlhint.ml \
   #End
 ML_FILES = $(ML_FILES_BASE) sdl.ml
 
@@ -109,6 +110,7 @@ CSTUBS = \
   sdlrwops_stub.c \
   sdlerror_stub.c \
   sdl_platform_stub.c \
+  sdlhint_stub.c \
   #End
 
 CSTUBS_BA = \
