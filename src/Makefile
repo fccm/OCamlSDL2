@@ -52,6 +52,7 @@ ML_FILES_BASE = \
   sdlwindow.ml \
   sdlrender.ml \
   sdltexture.ml \
+  sdltextureAccess.ml \
   sdlpixelFormat.ml \
   sdlpixel.ml \
   sdlevent.ml \
@@ -77,6 +78,7 @@ ML_FILES = $(ML_FILES_BASE) sdl.ml
 
 ML_FILES_BA_BASE = \
   sdlsurface_ba.ml \
+  sdltexture_ba.ml \
   #End
 ML_FILES_BA = $(ML_FILES_BA_BASE) sdlba.ml
 
@@ -111,6 +113,7 @@ CSTUBS = \
 
 CSTUBS_BA = \
   sdlsurface_ba_stub.c \
+  sdltexture_ba_stub.c \
   #End
 
 C_HEADERS = \

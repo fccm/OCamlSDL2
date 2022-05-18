@@ -16,9 +16,25 @@
  
 #include <SDL_render.h>
 #include "sdlrender_stub.h"
+#include "sdlpixelFormat_stub.h"
 #include "sdltexture_stub.h"
 #include "sdlsurface_stub.h"
 #include "sdlblendMode_stub.h"
+
+CAMLprim value
+caml_SDL_CreateTexture(value renderer, value format, value access, value w, value h)
+{
+    SDL_Texture *tex =
+        SDL_CreateTexture(
+                SDL_Renderer_val(renderer),
+                Sdl_pixelformat_t(format),
+                Int_val(access),
+                Int_val(w),
+                Int_val(h));
+    if (!tex)
+        caml_failwith("Sdltexture.create");
+    return Val_SDL_Texture(tex);
+}
 
 CAMLprim value
 caml_SDL_CreateTextureFromSurface(value renderer, value surface)

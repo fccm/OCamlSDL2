@@ -1,5 +1,5 @@
 (* OCamlSDL2 - An OCaml interface to the SDL2 library
- Copyright (C) 2014 Florent Monnier
+ Copyright (C) 2013 Florent Monnier
  
  This software is provided "AS-IS", without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
@@ -8,13 +8,14 @@
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it freely.
 *)
-(** Prefixless modules, with Bigarray interactions *)
+(** Texture access kind *)
 
-module Surface_ba = struct
-  include Sdlsurface_ba
-end
+(** {{:https://wiki.libsdl.org/SDL_TextureAccess}api doc} *)
+type t =
+  | Static
+  | Streaming
+  | Target
 
-module Texture_ba = struct
-  include Sdltexture_ba
-end
+val to_string : t -> string
+val of_string : string -> t
 
