@@ -1,16 +1,25 @@
-Florent Monnier <monnier.florent at gmail>
-  Main author and current maintainer
+Florent Monnier <monnier.florent at gmail.com>
+  Main original author and maintainer
 
-David Cade <codename68 at gmail>
+David Cade <codename68 at gmail.com>
   Provided events handling of SDL_TextInputEvent and SDL_TextEditingEvent
 
 Piotr Mardziel <@piotrm0>
   Provided Sdlsurface_ba.get_pixels
 
-Alexandru Scvortov <scvalex at gmail>
+Alexandru Scvortov <scvalex at gmail.com>
   wrapped SDL_GetWindowSize() as Sdlwindow.get_size
   wrapped SDL_RWclose() as RWops.close
 
 Guillaume Munch-Maccagnoni <Guillaume.Munch-Maccagnoni at Inria.fr>
   Naked pointers checks and fixes
+
+Carsten Elton Sørensen <cso at rift.dk>
+  Add SDL_SetRenderTarget binding
+  Implement "hints" API
+  Implement texture locking and creation with access type
+  Add events subsystem
+  Add support for HiDPI
+  Add Sdlrender.get_output_size
+  Use new OCaml macros when available
 
