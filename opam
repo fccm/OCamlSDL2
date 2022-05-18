@@ -6,6 +6,7 @@ authors: [
   "Piotr Mardziel"
   "David Cadé"
   "Guillaume Munch-Maccagnoni"
+  "Carsten Elton Sørensen"
 ]
 license: "restrictionless Zlib"
 homepage: "https://github.com/fccm/OCamlSDL2"
