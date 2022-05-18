@@ -1,7 +1,8 @@
 # Config for Linux
 
 OCAMLC := ocamlc -g
-OCAMLOPT_PARAMS := -g -w A -warn-error A -ccopt "$(CC_PARAMS)"
+#OCAMLOPT_PARAMS := -g -w A -warn-error A -ccopt "$(CC_PARAMS)"
+OCAMLOPT_PARAMS := -g -ccopt "$(CC_PARAMS)"
 OCAMLOPT = ocamlopt -g -cc "$(CC)" $(OCAMLOPT_PARAMS)
 #OCAMLMKLIB := ocamlmklib -v
 OCAMLMKLIB := ocamlmklib
