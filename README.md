@@ -29,7 +29,7 @@ bindings under the terms of the same license.
 ## Versions
 
 This version of the bindings is known to work with
-SDL 2.0.9 or 2.0.10 and OCaml 4.07.1 until 4.11.1
+SDL 2.0.9 or 2.0.10 and OCaml 4.07.1 until 4.13.1
 
 
 ## Install
