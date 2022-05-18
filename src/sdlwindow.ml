@@ -25,6 +25,7 @@ type window_flags =
   | Mouse_Focus
   | FullScreen_Desktop
   | Foreign
+  | Allow_HighDPI
 
 type window_pos = [ `centered | `undefined | `pos of int ]
 

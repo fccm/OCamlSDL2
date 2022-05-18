@@ -38,6 +38,10 @@ external create_renderer :
   = "caml_SDL_CreateRenderer"
 (** {{:http://wiki.libsdl.org/SDL_CreateRenderer}api doc} *)
 
+external get_output_size : t -> int * int
+  = "caml_SDL_GetRendererOutputSize"
+(** {{:http://wiki.libsdl.org/SDL_GetRendererOutputSize}api doc} *)
+
 external set_logical_size : t -> int * int -> unit
   = "caml_SDL_RenderSetLogicalSize"
 (** {{:http://wiki.libsdl.org/SDL_RenderSetLogicalSize}api doc} *)
