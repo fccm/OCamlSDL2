@@ -3,7 +3,7 @@
 ![OCaml and SDL](
 http://openclipart.org/image/250px/svg_to_png/174316/games.png)
 
-## Intro
+## Introduction
 
 OCamlSDL2 is an OCaml interface to the SDL2 library.
 
@@ -11,19 +11,6 @@ If you are searching for OCaml bindings for SDL 1.2
 then you should go there instead:
   [ocamlsdl.sf.net](
   http://ocamlsdl.sourceforge.net/)
-
-## FAQ
-
-Why another OCaml SDL bindings?
-
-SDL1 was released under the LGPL and OCamlSDL1 too.
-(LGPL without any exception on static linking.)
-SDL2 is released under a liberal license. And it was
-impossible to reach the authors of OCamlSDL1 to ask
-them to change the license.
-If SDL changes again its license in the future to any
-Floss / OSI approved license, you can use these
-bindings under the terms of the same license.
 
 
 ## Versions
