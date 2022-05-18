@@ -322,7 +322,7 @@ cleandeps:
 .PHONY: clean
 clean:
 	$(RM) *.[oas] *.cm[ioax] *.cmx[as] *.so *.dll *.opt *.exe
-	$(RM) *.mk *.gen.c sdl.mli
+	$(RM) *.mk *.gen.c sdl.mli sdlba.mli
 
 .PHONY: cleanall
 cleanall: clean cleandeps cleandoc
