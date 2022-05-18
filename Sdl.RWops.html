@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.RWops</title>
 </head>
 <body>
@@ -55,18 +58,18 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a></code> </pre>
 
 
-<pre><span id="VALfrom_mem"><span class="keyword">val</span> from_mem</span> : <code class="type">bytes -> <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
-<pre><span id="VALfrom_const_mem"><span class="keyword">val</span> from_const_mem</span> : <code class="type">string -> <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
-<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">filename:string -> mode:string -> <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfrom_mem"><span class="keyword">val</span> from_mem</span> : <code class="type">bytes -&gt; <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfrom_const_mem"><span class="keyword">val</span> from_const_mem</span> : <code class="type">string -&gt; <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">filename:string -&gt; mode:string -&gt; <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
 <pre><span id="TYPEinput"><span class="keyword">type</span> <code class="type"></code>input</span> = <code class="type">[ `Buffer of bytes | `Filename of string | `String of string ]</code> </pre>
 
 
-<pre><span id="VALfrom_input"><span class="keyword">val</span> from_input</span> : <code class="type">[< `Buffer of bytes | `Filename of string | `String of string ] -><br>       <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
-<pre><span id="VALfrom_input_opt"><span class="keyword">val</span> from_input_opt</span> : <code class="type">[> `Buffer of bytes | `Filename of string | `String of string ] -><br>       <a href="Sdl.RWops.html#TYPEt">t</a> option</code></pre>
-<pre><span id="VALalloc"><span class="keyword">val</span> alloc</span> : <code class="type">unit -> <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
-<pre><span id="VALfree"><span class="keyword">val</span> free</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -> unit</code></pre>
-<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -> unit</code></pre>
-<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -> int64</code></pre>
+<pre><span id="VALfrom_input"><span class="keyword">val</span> from_input</span> : <code class="type">[&lt; `Buffer of bytes | `Filename of string | `String of string ] -&gt;<br>       <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfrom_input_opt"><span class="keyword">val</span> from_input_opt</span> : <code class="type">[&gt; `Buffer of bytes | `Filename of string | `String of string ] -&gt;<br>       <a href="Sdl.RWops.html#TYPEt">t</a> option</code></pre>
+<pre><span id="VALalloc"><span class="keyword">val</span> alloc</span> : <code class="type">unit -&gt; <a href="Sdl.RWops.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfree"><span class="keyword">val</span> free</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -&gt; unit</code></pre>
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -&gt; unit</code></pre>
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -&gt; int64</code></pre>
 <pre><span id="TYPEseek"><span class="keyword">type</span> <code class="type"></code>seek</span> = <code class="type"><a href="Sdlrwops.html#TYPEseek">Sdlrwops.seek</a></code> = </pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -92,8 +95,8 @@
 
 
 
-<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -> offset:int64 -> <a href="Sdl.RWops.html#TYPEseek">seek</a> -> int64</code></pre>
-<pre><span id="VALtell"><span class="keyword">val</span> tell</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -> int64</code></pre>
+<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -&gt; offset:int64 -&gt; <a href="Sdl.RWops.html#TYPEseek">seek</a> -&gt; int64</code></pre>
+<pre><span id="VALtell"><span class="keyword">val</span> tell</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -&gt; int64</code></pre>
 <pre><span id="TYPEuint8"><span class="keyword">type</span> <code class="type"></code>uint8</span> = <code class="type">int</code> </pre>
 
 
@@ -106,7 +109,7 @@
 <pre><span id="TYPEuint64"><span class="keyword">type</span> <code class="type"></code>uint64</span> = <code class="type">int64</code> </pre>
 
 
-<pre><span id="VALreadU8"><span class="keyword">val</span> readU8</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -> <a href="Sdl.RWops.html#TYPEuint8">uint8</a></code></pre>
-<pre><span id="VALwriteU8"><span class="keyword">val</span> writeU8</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -> <a href="Sdl.RWops.html#TYPEuint8">uint8</a> -> unit</code></pre>
+<pre><span id="VALreadU8"><span class="keyword">val</span> readU8</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -&gt; <a href="Sdl.RWops.html#TYPEuint8">uint8</a></code></pre>
+<pre><span id="VALwriteU8"><span class="keyword">val</span> writeU8</span> : <code class="type"><a href="Sdl.RWops.html#TYPEt">t</a> -&gt; <a href="Sdl.RWops.html#TYPEuint8">uint8</a> -&gt; unit</code></pre>
 <pre><span id="MODULEBigEndian"><span class="keyword">module</span> <a href="Sdl.RWops.BigEndian.html">BigEndian</a></span>: <code class="type"><a href="Sdlrwops.BigEndian.html">Sdlrwops.BigEndian</a></code></pre>
 <pre><span id="MODULELittleEndian"><span class="keyword">module</span> <a href="Sdl.RWops.LittleEndian.html">LittleEndian</a></span>: <code class="type"><a href="Sdlrwops.LittleEndian.html">Sdlrwops.LittleEndian</a></code></pre></body></html>

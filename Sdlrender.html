@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlrender</title>
 </head>
 <body>
@@ -62,7 +65,7 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">Sdltype.renderer</code> </pre>
 
 
-<pre><span id="VALcreate_window_and_renderer"><span class="keyword">val</span> create_window_and_renderer</span> : <code class="type">width:int -><br>       height:int -> flags:<a href="Sdlwindow.html#TYPEwindow_flags">Sdlwindow.window_flags</a> list -> <a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> * <a href="Sdlrender.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate_window_and_renderer"><span class="keyword">val</span> create_window_and_renderer</span> : <code class="type">width:int -&gt;<br>       height:int -&gt; flags:<a href="Sdlwindow.html#TYPEwindow_flags">Sdlwindow.window_flags</a> list -&gt; <a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> * <a href="Sdlrender.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_CreateWindowAndRenderer">api doc</a></p>
 </div>
@@ -105,117 +108,123 @@
 </div>
 
 
-<pre><span id="VALstring_of_renderer_flags"><span class="keyword">val</span> string_of_renderer_flags</span> : <code class="type"><a href="Sdlrender.html#TYPErenderer_flags">renderer_flags</a> -> string</code></pre>
-<pre><span id="VALrenderer_flags_of_string"><span class="keyword">val</span> renderer_flags_of_string</span> : <code class="type">string -> <a href="Sdlrender.html#TYPErenderer_flags">renderer_flags</a></code></pre>
-<pre><span id="VALcreate_renderer"><span class="keyword">val</span> create_renderer</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -><br>       index:int -> flags:<a href="Sdlrender.html#TYPErenderer_flags">renderer_flags</a> list -> <a href="Sdlrender.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALstring_of_renderer_flags"><span class="keyword">val</span> string_of_renderer_flags</span> : <code class="type"><a href="Sdlrender.html#TYPErenderer_flags">renderer_flags</a> -&gt; string</code></pre>
+<pre><span id="VALrenderer_flags_of_string"><span class="keyword">val</span> renderer_flags_of_string</span> : <code class="type">string -&gt; <a href="Sdlrender.html#TYPErenderer_flags">renderer_flags</a></code></pre>
+<pre><span id="VALcreate_renderer"><span class="keyword">val</span> create_renderer</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt;<br>       index:int -&gt; flags:<a href="Sdlrender.html#TYPErenderer_flags">renderer_flags</a> list -&gt; <a href="Sdlrender.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_CreateRenderer">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_logical_size"><span class="keyword">val</span> set_logical_size</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> int * int -> unit</code></pre><div class="info ">
+<pre><span id="VALget_output_size"><span class="keyword">val</span> get_output_size</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; int * int</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_GetRendererOutputSize">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALset_logical_size"><span class="keyword">val</span> set_logical_size</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; int * int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderSetLogicalSize">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_logical_size2"><span class="keyword">val</span> set_logical_size2</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> width:int -> height:int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_logical_size2"><span class="keyword">val</span> set_logical_size2</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; width:int -&gt; height:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderSetLogicalSize">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_viewport"><span class="keyword">val</span> set_viewport</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_viewport"><span class="keyword">val</span> set_viewport</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderSetViewport">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_clip_rect"><span class="keyword">val</span> set_clip_rect</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_clip_rect"><span class="keyword">val</span> set_clip_rect</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="https://wiki.libsdl.org/SDL_RenderSetClipRect">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_draw_color"><span class="keyword">val</span> set_draw_color</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> rgb:int * int * int -> a:int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_draw_color"><span class="keyword">val</span> set_draw_color</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; rgb:int * int * int -&gt; a:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetRenderDrawColor">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_draw_color3"><span class="keyword">val</span> set_draw_color3</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> r:int -> g:int -> b:int -> a:int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_draw_color3"><span class="keyword">val</span> set_draw_color3</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; r:int -&gt; g:int -&gt; b:int -&gt; a:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetRenderDrawColor">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_draw_blend_mode"><span class="keyword">val</span> set_draw_blend_mode</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_draw_blend_mode"><span class="keyword">val</span> set_draw_blend_mode</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetRenderDrawBlendMode">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_point"><span class="keyword">val</span> draw_point</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> int * int -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_point"><span class="keyword">val</span> draw_point</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; int * int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawPoint">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_point2"><span class="keyword">val</span> draw_point2</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> x:int -> y:int -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_point2"><span class="keyword">val</span> draw_point2</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; x:int -&gt; y:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawPoint">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_points"><span class="keyword">val</span> draw_points</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> points:(int * int) array -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_points"><span class="keyword">val</span> draw_points</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; points:(int * int) array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawPoints">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_line"><span class="keyword">val</span> draw_line</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> (int * int) * (int * int) -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_line"><span class="keyword">val</span> draw_line</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; (int * int) * (int * int) -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawLine">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_line2"><span class="keyword">val</span> draw_line2</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> p1:int * int -> p2:int * int -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_line2"><span class="keyword">val</span> draw_line2</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; p1:int * int -&gt; p2:int * int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawLine">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_lines"><span class="keyword">val</span> draw_lines</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> (int * int) array -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_lines"><span class="keyword">val</span> draw_lines</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; (int * int) array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawLines">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_rect"><span class="keyword">val</span> draw_rect</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_rect"><span class="keyword">val</span> draw_rect</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawRect">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdraw_rects"><span class="keyword">val</span> draw_rects</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> array -> unit</code></pre><div class="info ">
+<pre><span id="VALdraw_rects"><span class="keyword">val</span> draw_rects</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderDrawRects">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALfill_rect"><span class="keyword">val</span> fill_rect</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfill_rect"><span class="keyword">val</span> fill_rect</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderFillRect">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALfill_rects"><span class="keyword">val</span> fill_rects</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> array -> unit</code></pre><div class="info ">
+<pre><span id="VALfill_rects"><span class="keyword">val</span> fill_rects</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a> array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderFillRects">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -><br>       texture:<a href="Sdltexture.html#TYPEt">Sdltexture.t</a> -><br>       ?src_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> ?dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> unit -> unit</code></pre><div class="info ">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt;<br>       texture:<a href="Sdltexture.html#TYPEt">Sdltexture.t</a> -&gt;<br>       ?src_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; ?dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderCopy">api doc</a></p>
 </div>
@@ -251,25 +260,25 @@
 </div>
 
 
-<pre><span id="VALcopyEx"><span class="keyword">val</span> copyEx</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -><br>       texture:<a href="Sdltexture.html#TYPEt">Sdltexture.t</a> -><br>       ?src_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -><br>       ?dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -><br>       ?angle:float -><br>       ?center:int * int -> ?flip:<a href="Sdlrender.html#TYPErenderer_flip">renderer_flip</a> -> unit -> unit</code></pre><div class="info ">
+<pre><span id="VALcopyEx"><span class="keyword">val</span> copyEx</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt;<br>       texture:<a href="Sdltexture.html#TYPEt">Sdltexture.t</a> -&gt;<br>       ?src_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt;<br>       ?dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt;<br>       ?angle:float -&gt;<br>       ?center:int * int -&gt; ?flip:<a href="Sdlrender.html#TYPErenderer_flip">renderer_flip</a> -&gt; unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderCopyEx">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_scale"><span class="keyword">val</span> set_scale</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> float * float -> unit</code></pre><div class="info ">
+<pre><span id="VALset_scale"><span class="keyword">val</span> set_scale</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; float * float -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderSetScale">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALrender_present"><span class="keyword">val</span> render_present</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALrender_present"><span class="keyword">val</span> render_present</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderPresent">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderClear">api doc</a></p>
 </div>
@@ -306,15 +315,21 @@
 </div>
 
 
-<pre><span id="VALget_render_drivers"><span class="keyword">val</span> get_render_drivers</span> : <code class="type">unit -> <a href="Sdlrender.html#TYPErenderer_info">renderer_info</a> array</code></pre><div class="info ">
+<pre><span id="VALget_render_drivers"><span class="keyword">val</span> get_render_drivers</span> : <code class="type">unit -&gt; <a href="Sdlrender.html#TYPErenderer_info">renderer_info</a> array</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetRenderDrivers">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALread_pixels"><span class="keyword">val</span> read_pixels</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -> ?rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> <a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALread_pixels"><span class="keyword">val</span> read_pixels</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; ?rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; <a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RenderReadPixels">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALset_render_target"><span class="keyword">val</span> set_render_target</span> : <code class="type"><a href="Sdlrender.html#TYPEt">t</a> -&gt; <a href="Sdltexture.html#TYPEt">Sdltexture.t</a> option -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_SetRenderTarget">api doc</a></p>
 </div>
 </div>
 </body></html>

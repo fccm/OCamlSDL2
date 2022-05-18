@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.GL</title>
 </head>
 <body>
@@ -55,14 +58,14 @@
 <pre><span id="TYPEcontext"><span class="keyword">type</span> <code class="type"></code>context</span> = <code class="type"><a href="Sdlgl.html#TYPEcontext">Sdlgl.context</a></code> </pre>
 
 
-<pre><span id="VALcreate_context"><span class="keyword">val</span> create_context</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> <a href="Sdl.GL.html#TYPEcontext">context</a></code></pre>
-<pre><span id="VALmake_current"><span class="keyword">val</span> make_current</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> ctx:<a href="Sdl.GL.html#TYPEcontext">context</a> -> int</code></pre>
-<pre><span id="VALunload_library"><span class="keyword">val</span> unload_library</span> : <code class="type">unit -> unit</code></pre>
-<pre><span id="VALextension_supported"><span class="keyword">val</span> extension_supported</span> : <code class="type">extension:string -> bool</code></pre>
-<pre><span id="VALset_swap_interval"><span class="keyword">val</span> set_swap_interval</span> : <code class="type">interval:int -> unit</code></pre>
-<pre><span id="VALget_swap_interval"><span class="keyword">val</span> get_swap_interval</span> : <code class="type">unit -> int</code></pre>
-<pre><span id="VALswap_window"><span class="keyword">val</span> swap_window</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> unit</code></pre>
-<pre><span id="VALdelete_context"><span class="keyword">val</span> delete_context</span> : <code class="type"><a href="Sdl.GL.html#TYPEcontext">context</a> -> unit</code></pre>
+<pre><span id="VALcreate_context"><span class="keyword">val</span> create_context</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt; <a href="Sdl.GL.html#TYPEcontext">context</a></code></pre>
+<pre><span id="VALmake_current"><span class="keyword">val</span> make_current</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt; ctx:<a href="Sdl.GL.html#TYPEcontext">context</a> -&gt; int</code></pre>
+<pre><span id="VALunload_library"><span class="keyword">val</span> unload_library</span> : <code class="type">unit -&gt; unit</code></pre>
+<pre><span id="VALextension_supported"><span class="keyword">val</span> extension_supported</span> : <code class="type">extension:string -&gt; bool</code></pre>
+<pre><span id="VALset_swap_interval"><span class="keyword">val</span> set_swap_interval</span> : <code class="type">interval:int -&gt; unit</code></pre>
+<pre><span id="VALget_swap_interval"><span class="keyword">val</span> get_swap_interval</span> : <code class="type">unit -&gt; int</code></pre>
+<pre><span id="VALswap_window"><span class="keyword">val</span> swap_window</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt; unit</code></pre>
+<pre><span id="VALdelete_context"><span class="keyword">val</span> delete_context</span> : <code class="type"><a href="Sdl.GL.html#TYPEcontext">context</a> -&gt; unit</code></pre>
 <pre><span id="TYPEgl_attr"><span class="keyword">type</span> <code class="type"></code>gl_attr</span> = <code class="type"><a href="Sdlgl.html#TYPEgl_attr">Sdlgl.gl_attr</a></code> = </pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -228,5 +231,5 @@
 
 
 
-<pre><span id="VALset_attribute"><span class="keyword">val</span> set_attribute</span> : <code class="type"><a href="Sdl.GL.html#TYPEgl_attr">gl_attr</a> -> int -> unit</code></pre>
-<pre><span id="VALget_attribute"><span class="keyword">val</span> get_attribute</span> : <code class="type"><a href="Sdl.GL.html#TYPEgl_attr">gl_attr</a> -> int</code></pre></body></html>
+<pre><span id="VALset_attribute"><span class="keyword">val</span> set_attribute</span> : <code class="type"><a href="Sdl.GL.html#TYPEgl_attr">gl_attr</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALget_attribute"><span class="keyword">val</span> get_attribute</span> : <code class="type"><a href="Sdl.GL.html#TYPEgl_attr">gl_attr</a> -&gt; int</code></pre></body></html>

@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Sdlgl.html">
+<link rel="previous" href="Sdlhint.html">
 <link rel="next" href="Sdlsurface_ba.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,12 +40,14 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Sdlgl.html" title="Sdlgl">Previous</a>
+<div class="navbar"><a class="pre" href="Sdlhint.html" title="Sdlhint">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;<a class="post" href="Sdlsurface_ba.html" title="Sdlsurface_ba">Next</a>
 </div>
@@ -57,20 +60,21 @@
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEsubsystem"><span class="keyword">type</span> <code class="type"></code>subsystem</span> = <code class="type">[ `AUDIO | `GAMECONTROLLER | `HAPTIC | `JOYSTICK | `TIMER | `VIDEO ]</code> </pre>
+<pre><span id="TYPEsubsystem"><span class="keyword">type</span> <code class="type"></code>subsystem</span> = <code class="type">[ `AUDIO | `EVENTS | `GAMECONTROLLER | `HAPTIC | `JOYSTICK | `TIMER | `VIDEO<br>       ]</code> </pre>
 
 
-<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">[< `AUDIO<br>        | `EVERYTHING<br>        | `GAMECONTROLLER<br>        | `HAPTIC<br>        | `JOYSTICK<br>        | `NOPARACHUTE<br>        | `TIMER<br>        | `VIDEO ]<br>       list -> unit</code></pre>
-<pre><span id="VALinit_subsystem"><span class="keyword">val</span> init_subsystem</span> : <code class="type"><a href="Sdl.html#TYPEsubsystem">subsystem</a> list -> unit</code></pre>
-<pre><span id="VALquit"><span class="keyword">val</span> quit</span> : <code class="type">unit -> unit</code></pre>
-<pre><span id="VALquit_requested"><span class="keyword">val</span> quit_requested</span> : <code class="type">unit -> bool</code></pre>
-<pre><span id="VALget_platform"><span class="keyword">val</span> get_platform</span> : <code class="type">unit -> string</code></pre>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">[&lt; `AUDIO<br>        | `EVENTS<br>        | `EVERYTHING<br>        | `GAMECONTROLLER<br>        | `HAPTIC<br>        | `JOYSTICK<br>        | `NOPARACHUTE<br>        | `TIMER<br>        | `VIDEO ]<br>       list -&gt; unit</code></pre>
+<pre><span id="VALinit_subsystem"><span class="keyword">val</span> init_subsystem</span> : <code class="type"><a href="Sdl.html#TYPEsubsystem">subsystem</a> list -&gt; unit</code></pre>
+<pre><span id="VALquit"><span class="keyword">val</span> quit</span> : <code class="type">unit -&gt; unit</code></pre>
+<pre><span id="VALquit_requested"><span class="keyword">val</span> quit_requested</span> : <code class="type">unit -&gt; bool</code></pre>
+<pre><span id="VALget_platform"><span class="keyword">val</span> get_platform</span> : <code class="type">unit -&gt; string</code></pre>
 <pre><span id="MODULEInit"><span class="keyword">module</span> <a href="Sdl.Init.html">Init</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Init.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULEQuit"><span class="keyword">module</span> <a href="Sdl.Quit.html">Quit</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Quit.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULEWindow"><span class="keyword">module</span> <a href="Sdl.Window.html">Window</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Window.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULESurface"><span class="keyword">module</span> <a href="Sdl.Surface.html">Surface</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Surface.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULERender"><span class="keyword">module</span> <a href="Sdl.Render.html">Render</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Render.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULETexture"><span class="keyword">module</span> <a href="Sdl.Texture.html">Texture</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Texture.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULETextureAccess"><span class="keyword">module</span> <a href="Sdl.TextureAccess.html">TextureAccess</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.TextureAccess.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULEPixelFormat"><span class="keyword">module</span> <a href="Sdl.PixelFormat.html">PixelFormat</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.PixelFormat.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULEPixel"><span class="keyword">module</span> <a href="Sdl.Pixel.html">Pixel</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Pixel.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULEBlendMode"><span class="keyword">module</span> <a href="Sdl.BlendMode.html">BlendMode</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.BlendMode.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
@@ -92,4 +96,5 @@
 <pre><span id="MODULECPUInfo"><span class="keyword">module</span> <a href="Sdl.CPUInfo.html">CPUInfo</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.CPUInfo.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULEPower"><span class="keyword">module</span> <a href="Sdl.Power.html">Power</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Power.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="MODULERWops"><span class="keyword">module</span> <a href="Sdl.RWops.html">RWops</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.RWops.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span id="MODULEError"><span class="keyword">module</span> <a href="Sdl.Error.html">Error</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span id="MODULEError"><span class="keyword">module</span> <a href="Sdl.Error.html">Error</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEHint"><span class="keyword">module</span> <a href="Sdl.Hint.html">Hint</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Hint.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

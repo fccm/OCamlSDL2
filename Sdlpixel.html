@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlpixel</title>
 </head>
 <body>
@@ -59,7 +62,7 @@
 <p>API Doc:
   <a href="http://wiki.libsdl.org/CategoryPixels">Pixels category</a></p>
 
-<pre><span id="VALget_pixel_format_name"><span class="keyword">val</span> get_pixel_format_name</span> : <code class="type"><a href="SdlpixelFormat.html#TYPEt">SdlpixelFormat.t</a> -> string</code></pre><div class="info ">
+<pre><span id="VALget_pixel_format_name"><span class="keyword">val</span> get_pixel_format_name</span> : <code class="type"><a href="SdlpixelFormat.html#TYPEt">SdlpixelFormat.t</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetPixelFormatName">api doc</a></p>
 </div>
@@ -68,13 +71,13 @@
 <pre><span id="TYPEpixel_format"><span class="keyword">type</span> <code class="type"></code>pixel_format</span> </pre>
 
 
-<pre><span id="VALalloc_format"><span class="keyword">val</span> alloc_format</span> : <code class="type"><a href="SdlpixelFormat.html#TYPEt">SdlpixelFormat.t</a> -> <a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a></code></pre><div class="info ">
+<pre><span id="VALalloc_format"><span class="keyword">val</span> alloc_format</span> : <code class="type"><a href="SdlpixelFormat.html#TYPEt">SdlpixelFormat.t</a> -&gt; <a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_AllocFormat">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALfree_format"><span class="keyword">val</span> free_format</span> : <code class="type"><a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfree_format"><span class="keyword">val</span> free_format</span> : <code class="type"><a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_FreeFormat">api doc</a></p>
 </div>
@@ -89,25 +92,25 @@
 <pre><span id="TYPErgba"><span class="keyword">type</span> <code class="type"></code>rgba</span> = <code class="type"><a href="Sdlpixel.html#TYPEuint8">uint8</a> * <a href="Sdlpixel.html#TYPEuint8">uint8</a> * <a href="Sdlpixel.html#TYPEuint8">uint8</a> * <a href="Sdlpixel.html#TYPEuint8">uint8</a></code> </pre>
 
 
-<pre><span id="VALmap_RGB"><span class="keyword">val</span> map_RGB</span> : <code class="type"><a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -> rgb:<a href="Sdlpixel.html#TYPErgb">rgb</a> -> int32</code></pre><div class="info ">
+<pre><span id="VALmap_RGB"><span class="keyword">val</span> map_RGB</span> : <code class="type"><a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -&gt; rgb:<a href="Sdlpixel.html#TYPErgb">rgb</a> -&gt; int32</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_MapRGB">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALmap_RGBA"><span class="keyword">val</span> map_RGBA</span> : <code class="type"><a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -> rgba:<a href="Sdlpixel.html#TYPErgba">rgba</a> -> int32</code></pre><div class="info ">
+<pre><span id="VALmap_RGBA"><span class="keyword">val</span> map_RGBA</span> : <code class="type"><a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -&gt; rgba:<a href="Sdlpixel.html#TYPErgba">rgba</a> -&gt; int32</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_MapRGBA">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_RGB"><span class="keyword">val</span> get_RGB</span> : <code class="type">pixel:int32 -> fmt:<a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -> <a href="Sdlpixel.html#TYPErgb">rgb</a></code></pre><div class="info ">
+<pre><span id="VALget_RGB"><span class="keyword">val</span> get_RGB</span> : <code class="type">pixel:int32 -&gt; fmt:<a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -&gt; <a href="Sdlpixel.html#TYPErgb">rgb</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetRGB">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_RGBA"><span class="keyword">val</span> get_RGBA</span> : <code class="type">pixel:int32 -> fmt:<a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -> <a href="Sdlpixel.html#TYPErgba">rgba</a></code></pre><div class="info ">
+<pre><span id="VALget_RGBA"><span class="keyword">val</span> get_RGBA</span> : <code class="type">pixel:int32 -&gt; fmt:<a href="Sdlpixel.html#TYPEpixel_format">pixel_format</a> -&gt; <a href="Sdlpixel.html#TYPErgba">rgba</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetRGBA">api doc</a></p>
 </div>

@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.Audio</title>
 </head>
 <body>
@@ -185,10 +188,10 @@
 
 
 
-<pre><span id="VALget_drivers"><span class="keyword">val</span> get_drivers</span> : <code class="type">unit -> string array</code></pre>
-<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">driver_name:string -> unit</code></pre>
-<pre><span id="VALquit"><span class="keyword">val</span> quit</span> : <code class="type">unit -> unit</code></pre>
-<pre><span id="VALget_current_driver"><span class="keyword">val</span> get_current_driver</span> : <code class="type">unit -> string</code></pre>
+<pre><span id="VALget_drivers"><span class="keyword">val</span> get_drivers</span> : <code class="type">unit -&gt; string array</code></pre>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">driver_name:string -&gt; unit</code></pre>
+<pre><span id="VALquit"><span class="keyword">val</span> quit</span> : <code class="type">unit -&gt; unit</code></pre>
+<pre><span id="VALget_current_driver"><span class="keyword">val</span> get_current_driver</span> : <code class="type">unit -&gt; string</code></pre>
 <pre><span id="TYPEstatus"><span class="keyword">type</span> <code class="type"></code>status</span> = <code class="type"><a href="Sdlaudio.html#TYPEstatus">Sdlaudio.status</a></code> = </pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -214,27 +217,27 @@
 
 
 
-<pre><span id="VALget_status"><span class="keyword">val</span> get_status</span> : <code class="type">unit -> <a href="Sdl.Audio.html#TYPEstatus">status</a></code></pre>
-<pre><span id="VALstring_of_status"><span class="keyword">val</span> string_of_status</span> : <code class="type"><a href="Sdl.Audio.html#TYPEstatus">status</a> -> string</code></pre>
-<pre><span id="VALpause"><span class="keyword">val</span> pause</span> : <code class="type">pause_on:bool -> unit</code></pre>
-<pre><span id="VALlock"><span class="keyword">val</span> lock</span> : <code class="type">unit -> unit</code></pre>
-<pre><span id="VALunlock"><span class="keyword">val</span> unlock</span> : <code class="type">unit -> unit</code></pre>
-<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type">unit -> unit</code></pre>
+<pre><span id="VALget_status"><span class="keyword">val</span> get_status</span> : <code class="type">unit -&gt; <a href="Sdl.Audio.html#TYPEstatus">status</a></code></pre>
+<pre><span id="VALstring_of_status"><span class="keyword">val</span> string_of_status</span> : <code class="type"><a href="Sdl.Audio.html#TYPEstatus">status</a> -&gt; string</code></pre>
+<pre><span id="VALpause"><span class="keyword">val</span> pause</span> : <code class="type">pause_on:bool -&gt; unit</code></pre>
+<pre><span id="VALlock"><span class="keyword">val</span> lock</span> : <code class="type">unit -&gt; unit</code></pre>
+<pre><span id="VALunlock"><span class="keyword">val</span> unlock</span> : <code class="type">unit -&gt; unit</code></pre>
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type">unit -&gt; unit</code></pre>
 <pre><span id="TYPEaudio_spec"><span class="keyword">type</span> <code class="type"></code>audio_spec</span> = <code class="type"><a href="Sdlaudio.html#TYPEaudio_spec">Sdlaudio.audio_spec</a></code> </pre>
 
 
-<pre><span id="VALnew_audio_spec"><span class="keyword">val</span> new_audio_spec</span> : <code class="type">unit -> <a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a></code></pre>
-<pre><span id="VALfree_audio_spec"><span class="keyword">val</span> free_audio_spec</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a> -> unit</code></pre>
+<pre><span id="VALnew_audio_spec"><span class="keyword">val</span> new_audio_spec</span> : <code class="type">unit -&gt; <a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a></code></pre>
+<pre><span id="VALfree_audio_spec"><span class="keyword">val</span> free_audio_spec</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a> -&gt; unit</code></pre>
 <pre><span id="TYPEaudio_buffer"><span class="keyword">type</span> <code class="type"></code>audio_buffer</span> = <code class="type"><a href="Sdlaudio.html#TYPEaudio_buffer">Sdlaudio.audio_buffer</a></code> </pre>
 
 
-<pre><span id="VALload_wav"><span class="keyword">val</span> load_wav</span> : <code class="type">filename:string -><br>       spec:<a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a> -> <a href="Sdl.Audio.html#TYPEaudio_buffer">audio_buffer</a> * int32</code></pre>
-<pre><span id="VALfree_wav"><span class="keyword">val</span> free_wav</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_buffer">audio_buffer</a> -> unit</code></pre>
+<pre><span id="VALload_wav"><span class="keyword">val</span> load_wav</span> : <code class="type">filename:string -&gt;<br>       spec:<a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a> -&gt; <a href="Sdl.Audio.html#TYPEaudio_buffer">audio_buffer</a> * int32</code></pre>
+<pre><span id="VALfree_wav"><span class="keyword">val</span> free_wav</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_buffer">audio_buffer</a> -&gt; unit</code></pre>
 <pre><span id="TYPEaudio_device_id"><span class="keyword">type</span> <code class="type"></code>audio_device_id</span> = <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">Sdlaudio.audio_device_id</a></code> </pre>
 
 
-<pre><span id="VALopen_audio_device_simple"><span class="keyword">val</span> open_audio_device_simple</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a> -> <a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a></code></pre>
-<pre><span id="VALqueue_audio"><span class="keyword">val</span> queue_audio</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -> <a href="Sdl.Audio.html#TYPEaudio_buffer">audio_buffer</a> -> int32 -> unit</code></pre>
-<pre><span id="VALunpause_audio_device"><span class="keyword">val</span> unpause_audio_device</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -> unit</code></pre>
-<pre><span id="VALpause_audio_device"><span class="keyword">val</span> pause_audio_device</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -> unit</code></pre>
-<pre><span id="VALclose_audio_device"><span class="keyword">val</span> close_audio_device</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -> unit</code></pre></body></html>
+<pre><span id="VALopen_audio_device_simple"><span class="keyword">val</span> open_audio_device_simple</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_spec">audio_spec</a> -&gt; <a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a></code></pre>
+<pre><span id="VALqueue_audio"><span class="keyword">val</span> queue_audio</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; <a href="Sdl.Audio.html#TYPEaudio_buffer">audio_buffer</a> -&gt; int32 -&gt; unit</code></pre>
+<pre><span id="VALunpause_audio_device"><span class="keyword">val</span> unpause_audio_device</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; unit</code></pre>
+<pre><span id="VALpause_audio_device"><span class="keyword">val</span> pause_audio_device</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; unit</code></pre>
+<pre><span id="VALclose_audio_device"><span class="keyword">val</span> close_audio_device</span> : <code class="type"><a href="Sdl.Audio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; unit</code></pre></body></html>

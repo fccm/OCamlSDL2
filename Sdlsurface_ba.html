@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Sdl.html">
-<link rel="next" href="Sdlba.html">
+<link rel="next" href="Sdltexture_ba.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,14 +40,16 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlsurface_ba</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Sdl.html" title="Sdl">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Sdlba.html" title="Sdlba">Next</a>
+&nbsp;<a class="post" href="Sdltexture_ba.html" title="Sdltexture_ba">Next</a>
 </div>
 <h1>Module <a href="type_Sdlsurface_ba.html">Sdlsurface_ba</a></h1>
 
@@ -62,5 +65,5 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a></code> </pre>
 
 
-<pre><span id="VALget_pixels"><span class="keyword">val</span> get_pixels</span> : <code class="type"><a href="Sdlsurface_ba.html#TYPEt">t</a> -><br>       (int, Stdlib.Bigarray.int8_unsigned_elt, Stdlib.Bigarray.c_layout)<br>       Stdlib.Bigarray.Array1.t</code></pre>
-<pre><span id="VALcreate_rgb_surface_from"><span class="keyword">val</span> create_rgb_surface_from</span> : <code class="type">pixels:(int, Stdlib.Bigarray.int8_unsigned_elt, Stdlib.Bigarray.c_layout)<br>              Stdlib.Bigarray.Array1.t -><br>       width:int -><br>       height:int -><br>       depth:int -><br>       pitch:int -><br>       r_mask:int32 -><br>       g_mask:int32 -> b_mask:int32 -> a_mask:int32 -> <a href="Sdlsurface_ba.html#TYPEt">t</a></code></pre></body></html>
+<pre><span id="VALget_pixels"><span class="keyword">val</span> get_pixels</span> : <code class="type"><a href="Sdlsurface_ba.html#TYPEt">t</a> -&gt;<br>       (int, Stdlib.Bigarray.int8_unsigned_elt, Stdlib.Bigarray.c_layout)<br>       Stdlib.Bigarray.Array1.t</code></pre>
+<pre><span id="VALcreate_rgb_surface_from"><span class="keyword">val</span> create_rgb_surface_from</span> : <code class="type">pixels:(int, Stdlib.Bigarray.int8_unsigned_elt, Stdlib.Bigarray.c_layout)<br>              Stdlib.Bigarray.Array1.t -&gt;<br>       width:int -&gt;<br>       height:int -&gt;<br>       depth:int -&gt;<br>       pitch:int -&gt;<br>       r_mask:int32 -&gt;<br>       g_mask:int32 -&gt; b_mask:int32 -&gt; a_mask:int32 -&gt; <a href="Sdlsurface_ba.html#TYPEt">t</a></code></pre></body></html>

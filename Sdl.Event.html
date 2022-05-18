@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.Event</title>
 </head>
 <body>
@@ -70,7 +73,7 @@
 
 
 
-<pre><span id="VALstring_of_state"><span class="keyword">val</span> string_of_state</span> : <code class="type"><a href="Sdl.Event.html#TYPEstate">state</a> -> string</code></pre>
+<pre><span id="VALstring_of_state"><span class="keyword">val</span> string_of_state</span> : <code class="type"><a href="Sdl.Event.html#TYPEstate">state</a> -&gt; string</code></pre>
 <pre><span id="TYPEkeyboard_event"><span class="keyword">type</span> <code class="type"></code>keyboard_event</span> = <code class="type"><a href="Sdlevent.html#TYPEkeyboard_event">Sdlevent.keyboard_event</a></code> = {</pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -383,7 +386,7 @@
 
 
 
-<pre><span id="VALstring_of_joy_device_change"><span class="keyword">val</span> string_of_joy_device_change</span> : <code class="type"><a href="Sdl.Event.html#TYPEjoy_device_change">joy_device_change</a> -> string</code></pre>
+<pre><span id="VALstring_of_joy_device_change"><span class="keyword">val</span> string_of_joy_device_change</span> : <code class="type"><a href="Sdl.Event.html#TYPEjoy_device_change">joy_device_change</a> -&gt; string</code></pre>
 <pre><span id="TYPEjoy_device_event"><span class="keyword">type</span> <code class="type"></code>joy_device_event</span> = <code class="type"><a href="Sdlevent.html#TYPEjoy_device_event">Sdlevent.joy_device_event</a></code> = {</pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -552,7 +555,7 @@
 
 
 
-<pre><span id="VALstring_of_window_event_kind"><span class="keyword">val</span> string_of_window_event_kind</span> : <code class="type"><a href="Sdl.Event.html#TYPEwindow_event_kind">window_event_kind</a> -> string</code></pre>
+<pre><span id="VALstring_of_window_event_kind"><span class="keyword">val</span> string_of_window_event_kind</span> : <code class="type"><a href="Sdl.Event.html#TYPEwindow_event_kind">window_event_kind</a> -&gt; string</code></pre>
 <pre><span id="TYPEwindow_event"><span class="keyword">type</span> <code class="type"></code>window_event</span> = <code class="type"><a href="Sdlevent.html#TYPEwindow_event">Sdlevent.window_event</a></code> = {</pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -1004,5 +1007,5 @@
 
 
 
-<pre><span id="VALpoll_event"><span class="keyword">val</span> poll_event</span> : <code class="type">unit -> <a href="Sdl.Event.html#TYPEt">t</a> option</code></pre>
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Sdl.Event.html#TYPEt">t</a> -> string</code></pre></body></html>
+<pre><span id="VALpoll_event"><span class="keyword">val</span> poll_event</span> : <code class="type">unit -&gt; <a href="Sdl.Event.html#TYPEt">t</a> option</code></pre>
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Sdl.Event.html#TYPEt">t</a> -&gt; string</code></pre></body></html>

@@ -14,6 +14,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -34,8 +35,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlrender</title>
 </head>
 <body>
@@ -53,6 +56,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;win:<span class="constructor">Sdlwindow</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;index:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;flags:<span class="constructor">Sdlrender</span>.renderer_flags&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlrender</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_CreateRenderer"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_output_size&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_GetRendererOutputSize"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_logical_size&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_RenderSetLogicalSize"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_logical_size2&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;width:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;height:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
@@ -117,4 +122,6 @@
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;read_pixels&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?rect:<span class="constructor">Sdlrect</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdlsurface</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_RenderReadPixels"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_render_target&nbsp;:&nbsp;<span class="constructor">Sdlrender</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sdltexture</span>.t&nbsp;option&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_SDL_SetRenderTarget"</span><br>
 <span class="keyword">end</span></code></body></html>

@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlaudio</title>
 </head>
 <body>
@@ -192,25 +195,25 @@
 
 
 
-<pre><span id="VALget_drivers"><span class="keyword">val</span> get_drivers</span> : <code class="type">unit -> string array</code></pre><div class="info ">
+<pre><span id="VALget_drivers"><span class="keyword">val</span> get_drivers</span> : <code class="type">unit -&gt; string array</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetAudioDrivers">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">driver_name:string -> unit</code></pre><div class="info ">
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">driver_name:string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_AudioInit">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALquit"><span class="keyword">val</span> quit</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALquit"><span class="keyword">val</span> quit</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_AudioQuit">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_current_driver"><span class="keyword">val</span> get_current_driver</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALget_current_driver"><span class="keyword">val</span> get_current_driver</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetCurrentAudioDriver">api doc</a></p>
 </div>
@@ -241,32 +244,32 @@
 
 
 
-<pre><span id="VALget_status"><span class="keyword">val</span> get_status</span> : <code class="type">unit -> <a href="Sdlaudio.html#TYPEstatus">status</a></code></pre><div class="info ">
+<pre><span id="VALget_status"><span class="keyword">val</span> get_status</span> : <code class="type">unit -&gt; <a href="Sdlaudio.html#TYPEstatus">status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetAudioStatus">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALstring_of_status"><span class="keyword">val</span> string_of_status</span> : <code class="type"><a href="Sdlaudio.html#TYPEstatus">status</a> -> string</code></pre>
-<pre><span id="VALpause"><span class="keyword">val</span> pause</span> : <code class="type">pause_on:bool -> unit</code></pre><div class="info ">
+<pre><span id="VALstring_of_status"><span class="keyword">val</span> string_of_status</span> : <code class="type"><a href="Sdlaudio.html#TYPEstatus">status</a> -&gt; string</code></pre>
+<pre><span id="VALpause"><span class="keyword">val</span> pause</span> : <code class="type">pause_on:bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_PauseAudio">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALlock"><span class="keyword">val</span> lock</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALlock"><span class="keyword">val</span> lock</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_LockAudio">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALunlock"><span class="keyword">val</span> unlock</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALunlock"><span class="keyword">val</span> unlock</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_UnlockAudio">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_CloseAudio">api doc</a></p>
 </div>
@@ -280,18 +283,18 @@
 </div>
 
 
-<pre><span id="VALnew_audio_spec"><span class="keyword">val</span> new_audio_spec</span> : <code class="type">unit -> <a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a></code></pre>
-<pre><span id="VALfree_audio_spec"><span class="keyword">val</span> free_audio_spec</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a> -> unit</code></pre>
+<pre><span id="VALnew_audio_spec"><span class="keyword">val</span> new_audio_spec</span> : <code class="type">unit -&gt; <a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a></code></pre>
+<pre><span id="VALfree_audio_spec"><span class="keyword">val</span> free_audio_spec</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a> -&gt; unit</code></pre>
 <pre><span id="TYPEaudio_buffer"><span class="keyword">type</span> <code class="type"></code>audio_buffer</span> </pre>
 
 
-<pre><span id="VALload_wav"><span class="keyword">val</span> load_wav</span> : <code class="type">filename:string -> spec:<a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a> -> <a href="Sdlaudio.html#TYPEaudio_buffer">audio_buffer</a> * int32</code></pre><div class="info ">
+<pre><span id="VALload_wav"><span class="keyword">val</span> load_wav</span> : <code class="type">filename:string -&gt; spec:<a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a> -&gt; <a href="Sdlaudio.html#TYPEaudio_buffer">audio_buffer</a> * int32</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_LoadWAV">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALfree_wav"><span class="keyword">val</span> free_wav</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_buffer">audio_buffer</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfree_wav"><span class="keyword">val</span> free_wav</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_buffer">audio_buffer</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_FreeWAV">api doc</a></p>
 </div>
@@ -300,31 +303,31 @@
 <pre><span id="TYPEaudio_device_id"><span class="keyword">type</span> <code class="type"></code>audio_device_id</span> </pre>
 
 
-<pre><span id="VALopen_audio_device_simple"><span class="keyword">val</span> open_audio_device_simple</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a> -> <a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a></code></pre><div class="info ">
+<pre><span id="VALopen_audio_device_simple"><span class="keyword">val</span> open_audio_device_simple</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_spec">audio_spec</a> -&gt; <a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_OpenAudioDevice">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALqueue_audio"><span class="keyword">val</span> queue_audio</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -> <a href="Sdlaudio.html#TYPEaudio_buffer">audio_buffer</a> -> int32 -> unit</code></pre><div class="info ">
+<pre><span id="VALqueue_audio"><span class="keyword">val</span> queue_audio</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; <a href="Sdlaudio.html#TYPEaudio_buffer">audio_buffer</a> -&gt; int32 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_QueueAudio">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALunpause_audio_device"><span class="keyword">val</span> unpause_audio_device</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALunpause_audio_device"><span class="keyword">val</span> unpause_audio_device</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_PauseAudioDevice">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALpause_audio_device"><span class="keyword">val</span> pause_audio_device</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALpause_audio_device"><span class="keyword">val</span> pause_audio_device</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_PauseAudioDevice">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALclose_audio_device"><span class="keyword">val</span> close_audio_device</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclose_audio_device"><span class="keyword">val</span> close_audio_device</span> : <code class="type"><a href="Sdlaudio.html#TYPEaudio_device_id">audio_device_id</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_CloseAudioDevice">api doc</a></p>
 </div>

@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlrwops</title>
 </head>
 <body>
@@ -62,19 +65,19 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALfrom_mem"><span class="keyword">val</span> from_mem</span> : <code class="type">bytes -> <a href="Sdlrwops.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom_mem"><span class="keyword">val</span> from_mem</span> : <code class="type">bytes -&gt; <a href="Sdlrwops.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RWFromMem">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALfrom_const_mem"><span class="keyword">val</span> from_const_mem</span> : <code class="type">string -> <a href="Sdlrwops.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom_const_mem"><span class="keyword">val</span> from_const_mem</span> : <code class="type">string -&gt; <a href="Sdlrwops.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RWFromConstMem">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">filename:string -> mode:string -> <a href="Sdlrwops.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">filename:string -&gt; mode:string -&gt; <a href="Sdlrwops.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RWFromFile">api doc</a></p>
 </div>
@@ -83,17 +86,17 @@
 <pre><span id="TYPEinput"><span class="keyword">type</span> <code class="type"></code>input</span> = <code class="type">[ `Buffer of bytes | `Filename of string | `String of string ]</code> </pre>
 
 
-<pre><span id="VALfrom_input"><span class="keyword">val</span> from_input</span> : <code class="type">[< `Buffer of bytes | `Filename of string | `String of string ] -> <a href="Sdlrwops.html#TYPEt">t</a></code></pre>
-<pre><span id="VALfrom_input_opt"><span class="keyword">val</span> from_input_opt</span> : <code class="type">[> `Buffer of bytes | `Filename of string | `String of string ] -><br>       <a href="Sdlrwops.html#TYPEt">t</a> option</code></pre>
-<pre><span id="VALalloc"><span class="keyword">val</span> alloc</span> : <code class="type">unit -> <a href="Sdlrwops.html#TYPEt">t</a></code></pre>
-<pre><span id="VALfree"><span class="keyword">val</span> free</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -> unit</code></pre>
-<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfrom_input"><span class="keyword">val</span> from_input</span> : <code class="type">[&lt; `Buffer of bytes | `Filename of string | `String of string ] -&gt; <a href="Sdlrwops.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfrom_input_opt"><span class="keyword">val</span> from_input_opt</span> : <code class="type">[&gt; `Buffer of bytes | `Filename of string | `String of string ] -&gt;<br>       <a href="Sdlrwops.html#TYPEt">t</a> option</code></pre>
+<pre><span id="VALalloc"><span class="keyword">val</span> alloc</span> : <code class="type">unit -&gt; <a href="Sdlrwops.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfree"><span class="keyword">val</span> free</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -&gt; unit</code></pre>
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RWclose">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -> int64</code></pre><div class="info ">
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RWsize">api doc</a></p>
 </div>
@@ -124,13 +127,13 @@
 
 
 
-<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -> offset:int64 -> <a href="Sdlrwops.html#TYPEseek">seek</a> -> int64</code></pre><div class="info ">
+<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -&gt; offset:int64 -&gt; <a href="Sdlrwops.html#TYPEseek">seek</a> -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RWseek">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALtell"><span class="keyword">val</span> tell</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -> int64</code></pre><div class="info ">
+<pre><span id="VALtell"><span class="keyword">val</span> tell</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RWtell">api doc</a></p>
 </div>
@@ -148,13 +151,13 @@
 <pre><span id="TYPEuint64"><span class="keyword">type</span> <code class="type"></code>uint64</span> = <code class="type">int64</code> </pre>
 
 
-<pre><span id="VALreadU8"><span class="keyword">val</span> readU8</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -> <a href="Sdlrwops.html#TYPEuint8">uint8</a></code></pre><div class="info ">
+<pre><span id="VALreadU8"><span class="keyword">val</span> readU8</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -&gt; <a href="Sdlrwops.html#TYPEuint8">uint8</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_ReadU8">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALwriteU8"><span class="keyword">val</span> writeU8</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -> <a href="Sdlrwops.html#TYPEuint8">uint8</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALwriteU8"><span class="keyword">val</span> writeU8</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">t</a> -&gt; <a href="Sdlrwops.html#TYPEuint8">uint8</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_WriteU8">api doc</a></p>
 </div>

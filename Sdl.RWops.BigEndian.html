@@ -18,6 +18,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -38,8 +39,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.RWops.BigEndian</title>
 </head>
 <body>
@@ -50,37 +53,37 @@
 
 <pre><span id="MODULEBigEndian"><span class="keyword">module</span> BigEndian</span>: <code class="type"><a href="Sdlrwops.BigEndian.html">Sdlrwops.BigEndian</a></code></pre><hr width="100%">
 
-<pre><span id="VALread16"><span class="keyword">val</span> read16</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -> <a href="Sdlrwops.html#TYPEuint16">Sdlrwops.uint16</a></code></pre><div class="info ">
+<pre><span id="VALread16"><span class="keyword">val</span> read16</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -&gt; <a href="Sdlrwops.html#TYPEuint16">Sdlrwops.uint16</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_ReadBE16">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALread32"><span class="keyword">val</span> read32</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -> <a href="Sdlrwops.html#TYPEuint32">Sdlrwops.uint32</a></code></pre><div class="info ">
+<pre><span id="VALread32"><span class="keyword">val</span> read32</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -&gt; <a href="Sdlrwops.html#TYPEuint32">Sdlrwops.uint32</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_ReadBE32">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALread64"><span class="keyword">val</span> read64</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -> <a href="Sdlrwops.html#TYPEuint64">Sdlrwops.uint64</a></code></pre><div class="info ">
+<pre><span id="VALread64"><span class="keyword">val</span> read64</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -&gt; <a href="Sdlrwops.html#TYPEuint64">Sdlrwops.uint64</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_ReadBE64">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALwrite16"><span class="keyword">val</span> write16</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -> <a href="Sdlrwops.html#TYPEuint16">Sdlrwops.uint16</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALwrite16"><span class="keyword">val</span> write16</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -&gt; <a href="Sdlrwops.html#TYPEuint16">Sdlrwops.uint16</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_WriteBE16">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALwrite32"><span class="keyword">val</span> write32</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -> <a href="Sdlrwops.html#TYPEuint32">Sdlrwops.uint32</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALwrite32"><span class="keyword">val</span> write32</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -&gt; <a href="Sdlrwops.html#TYPEuint32">Sdlrwops.uint32</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_WriteBE32">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALwrite64"><span class="keyword">val</span> write64</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -> <a href="Sdlrwops.html#TYPEuint64">Sdlrwops.uint64</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALwrite64"><span class="keyword">val</span> write64</span> : <code class="type"><a href="Sdlrwops.html#TYPEt">Sdlrwops.t</a> -&gt; <a href="Sdlrwops.html#TYPEuint64">Sdlrwops.uint64</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_WriteBE64">api doc</a></p>
 </div>

@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.Surface</title>
 </head>
 <body>
@@ -55,27 +58,27 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a></code> </pre>
 
 
-<pre><span id="VALcreate_rgb"><span class="keyword">val</span> create_rgb</span> : <code class="type">width:int -> height:int -> depth:int -> <a href="Sdl.Surface.html#TYPEt">t</a></code></pre>
-<pre><span id="VALfree"><span class="keyword">val</span> free</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> unit</code></pre>
-<pre><span id="VALload_bmp"><span class="keyword">val</span> load_bmp</span> : <code class="type">filename:string -> <a href="Sdl.Surface.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsave_bmp"><span class="keyword">val</span> save_bmp</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> filename:string -> unit</code></pre>
-<pre><span id="VALfill_rect"><span class="keyword">val</span> fill_rect</span> : <code class="type">dst:<a href="Sdl.Surface.html#TYPEt">t</a> -> rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> color:int32 -> unit</code></pre>
-<pre><span id="VALblit_surface"><span class="keyword">val</span> blit_surface</span> : <code class="type">src:<a href="Sdl.Surface.html#TYPEt">t</a> -><br>       src_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> dst:<a href="Sdl.Surface.html#TYPEt">t</a> -> dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a></code></pre>
-<pre><span id="VALblit_surf"><span class="keyword">val</span> blit_surf</span> : <code class="type">src:<a href="Sdl.Surface.html#TYPEt">t</a> -> dst:<a href="Sdl.Surface.html#TYPEt">t</a> -> dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> <a href="Sdlrect.html#TYPEt">Sdlrect.t</a></code></pre>
-<pre><span id="VALblit_surfs"><span class="keyword">val</span> blit_surfs</span> : <code class="type">src:<a href="Sdl.Surface.html#TYPEt">t</a> -> dst:<a href="Sdl.Surface.html#TYPEt">t</a> -> dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -> unit</code></pre>
-<pre><span id="VALblit_pixels_unsafe"><span class="keyword">val</span> blit_pixels_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> string -> unit</code></pre>
-<pre><span id="VALset_color_key"><span class="keyword">val</span> set_color_key</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> enable:bool -> key:int32 -> unit</code></pre>
-<pre><span id="VALset_color_key_map_rgb"><span class="keyword">val</span> set_color_key_map_rgb</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> enable:bool -> rgb:int * int * int -> unit</code></pre>
-<pre><span id="VALget_width"><span class="keyword">val</span> get_width</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALget_height"><span class="keyword">val</span> get_height</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALget_dims"><span class="keyword">val</span> get_dims</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> int * int</code></pre>
-<pre><span id="VALget_pitch"><span class="keyword">val</span> get_pitch</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALget_pixel32_unsafe"><span class="keyword">val</span> get_pixel32_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> x:int -> y:int -> int32</code></pre>
-<pre><span id="VALget_pixel16_unsafe"><span class="keyword">val</span> get_pixel16_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> x:int -> y:int -> int32</code></pre>
-<pre><span id="VALget_pixel8_unsafe"><span class="keyword">val</span> get_pixel8_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> x:int -> y:int -> int32</code></pre>
-<pre><span id="VALget_bits_per_pixel"><span class="keyword">val</span> get_bits_per_pixel</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALhas_palette"><span class="keyword">val</span> has_palette</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> bool</code></pre>
-<pre><span id="VALpalette_num_colors"><span class="keyword">val</span> palette_num_colors</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALset_blend_mode"><span class="keyword">val</span> set_blend_mode</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a> -> unit</code></pre>
-<pre><span id="VALget_pixelformat_t"><span class="keyword">val</span> get_pixelformat_t</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> <a href="SdlpixelFormat.html#TYPEt">SdlpixelFormat.t</a></code></pre>
-<pre><span id="VALget_pixels"><span class="keyword">val</span> get_pixels</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -> string</code></pre></body></html>
+<pre><span id="VALcreate_rgb"><span class="keyword">val</span> create_rgb</span> : <code class="type">width:int -&gt; height:int -&gt; depth:int -&gt; <a href="Sdl.Surface.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfree"><span class="keyword">val</span> free</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; unit</code></pre>
+<pre><span id="VALload_bmp"><span class="keyword">val</span> load_bmp</span> : <code class="type">filename:string -&gt; <a href="Sdl.Surface.html#TYPEt">t</a></code></pre>
+<pre><span id="VALsave_bmp"><span class="keyword">val</span> save_bmp</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; filename:string -&gt; unit</code></pre>
+<pre><span id="VALfill_rect"><span class="keyword">val</span> fill_rect</span> : <code class="type">dst:<a href="Sdl.Surface.html#TYPEt">t</a> -&gt; rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; color:int32 -&gt; unit</code></pre>
+<pre><span id="VALblit_surface"><span class="keyword">val</span> blit_surface</span> : <code class="type">src:<a href="Sdl.Surface.html#TYPEt">t</a> -&gt;<br>       src_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; dst:<a href="Sdl.Surface.html#TYPEt">t</a> -&gt; dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a></code></pre>
+<pre><span id="VALblit_surf"><span class="keyword">val</span> blit_surf</span> : <code class="type">src:<a href="Sdl.Surface.html#TYPEt">t</a> -&gt; dst:<a href="Sdl.Surface.html#TYPEt">t</a> -&gt; dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; <a href="Sdlrect.html#TYPEt">Sdlrect.t</a></code></pre>
+<pre><span id="VALblit_surfs"><span class="keyword">val</span> blit_surfs</span> : <code class="type">src:<a href="Sdl.Surface.html#TYPEt">t</a> -&gt; dst:<a href="Sdl.Surface.html#TYPEt">t</a> -&gt; dst_rect:<a href="Sdlrect.html#TYPEt">Sdlrect.t</a> -&gt; unit</code></pre>
+<pre><span id="VALblit_pixels_unsafe"><span class="keyword">val</span> blit_pixels_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; string -&gt; unit</code></pre>
+<pre><span id="VALset_color_key"><span class="keyword">val</span> set_color_key</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; enable:bool -&gt; key:int32 -&gt; unit</code></pre>
+<pre><span id="VALset_color_key_map_rgb"><span class="keyword">val</span> set_color_key_map_rgb</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; enable:bool -&gt; rgb:int * int * int -&gt; unit</code></pre>
+<pre><span id="VALget_width"><span class="keyword">val</span> get_width</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALget_height"><span class="keyword">val</span> get_height</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALget_dims"><span class="keyword">val</span> get_dims</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; int * int</code></pre>
+<pre><span id="VALget_pitch"><span class="keyword">val</span> get_pitch</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALget_pixel32_unsafe"><span class="keyword">val</span> get_pixel32_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; x:int -&gt; y:int -&gt; int32</code></pre>
+<pre><span id="VALget_pixel16_unsafe"><span class="keyword">val</span> get_pixel16_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; x:int -&gt; y:int -&gt; int32</code></pre>
+<pre><span id="VALget_pixel8_unsafe"><span class="keyword">val</span> get_pixel8_unsafe</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; x:int -&gt; y:int -&gt; int32</code></pre>
+<pre><span id="VALget_bits_per_pixel"><span class="keyword">val</span> get_bits_per_pixel</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALhas_palette"><span class="keyword">val</span> has_palette</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; bool</code></pre>
+<pre><span id="VALpalette_num_colors"><span class="keyword">val</span> palette_num_colors</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALset_blend_mode"><span class="keyword">val</span> set_blend_mode</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a> -&gt; unit</code></pre>
+<pre><span id="VALget_pixelformat_t"><span class="keyword">val</span> get_pixelformat_t</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; <a href="SdlpixelFormat.html#TYPEt">SdlpixelFormat.t</a></code></pre>
+<pre><span id="VALget_pixels"><span class="keyword">val</span> get_pixels</span> : <code class="type"><a href="Sdl.Surface.html#TYPEt">t</a> -&gt; string</code></pre></body></html>

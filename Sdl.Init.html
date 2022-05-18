@@ -18,6 +18,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -38,8 +39,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.Init</title>
 </head>
 <body>
@@ -50,8 +53,8 @@
 
 <pre><span id="MODULEInit"><span class="keyword">module</span> Init</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Sdl.Init.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
-<pre><span id="TYPEsubsystem"><span class="keyword">type</span> <code class="type"></code>subsystem</span> = <code class="type">[ `AUDIO | `GAMECONTROLLER | `HAPTIC | `JOYSTICK | `TIMER | `VIDEO ]</code> </pre>
+<pre><span id="TYPEsubsystem"><span class="keyword">type</span> <code class="type"></code>subsystem</span> = <code class="type">[ `AUDIO | `EVENTS | `GAMECONTROLLER | `HAPTIC | `JOYSTICK | `TIMER | `VIDEO<br>       ]</code> </pre>
 
 
-<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">[< `AUDIO<br>        | `EVERYTHING<br>        | `GAMECONTROLLER<br>        | `HAPTIC<br>        | `JOYSTICK<br>        | `NOPARACHUTE<br>        | `TIMER<br>        | `VIDEO ]<br>       list -> unit</code></pre>
-<pre><span id="VALinit_subsystem"><span class="keyword">val</span> init_subsystem</span> : <code class="type"><a href="Sdl.Init.html#TYPEsubsystem">subsystem</a> list -> unit</code></pre></body></html>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">[&lt; `AUDIO<br>        | `EVENTS<br>        | `EVERYTHING<br>        | `GAMECONTROLLER<br>        | `HAPTIC<br>        | `JOYSTICK<br>        | `NOPARACHUTE<br>        | `TIMER<br>        | `VIDEO ]<br>       list -&gt; unit</code></pre>
+<pre><span id="VALinit_subsystem"><span class="keyword">val</span> init_subsystem</span> : <code class="type"><a href="Sdl.Init.html#TYPEsubsystem">subsystem</a> list -&gt; unit</code></pre></body></html>

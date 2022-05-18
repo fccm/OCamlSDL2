@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlwindow</title>
 </head>
 <body>
@@ -153,6 +156,13 @@
 <td align="left" valign="top" >
 <code><span id="TYPEELTwindow_flags.Foreign"><span class="constructor">Foreign</span></span></code></td>
 
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwindow_flags.Allow_HighDPI"><span class="constructor">Allow_HighDPI</span></span></code></td>
+
 </tr></table>
 
 <div class="info ">
@@ -165,91 +175,91 @@
 <pre><span id="TYPEwindow_pos"><span class="keyword">type</span> <code class="type"></code>window_pos</span> = <code class="type">[ `centered | `pos of int | `undefined ]</code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">title:string -><br>       pos:<a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> * <a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> -><br>       dims:int * int -> flags:<a href="Sdlwindow.html#TYPEwindow_flags">window_flags</a> list -> <a href="Sdlwindow.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">title:string -&gt;<br>       pos:<a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> * <a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> -&gt;<br>       dims:int * int -&gt; flags:<a href="Sdlwindow.html#TYPEwindow_flags">window_flags</a> list -&gt; <a href="Sdlwindow.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_CreateWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALcreate2"><span class="keyword">val</span> create2</span> : <code class="type">title:string -><br>       x:<a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> -><br>       y:<a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> -><br>       width:int -> height:int -> flags:<a href="Sdlwindow.html#TYPEwindow_flags">window_flags</a> list -> <a href="Sdlwindow.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate2"><span class="keyword">val</span> create2</span> : <code class="type">title:string -&gt;<br>       x:<a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> -&gt;<br>       y:<a href="Sdlwindow.html#TYPEwindow_pos">window_pos</a> -&gt;<br>       width:int -&gt; height:int -&gt; flags:<a href="Sdlwindow.html#TYPEwindow_flags">window_flags</a> list -&gt; <a href="Sdlwindow.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_CreateWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_title"><span class="keyword">val</span> set_title</span> : <code class="type">window:<a href="Sdlwindow.html#TYPEt">t</a> -> title:string -> unit</code></pre><div class="info ">
+<pre><span id="VALset_title"><span class="keyword">val</span> set_title</span> : <code class="type">window:<a href="Sdlwindow.html#TYPEt">t</a> -&gt; title:string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetWindowTitle">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALshow"><span class="keyword">val</span> show</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALshow"><span class="keyword">val</span> show</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_ShowWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALhide"><span class="keyword">val</span> hide</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALhide"><span class="keyword">val</span> hide</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_HideWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALraise_win"><span class="keyword">val</span> raise_win</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALraise_win"><span class="keyword">val</span> raise_win</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RaiseWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALmaximize"><span class="keyword">val</span> maximize</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALmaximize"><span class="keyword">val</span> maximize</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_MaximizeWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALminimize"><span class="keyword">val</span> minimize</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALminimize"><span class="keyword">val</span> minimize</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_MinimizeWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALrestore"><span class="keyword">val</span> restore</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALrestore"><span class="keyword">val</span> restore</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_RestoreWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_surface"><span class="keyword">val</span> get_surface</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> <a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a></code></pre><div class="info ">
+<pre><span id="VALget_surface"><span class="keyword">val</span> get_surface</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; <a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetWindowSurface">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALupdate_surface"><span class="keyword">val</span> update_surface</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALupdate_surface"><span class="keyword">val</span> update_surface</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_UpdateWindowSurface">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_brightness"><span class="keyword">val</span> set_brightness</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> brightness:float -> unit</code></pre><div class="info ">
+<pre><span id="VALset_brightness"><span class="keyword">val</span> set_brightness</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; brightness:float -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetWindowBrightness">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_brightness"><span class="keyword">val</span> get_brightness</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> float</code></pre><div class="info ">
+<pre><span id="VALget_brightness"><span class="keyword">val</span> get_brightness</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetWindowBrightness">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_DestroyWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_size"><span class="keyword">val</span> get_size</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -> int * int</code></pre><div class="info ">
+<pre><span id="VALget_size"><span class="keyword">val</span> get_size</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">t</a> -&gt; int * int</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetWindowSize">api doc</a></p>
 </div>

@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,8 +40,10 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdl.Mouse</title>
 </head>
 <body>
@@ -115,12 +118,12 @@
 <pre><span id="TYPEpos"><span class="keyword">type</span> <code class="type"></code>pos</span> = <code class="type">int * int</code> </pre>
 
 
-<pre><span id="VALget_state"><span class="keyword">val</span> get_state</span> : <code class="type">unit -> <a href="Sdl.Mouse.html#TYPEpos">pos</a> * <a href="Sdl.Mouse.html#TYPEbutton">button</a> list</code></pre>
-<pre><span id="VALget_buttons"><span class="keyword">val</span> get_buttons</span> : <code class="type">unit -> <a href="Sdl.Mouse.html#TYPEbutton">button</a> list</code></pre>
-<pre><span id="VALget_pos"><span class="keyword">val</span> get_pos</span> : <code class="type">unit -> <a href="Sdl.Mouse.html#TYPEpos">pos</a></code></pre>
-<pre><span id="VALwarp_in_window"><span class="keyword">val</span> warp_in_window</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> x:int -> y:int -> unit</code></pre>
-<pre><span id="VALset_relative_mode"><span class="keyword">val</span> set_relative_mode</span> : <code class="type">enabled:bool -> unit</code></pre>
-<pre><span id="VALshow_cursor"><span class="keyword">val</span> show_cursor</span> : <code class="type">toggle:bool -> unit</code></pre>
-<pre><span id="VALcursor_is_shown"><span class="keyword">val</span> cursor_is_shown</span> : <code class="type">unit -> bool</code></pre>
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Sdl.Mouse.html#TYPEbutton">button</a> -> string</code></pre>
-<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Sdl.Mouse.html#TYPEbutton">button</a></code></pre></body></html>
+<pre><span id="VALget_state"><span class="keyword">val</span> get_state</span> : <code class="type">unit -&gt; <a href="Sdl.Mouse.html#TYPEpos">pos</a> * <a href="Sdl.Mouse.html#TYPEbutton">button</a> list</code></pre>
+<pre><span id="VALget_buttons"><span class="keyword">val</span> get_buttons</span> : <code class="type">unit -&gt; <a href="Sdl.Mouse.html#TYPEbutton">button</a> list</code></pre>
+<pre><span id="VALget_pos"><span class="keyword">val</span> get_pos</span> : <code class="type">unit -&gt; <a href="Sdl.Mouse.html#TYPEpos">pos</a></code></pre>
+<pre><span id="VALwarp_in_window"><span class="keyword">val</span> warp_in_window</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt; x:int -&gt; y:int -&gt; unit</code></pre>
+<pre><span id="VALset_relative_mode"><span class="keyword">val</span> set_relative_mode</span> : <code class="type">enabled:bool -&gt; unit</code></pre>
+<pre><span id="VALshow_cursor"><span class="keyword">val</span> show_cursor</span> : <code class="type">toggle:bool -&gt; unit</code></pre>
+<pre><span id="VALcursor_is_shown"><span class="keyword">val</span> cursor_is_shown</span> : <code class="type">unit -&gt; bool</code></pre>
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Sdl.Mouse.html#TYPEbutton">button</a> -&gt; string</code></pre>
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; <a href="Sdl.Mouse.html#TYPEbutton">button</a></code></pre></body></html>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Sdlerror.html">
-<link rel="next" href="Sdl.html">
+<link rel="next" href="Sdlhint.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,14 +40,16 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdlgl</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Sdlerror.html" title="Sdlerror">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Sdl.html" title="Sdl">Next</a>
+&nbsp;<a class="post" href="Sdlhint.html" title="Sdlhint">Next</a>
 </div>
 <h1>Module <a href="type_Sdlgl.html">Sdlgl</a></h1>
 
@@ -63,49 +66,49 @@
 <pre><span id="TYPEcontext"><span class="keyword">type</span> <code class="type"></code>context</span> </pre>
 
 
-<pre><span id="VALcreate_context"><span class="keyword">val</span> create_context</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> <a href="Sdlgl.html#TYPEcontext">context</a></code></pre><div class="info ">
+<pre><span id="VALcreate_context"><span class="keyword">val</span> create_context</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt; <a href="Sdlgl.html#TYPEcontext">context</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_CreateContext">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALmake_current"><span class="keyword">val</span> make_current</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> ctx:<a href="Sdlgl.html#TYPEcontext">context</a> -> int</code></pre><div class="info ">
+<pre><span id="VALmake_current"><span class="keyword">val</span> make_current</span> : <code class="type">win:<a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt; ctx:<a href="Sdlgl.html#TYPEcontext">context</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_MakeCurrent">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALunload_library"><span class="keyword">val</span> unload_library</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALunload_library"><span class="keyword">val</span> unload_library</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_UnloadLibrary">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALextension_supported"><span class="keyword">val</span> extension_supported</span> : <code class="type">extension:string -> bool</code></pre><div class="info ">
+<pre><span id="VALextension_supported"><span class="keyword">val</span> extension_supported</span> : <code class="type">extension:string -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_ExtensionSupported">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_swap_interval"><span class="keyword">val</span> set_swap_interval</span> : <code class="type">interval:int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_swap_interval"><span class="keyword">val</span> set_swap_interval</span> : <code class="type">interval:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_SetSwapInterval">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_swap_interval"><span class="keyword">val</span> get_swap_interval</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALget_swap_interval"><span class="keyword">val</span> get_swap_interval</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_GetSwapInterval">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALswap_window"><span class="keyword">val</span> swap_window</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALswap_window"><span class="keyword">val</span> swap_window</span> : <code class="type"><a href="Sdlwindow.html#TYPEt">Sdlwindow.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_SwapWindow">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdelete_context"><span class="keyword">val</span> delete_context</span> : <code class="type"><a href="Sdlgl.html#TYPEcontext">context</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALdelete_context"><span class="keyword">val</span> delete_context</span> : <code class="type"><a href="Sdlgl.html#TYPEcontext">context</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_DeleteContext">api doc</a></p>
 </div>
@@ -281,13 +284,13 @@
 </div>
 
 
-<pre><span id="VALset_attribute"><span class="keyword">val</span> set_attribute</span> : <code class="type"><a href="Sdlgl.html#TYPEgl_attr">gl_attr</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_attribute"><span class="keyword">val</span> set_attribute</span> : <code class="type"><a href="Sdlgl.html#TYPEgl_attr">gl_attr</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_SetAttribute">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_attribute"><span class="keyword">val</span> get_attribute</span> : <code class="type"><a href="Sdlgl.html#TYPEgl_attr">gl_attr</a> -> int</code></pre><div class="info ">
+<pre><span id="VALget_attribute"><span class="keyword">val</span> get_attribute</span> : <code class="type"><a href="Sdlgl.html#TYPEgl_attr">gl_attr</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GL_GetAttribute">api doc</a></p>
 </div>

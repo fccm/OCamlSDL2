@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Sdlrender.html">
-<link rel="next" href="SdlpixelFormat.html">
+<link rel="next" href="SdltextureAccess.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -19,6 +19,7 @@
 <link title="Sdlwindow" rel="Chapter" href="Sdlwindow.html">
 <link title="Sdlrender" rel="Chapter" href="Sdlrender.html">
 <link title="Sdltexture" rel="Chapter" href="Sdltexture.html">
+<link title="SdltextureAccess" rel="Chapter" href="SdltextureAccess.html">
 <link title="SdlpixelFormat" rel="Chapter" href="SdlpixelFormat.html">
 <link title="Sdlpixel" rel="Chapter" href="Sdlpixel.html">
 <link title="Sdlevent" rel="Chapter" href="Sdlevent.html">
@@ -39,14 +40,16 @@
 <link title="Sdlrwops" rel="Chapter" href="Sdlrwops.html">
 <link title="Sdlerror" rel="Chapter" href="Sdlerror.html">
 <link title="Sdlgl" rel="Chapter" href="Sdlgl.html">
+<link title="Sdlhint" rel="Chapter" href="Sdlhint.html">
 <link title="Sdl" rel="Chapter" href="Sdl.html">
 <link title="Sdlsurface_ba" rel="Chapter" href="Sdlsurface_ba.html">
+<link title="Sdltexture_ba" rel="Chapter" href="Sdltexture_ba.html">
 <link title="Sdlba" rel="Chapter" href="Sdlba.html"><title>Sdltexture</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Sdlrender.html" title="Sdlrender">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="SdlpixelFormat.html" title="SdlpixelFormat">Next</a>
+&nbsp;<a class="post" href="SdltextureAccess.html" title="SdltextureAccess">Next</a>
 </div>
 <h1>Module <a href="type_Sdltexture.html">Sdltexture</a></h1>
 
@@ -61,55 +64,61 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALcreate_from_surface"><span class="keyword">val</span> create_from_surface</span> : <code class="type">Sdltype.renderer -> <a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a> -> <a href="Sdltexture.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">Sdltype.renderer -&gt;<br>       <a href="SdlpixelFormat.html#TYPEt">SdlpixelFormat.t</a> -&gt; <a href="SdltextureAccess.html#TYPEt">SdltextureAccess.t</a> -&gt; int -&gt; int -&gt; <a href="Sdltexture.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><a href="http://wiki.libsdl.org/SDL_CreateTexture">api doc</a></p>
+</div>
+</div>
+
+<pre><span id="VALcreate_from_surface"><span class="keyword">val</span> create_from_surface</span> : <code class="type">Sdltype.renderer -&gt; <a href="Sdlsurface.html#TYPEt">Sdlsurface.t</a> -&gt; <a href="Sdltexture.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_CreateTextureFromSurface">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_DestroyTexture">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_blend_mode"><span class="keyword">val</span> set_blend_mode</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_blend_mode"><span class="keyword">val</span> set_blend_mode</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetTextureBlendMode">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_blend_mode"><span class="keyword">val</span> get_blend_mode</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a></code></pre><div class="info ">
+<pre><span id="VALget_blend_mode"><span class="keyword">val</span> get_blend_mode</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; <a href="SdlblendMode.html#TYPEt">SdlblendMode.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetTextureBlendMode">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_alpha_mod"><span class="keyword">val</span> set_alpha_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> alpha:int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_alpha_mod"><span class="keyword">val</span> set_alpha_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; alpha:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetTextureAlphaMod">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_alpha_mod"><span class="keyword">val</span> get_alpha_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALget_alpha_mod"><span class="keyword">val</span> get_alpha_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetTextureAlphaMod">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_color_mod"><span class="keyword">val</span> set_color_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> int * int * int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_color_mod"><span class="keyword">val</span> set_color_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; int * int * int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetTextureColorMod">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALset_color_mod3"><span class="keyword">val</span> set_color_mod3</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> r:int -> g:int -> b:int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_color_mod3"><span class="keyword">val</span> set_color_mod3</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; r:int -&gt; g:int -&gt; b:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_SetTextureColorMod">api doc</a></p>
 </div>
 </div>
 
-<pre><span id="VALget_color_mod"><span class="keyword">val</span> get_color_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -> int * int * int</code></pre><div class="info ">
+<pre><span id="VALget_color_mod"><span class="keyword">val</span> get_color_mod</span> : <code class="type"><a href="Sdltexture.html#TYPEt">t</a> -&gt; int * int * int</code></pre><div class="info ">
 <div class="info-desc">
 <p><a href="http://wiki.libsdl.org/SDL_GetTextureColorMod">api doc</a></p>
 </div>
