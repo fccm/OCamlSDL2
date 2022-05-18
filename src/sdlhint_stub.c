@@ -1,5 +1,5 @@
 /* OCamlSDL2 - An OCaml interface to the SDL2 library
- Copyright (C) 2013 Florent Monnier
+ Copyright (C) 2022 Carsten Elton Sørensen
  
  This software is provided "AS-IS", without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
