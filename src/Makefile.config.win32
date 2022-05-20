@@ -1,11 +1,15 @@
 # Config for Cygwin/MinGW
 
-CC_PARAMS := -Wall -Werror
+#CC_PARAMS := -Wall -Werror
+CC_PARAMS := 
 CC = c:/cygwin/bin/i686-w64-mingw32-gcc.exe -g $(CC_PARAMS)
+
 OCAMLC = ocamlc -cc "$(CC)"
+
 #OCAMLOPT_PARAMS := -g -w A -warn-error A -ccopt "$(CC_PARAMS)"
 OCAMLOPT_PARAMS := -g -ccopt "$(CC_PARAMS)"
 OCAMLOPT = ocamlopt -cc "$(CC)" $(OCAMLOPT_PARAMS)
+
 OCAMLMKLIB = ocamlmklib \
   -ocamlc '$(OCAMLC)' -ocamlopt '$(OCAMLOPT)'
 
