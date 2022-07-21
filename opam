@@ -36,6 +36,8 @@ build: [
   [make "-C" "src" "dep"]
   [make "-C" "src" "opt"]
   [make "-C" "src" "byte"]
+  [make "-C" "src" "baopt"]
+  [make "-C" "src" "ba"]
 ]
 install: [
   [make "-C" "src" "findinstall"]
