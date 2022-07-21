@@ -47,6 +47,11 @@ To install the source directory (tarball release or git clone):
 $ opam install .
 ```
 
+To use the current master branch:
+```
+$ opam pin -y sdl2 https://github.com/fccm/OCamlSDL2.git#master
+```
+
 
 ## API Documentation
 
